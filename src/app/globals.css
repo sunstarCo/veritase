@@ -5,20 +5,5 @@
 :root {
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-:root {
-  font-size: 12px;
-
-  @media screen and (min-width: 380px) {
-    font-size: 13px;
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    font-size: 15px;
-  }
+  color: #272928;
 }

@@ -19,10 +19,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="ko">
       <body className={inter.className}>
         <Providers>
-          <div>
-            <Header />
-            {children}
-          </div>
+          <Header />
+          <div className="w-full xl:max-w-[1280px] mx-auto">{children}</div>
         </Providers>
       </body>
     </html>

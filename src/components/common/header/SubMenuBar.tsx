@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 interface MenusI {
   menu: {
@@ -8,6 +8,11 @@ interface MenusI {
     default_path: string;
     sub_menu?: SubMenuI[];
   };
+  curPath: string;
+  forceBlock: boolean;
+  onForceBlock: () => void;
+  offForceBlock: () => void;
+  searchParams: {};
 }
 
 interface SubMenuI {
@@ -15,36 +20,62 @@ interface SubMenuI {
   path: string;
 }
 
-function SubMenuBar({menu}: MenusI) {
-  const [showSubMenu, setShowSubMenu] = useState(false);
+function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, searchParams}: MenusI) {
+  const [hoverMenu, setHoverMenu] = useState(false);
   const [selectMenu, setSelectMenu] = useState([{name: '', path: ''}]);
+  if (curPath === '/') {
+    curPath = '/home';
+  }
+
+  const isClicked = useMemo(() => {
+    if (menu.default_path.includes('tips') && curPath.includes('tips')) {
+      return true;
+    }
+    return menu.default_path.includes(curPath.split('/')[1]);
+  }, [menu.default_path, curPath]);
+
   return (
-    <>
-      <Link
-        key={menu.name}
-        href={menu.default_path}
-        className="flex flex-col relative"
-        onMouseOver={() => {
-          if (menu.sub_menu) {
-            setShowSubMenu(prev => !prev);
-            setSelectMenu(menu.sub_menu);
-          } else {
-            setShowSubMenu(false);
-          }
-        }}
-        onMouseOut={() => {
-          setShowSubMenu(false);
-        }}>
-        {menu.name}
-        {showSubMenu && (
-          <div className="flex gap-4 absolute p-4 text-nowrap top-4">
-            {selectMenu.map(sub_menu => {
-              return <Link href={sub_menu.path}>{sub_menu.name}</Link>;
-            })}
-          </div>
-        )}
+    <div
+      className="relative cursor-pointer px-4"
+      onMouseOver={() => {
+        if (menu.sub_menu) {
+          setHoverMenu(prev => !prev);
+          setSelectMenu(menu.sub_menu);
+          onForceBlock();
+        } else if (menu.default_path === '/news') {
+          onForceBlock();
+        } else {
+          setHoverMenu(false);
+        }
+      }}
+      onMouseOut={() => {
+        setHoverMenu(false);
+        offForceBlock();
+      }}>
+      <Link key={menu.name} href={menu.default_path} className={`flex flex-col  px-2`}>
+        <p className={`border-b-4 hover:border-blue-4 py-3 ${isClicked ? 'border-blue-4' : 'border-transparent'}`}>
+          {menu.name}
+        </p>
       </Link>
-    </>
+      {(hoverMenu || (!forceBlock && isClicked)) && (
+        <div className="flex gap-4 absolute p-4 pt-3 text-nowrap -left-5">
+          {selectMenu.map(sub_menu => {
+            return (
+              <Link
+                href={sub_menu.path}
+                key={sub_menu.name}
+                className={`p-2 hover:text-blue-4 hover:font-bold ${
+                  curPath === sub_menu.path || searchParams === sub_menu.path.split('=')[1]
+                    ? 'font-bold text-blue-4'
+                    : ''
+                }`}>
+                {sub_menu.name}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
   );
 }
 

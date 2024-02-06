@@ -3,41 +3,42 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, {useState} from 'react';
 import SubMenuBar from './SubMenuBar';
+import {usePathname, useSearchParams} from 'next/navigation';
 
 const menus = [
   {
     name: '회사소개',
-    default_path: '/greeting',
+    default_path: '/company/greeting',
     sub_menu: [
       {
         name: '인사말',
-        path: '/greeting',
+        path: '/company/greeting',
       },
       {
         name: '회사소개',
-        path: '/introduce',
+        path: '/company/introduce',
       },
       {
         name: '오시는 길',
-        path: '/way',
+        path: '/company/way',
       },
     ],
   },
   {
     name: '교육시스템',
-    default_path: '/eduSystem',
+    default_path: '/education/eduSystem',
     sub_menu: [
       {
         name: '학습관리시스템',
-        path: '/eduSystem',
+        path: '/education/eduSystem',
       },
       {
         name: '수능강사',
-        path: '/teacher',
+        path: '/education/teacher',
       },
       {
         name: '자주묻는질문',
-        path: '/qna',
+        path: '/education/qna',
       },
     ],
   },
@@ -70,23 +71,23 @@ const menus = [
   },
   {
     name: '입시전략',
-    default_path: '/eduPeriod',
+    default_path: '/plan/eduPeriod',
     sub_menu: [
       {
         name: '시기별학습법',
-        path: '/eduPeriod',
+        path: '/plan/eduPeriod',
       },
       {
         name: '수시',
-        path: '/admission',
+        path: '/plan/admission',
       },
       {
         name: '정시',
-        path: '/sat',
+        path: '/plan/sat',
       },
       {
         name: '교육과정',
-        path: '/curriculum',
+        path: '/plan/curriculum',
       },
     ],
   },
@@ -97,25 +98,52 @@ const menus = [
 ];
 
 function Header() {
-  const [showSubMenu, setShowSubMenu] = useState(false);
-  const [selectMenu, setSelectMenu] = useState([{name: '', path: ''}]);
+  const curPath = usePathname();
+  const searchParams = useSearchParams().get('subject');
+
+  const [forceBlock, setForceBlock] = useState(false);
+
+  const onForceBlock = () => {
+    setForceBlock(true);
+  };
+
+  const offForceBlock = () => {
+    setForceBlock(false);
+  };
+
   return (
-    <div className="w-full p-8">
-      <div className="max-w-[1280px] flex">
-        <div className="w-[214px] h-[46px]">
-          <Image
-            src={'/logo/베리타스헤더로고.png'}
-            alt="베리타스헤더로고"
-            width={0}
-            height={0}
-            sizes="100"
-            style={{objectFit: 'cover'}}
-          />
-        </div>
-        <div className="flex gap-4">
-          {menus.map(menu => {
-            return <SubMenuBar menu={menu} />;
-          })}
+    <div className="sticky top-0 w-full text-nowrap flex justify-center">
+      <div className="w-full xl:max-w-[1280px] p-8 pb-16">
+        <div className="w-full flex items-center justify-between">
+          <Link href={'/'} className="min-w-[217px]">
+            <Image
+              src={'/logo/베리타스헤더로고.svg'}
+              alt="veritase_logo"
+              width={0}
+              height={0}
+              sizes="100"
+              style={{width: '100%'}}
+              priority
+            />
+          </Link>
+          <div className="flex items-center">
+            {menus.map(menu => {
+              return (
+                <SubMenuBar
+                  menu={menu}
+                  key={menu.name}
+                  curPath={curPath}
+                  forceBlock={forceBlock}
+                  onForceBlock={onForceBlock}
+                  offForceBlock={offForceBlock}
+                  searchParams={searchParams ?? ''}
+                />
+              );
+            })}
+            <Link href={'/request'} className="py-2 bg-blue-4 text-white rounded px-20 text-nowrap">
+              상담신청
+            </Link>
+          </div>
         </div>
       </div>
     </div>
