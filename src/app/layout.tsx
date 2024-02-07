@@ -5,6 +5,7 @@ import Header from '@/components/common/header/Header';
 import Providers from '@/utils/provider';
 
 import type {Metadata} from 'next';
+import {Footer} from '@/components/common/Footer/Footer';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -22,7 +23,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={inter.className}>
         <Providers>
           <Header />
-          <div className="w-full xl:max-w-[1280px] mx-auto">{children}</div>
+          <div>{children}</div>
+          <Footer />
         </Providers>
       </body>
     </html>

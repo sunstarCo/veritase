@@ -117,7 +117,7 @@ function Header() {
     <div className="sticky top-0 w-full text-nowrap flex justify-center">
       <div className="w-full xl:max-w-[1280px] p-8 pb-16">
         <div className="w-full flex items-center justify-between">
-          <Link href={'/'} className="min-w-[217px]">
+          <Link href={'/'} className="max-w-[217px] min-w-[150px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"
