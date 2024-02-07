@@ -1,9 +1,14 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 interface Props {
   title: string;
   sub_text: string;
-  sub_titles?: string[];
+  sub_titles?: {
+    title: string;
+    path: string;
+  }[];
   curParams?: string;
 }
 
@@ -20,18 +25,18 @@ function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***'}: Props
         <div className="w-full flex mt-8">
           {sub_titles?.map(sub_title => {
             return (
-              <p
-                key={sub_title}
+              <Link
+                key={sub_title.title}
+                href={sub_title.path}
                 className={`${sub_width} border-b-[7px] pb-5 text-center ${
-                  sub_title.includes(curParams) ? 'border-blue-4' : 'border-sub-4'
+                  sub_title.title.includes(curParams) ? 'border-blue-4' : 'border-sub-4'
                 }`}>
-                {sub_title}
-              </p>
+                {sub_title.title}
+              </Link>
             );
           })}
         </div>
       )}
-
       {sub_len === 0 && (
         <div className="w-full h-[7px] bg-sub-4 relative mt-5">
           <div className="absolute left-0 top-0 h-full bg-blue-4 w-1/3" />
