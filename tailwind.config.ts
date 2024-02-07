@@ -24,6 +24,8 @@ const config: Config = {
         'sub-1': '#EAEAEA',
         'sub-2': '#E7E7E7',
         'sub-3': '#CECECE',
+        'sub-4': '#D9D9D9',
+        'sub-5': '#4D4D4D',
         black: '#272928',
       },
     },
