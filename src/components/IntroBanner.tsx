@@ -12,6 +12,7 @@ function IntroBanner() {
         height={0}
         style={{width: '100%'}}
         alt="회사소개배너"
+        className=""
       />
       <div className="absolute top-1/2 left-12 -translate-y-1/2 w-full">
         <div className="text-white font-urbanist text-4xl leading-normal w-full xl:max-w-[1280px] mx-auto ">
