@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 interface Props {
   title: string;
-  sub_text: string;
+  sub_text?: string;
   sub_titles?: {
     title: string;
     path: string;
@@ -19,7 +19,7 @@ function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***'}: Props
     <div className="w-full">
       <div className="flex items-center gap-8">
         <h3 className="text-3xl font-bold">{title}</h3>
-        <p className="text-sub-5">{sub_text}</p>
+        {sub_text && <p className="text-sub-5">{sub_text}</p>}
       </div>
       {sub_len === 0 || (
         <div className="w-full flex mt-8">
