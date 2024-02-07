@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={`${noto_sans_kr.className} ${urbanist.variable} min-h-screen`}>
+      <body className={`${noto_sans_kr.className} ${urbanist.variable}`}>
         <Providers>
           <Header />
-          <div>{children}</div>
+          <div className="min-h-screen">{children}</div>
           <Footer />
         </Providers>
       </body>

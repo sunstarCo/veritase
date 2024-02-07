@@ -114,10 +114,10 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 w-full text-nowrap flex justify-center z-20 bg-white">
+    <div className="sticky top-0 w-full text-nowrap flex justify-center">
       <div className="w-full xl:max-w-[1280px] p-8 pb-16">
         <div className="w-full flex items-center justify-between">
-          <Link href={'/'} className="max-w-[217px] min-w-[150px]">
+          <Link href={'/'} className="min-w-[217px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"
@@ -142,7 +142,7 @@ function Header() {
                 />
               );
             })}
-            <Link href={'/request'} className="py-2 bg-blue-4 text-white rounded px-20 text-nowrap ml-5">
+            <Link href={'/request'} className="py-2 bg-blue-4 text-white rounded px-20 text-nowrap">
               상담신청
             </Link>
           </div>
