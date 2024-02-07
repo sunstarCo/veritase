@@ -114,7 +114,7 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 w-full text-nowrap flex justify-center">
+    <div className="fixed top-0 w-full text-nowrap flex justify-center z-20 bg-white">
       <div className="w-full xl:max-w-[1280px] p-8 pb-16">
         <div className="w-full flex items-center justify-between">
           <Link href={'/'} className="min-w-[217px]">

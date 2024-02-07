@@ -14,15 +14,26 @@ interface Props {
 
 function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***'}: Props) {
   const sub_len = sub_titles.length;
-  const sub_width = 'w-[' + 100 / sub_len + '%]';
+  let sub_width = '';
+  switch (sub_len) {
+    case 3:
+      sub_width = 'w-1/3';
+      break;
+
+    case 5:
+      sub_width = 'w-1/5';
+      break;
+    default:
+      break;
+  }
   return (
-    <div className="w-full">
+    <div className="w-full sm:max-w-[1280px] mx-auto px-8">
       <div className="flex items-center gap-8">
         <h3 className="text-3xl font-bold">{title}</h3>
         {sub_text && <p className="text-sub-5">{sub_text}</p>}
       </div>
       {sub_len === 0 || (
-        <div className="w-full flex mt-8">
+        <div className="w-full flex mt-8 ">
           {sub_titles?.map(sub_title => {
             return (
               <Link

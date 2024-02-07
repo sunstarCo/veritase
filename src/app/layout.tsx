@@ -24,7 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={`${noto_sans_kr.className} ${urbanist.variable}`}>
         <Providers>
           <Header />
-          <div className="min-h-screen">{children}</div>
+          <div className="min-h-screen pt-[148px]">{children}</div>
           <Footer />
         </Providers>
       </body>

@@ -95,11 +95,12 @@ const menus = [
 function Header() {
   return (
     <div className="w-full">
-      <div className="max-w-[1280px]">
+      <div className="max-w-[1280px] max-md:hidden">
         {menus.map(menu => {
-          return <div>{menu.name}</div>;
+          return <div key={menu.name}>{menu.name}</div>;
         })}
       </div>
+      <button className="md:hidden">버튼</button>
     </div>
   );
 }
