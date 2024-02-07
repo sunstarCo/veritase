@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import React from 'react';
+
+import Image from 'next/image';
 
 const logoImages1 = [
   {img: '교육부.png', link: 'https://www.moe.go.kr/'},
@@ -15,7 +16,7 @@ const logoImages2 = [
 export function Footer() {
   return (
     <>
-      <div className="w-full py-8  bg-[#EAEAEA] flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-11">
+      <div className="w-screen py-8 bg-[#EAEAEA] flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-11">
         <div className="flex items-center gap-2 sm:gap-11">
           {logoImages1.map(logo => (
             <a href={logo.link} key={logo.img} className="max-w-[164px] min-w-[80px]">
@@ -32,7 +33,7 @@ export function Footer() {
         </div>
       </div>
       <footer className="w-full relative bottom-0 p-8 text-white bg-[#163B7B] flex justify-center items-center gap-9 text-nowrap  h-72 ">
-        <div className="flex flex-col   gap-1 sm:flex-row sm:gap-8">
+        <div className="flex flex-col gap-1 sm:flex-row sm:gap-8">
           <div className="max-w-[100px] min-w-[150px] sm:max-w-[294px] sm:min-w-[200px] sm:mr-14">
             <Image
               alt="footerLogo"

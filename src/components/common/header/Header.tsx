@@ -102,6 +102,7 @@ const menus = [
 function Header() {
   const curPath = usePathname();
   const searchParams = useSearchParams().get('subject');
+  const [showMenu, setShowMenu] = useState(false);
 
   const [forceBlock, setForceBlock] = useState(false);
 
@@ -114,10 +115,10 @@ function Header() {
   };
 
   return (
-    <div className="fixed top-0 w-full text-nowrap flex justify-center z-20 bg-white">
-      <div className="w-full xl:max-w-[1280px] p-8 pb-16">
-        <div className="w-full flex items-center justify-between">
-          <Link href={'/'} className="min-w-[217px]">
+    <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white">
+      <div className="w-full xl:max-w-[1280px] lg:pb-16">
+        <div className="w-full flex items-center justify-center relative p-8 lg:justify-between">
+          <Link href={'/'} className="min-w-[150px] max-w-[217px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"
@@ -128,7 +129,34 @@ function Header() {
               priority
             />
           </Link>
-          <div className="flex items-center">
+          <button
+            className={`lg:hidden absolute z-50 right-12 ${showMenu && 'rotate-90'}`}
+            onClick={() => setShowMenu(prev => !prev)}>
+            <Image
+              src={'/icons/hamberger.svg'}
+              alt="메뉴버튼"
+              width={0}
+              height={0}
+              sizes="100"
+              style={{width: '100%'}}
+            />
+          </button>
+          {showMenu && (
+            <div className="lg:hidden absolute bg-white z-30 w-1/3 h-screen top-0 right-10 flex flex-col justify-center items-center p-4">
+              {menus.map((menu, i) => {
+                return (
+                  <Link
+                    href={menu.default_path}
+                    key={i}
+                    className="w-full p-4 text-center border"
+                    onClick={() => setShowMenu(false)}>
+                    {menu.name}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+          <div className="lg:flex items-center hidden">
             {menus.map(menu => {
               return (
                 <SubMenuBar

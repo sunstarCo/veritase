@@ -6,4 +6,17 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: #272928;
+  font-size: 11px;
+
+  @media screen and (min-width: 600px) {
+    font-size: 13px;
+  }
+
+  @media screen and (min-width: 800px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 16px;
+  }
 }

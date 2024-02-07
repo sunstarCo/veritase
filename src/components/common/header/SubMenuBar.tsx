@@ -37,7 +37,7 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
 
   return (
     <div
-      className="relative cursor-pointer px-5"
+      className="relative cursor-pointer px-2 lg:px-3 xl:px-5"
       onMouseOver={() => {
         if (menu.sub_menu) {
           setHoverMenu(prev => !prev);
