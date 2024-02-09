@@ -9,25 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.1",
+    "@tanstack/react-query": "^5.14.2",
+    "@tanstack/react-query-devtools": "^5.14.2",
+    "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.6",
-    "@supabase/supabase-js": "^2.39.1",
-    "@tanstack/react-query-devtools": "^5.14.2",
-    "@tanstack/react-query": "^5.14.2"
+    "react-kakao-maps": "^0.0.13",
+    "react-kakao-maps-sdk": "^1.1.26"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
     "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
   }
 }

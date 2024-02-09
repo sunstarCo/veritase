@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .icon-box {
+    @apply relative w-[1.4375rem] h-[1.4375rem];
+  }
+}
+
 :root {
   box-sizing: border-box;
   scroll-behavior: smooth;

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={`${noto_sans_kr.className} ${urbanist.variable}`}>
+      <body className={`${noto_sans_kr.className} ${urbanist.variable} min-h-screen`}>
         <Providers>
           <Header />
           <div className="min-h-screen pt-[148px]">{children}</div>
