@@ -31,6 +31,16 @@ const config: Config = {
         'sub-5': '#4D4D4D',
         black: '#272928',
       },
+      keyframes: {
+        rightIn: {
+          '0%': {transform: 'translateX(100%)'},
+          '100%': {transform: 'translateX(0)'},
+        },
+        rightOut: {
+          '0%': {transform: 'translateX(0)'},
+          '100%': {transform: 'translateX(100%)'},
+        },
+      },
     },
   },
   plugins: [],

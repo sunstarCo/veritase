@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -81,7 +81,7 @@ const menus = [
       },
       {
         name: '수시',
-        path: '/plan/admission',
+        path: '/plan/admission?type=교과',
       },
       {
         name: '정시',
@@ -103,6 +103,7 @@ function Header() {
   const curPath = usePathname();
   const searchParams = useSearchParams().get('subject');
   const [showMenu, setShowMenu] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   const [forceBlock, setForceBlock] = useState(false);
 
@@ -114,9 +115,21 @@ function Header() {
     setForceBlock(false);
   };
 
+  useEffect(() => {
+    if (mobileMenuRef.current) {
+      if (showMenu) {
+        mobileMenuRef.current.classList.remove('animate-[rightOut_0.5s_ease-in-out_forwards]');
+        mobileMenuRef.current.classList.add('animate-[rightIn_0.5s_ease-in-out_forwards]');
+      } else {
+        mobileMenuRef.current.classList.remove('animate-[rightIn_0.5s_ease-in-out_forwards]');
+        mobileMenuRef.current.classList.add('animate-[rightOut_0.5s_ease-in-out_forwards]');
+      }
+    }
+  }, [showMenu]);
+
   return (
     <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white">
-      <div className="w-full xl:max-w-[1280px] lg:pb-16">
+      <div className="w-full xl:max-w-[1280px] lg:pb-8 relative">
         <div className="w-full flex items-center justify-center relative p-8 lg:justify-between">
           <Link href={'/'} className="min-w-[150px] max-w-[217px]">
             <Image
@@ -142,7 +155,9 @@ function Header() {
             />
           </button>
           {showMenu && (
-            <div className="lg:hidden absolute bg-white z-30 w-1/3 h-screen top-0 right-10 flex flex-col justify-center items-center p-4">
+            <div
+              ref={mobileMenuRef}
+              className={`absolute lg:hidden overflow-hidden bg-white z-30 w-1/3 h-screen top-0 right-0 translate-x-full flex flex-col justify-center items-center p-4`}>
               {menus.map((menu, i) => {
                 return (
                   <Link
@@ -156,6 +171,7 @@ function Header() {
               })}
             </div>
           )}
+
           <div className="lg:flex items-center hidden">
             {menus.map(menu => {
               return (

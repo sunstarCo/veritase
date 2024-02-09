@@ -7,7 +7,7 @@ import Providers from '@/utils/provider';
 
 import type {Metadata} from 'next';
 
-const noto_sans_kr = Noto_Sans_KR({subsets: ['latin']});
+const noto_sans_kr = Noto_Sans_KR({subsets: ['latin'], display: 'swap'});
 const urbanist = Urbanist({subsets: ['latin'], display: 'swap', variable: '--font-urbanist'});
 
 export const metadata: Metadata = {

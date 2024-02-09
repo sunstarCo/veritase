@@ -32,6 +32,7 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
     if (menu.default_path.includes('tips') && curPath.includes('tips')) {
       return true;
     }
+
     return menu.default_path.includes(curPath.split('/')[1]);
   }, [menu.default_path, curPath]);
 
@@ -66,7 +67,9 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
                 href={sub_menu.path}
                 key={sub_menu.name}
                 className={`p-2 hover:text-blue-4 hover:font-bold ${
-                  curPath === sub_menu.path || searchParams === sub_menu.path.split('=')[1]
+                  curPath === sub_menu.path ||
+                  searchParams === sub_menu.path.split('=')[1] ||
+                  (curPath.includes('admission') && sub_menu.name === '수시')
                     ? 'font-bold text-blue-4'
                     : ''
                 }`}>
