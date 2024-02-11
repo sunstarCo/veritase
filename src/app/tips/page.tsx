@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
+import KoreanTips from '@/components/tips/KoreanTips';
 
-export default function Page({searchParams: {subject}}: {searchParams: {subject: string}}) {
+export default function Page({searchParams: {subject: curParams}}: {searchParams: {subject: string}}) {
   const sub_titles = [
     {
       title: '국어영역',
@@ -27,13 +28,13 @@ export default function Page({searchParams: {subject}}: {searchParams: {subject:
   ];
   return (
     <div>
-      {' '}
       <Breadcrumb
         title="영역별 학습팁"
         sub_text="영역별로 학습 꿀팁을 알아봐요"
         sub_titles={sub_titles}
-        curParams={subject}
+        curParams={curParams}
       />
+      <div className="max-w-[1280px] mx-auto px-28 mt-12">{curParams === '국어' && <KoreanTips />}</div>
     </div>
   );
 }
