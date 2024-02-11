@@ -27,7 +27,7 @@ function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***'}: Props
       break;
   }
   return (
-    <div className="w-full sm:max-w-[1280px] mx-auto px-16">
+    <div className="w-full sm:max-w-[1280px] mx-auto px-8 md:px-16">
       <div className="flex items-center gap-8">
         <h3 className="text-2xl md:text-[1.75rem] font-bold px-4">{title}</h3>
         {sub_text && <p className="text-sub-5">{sub_text}</p>}

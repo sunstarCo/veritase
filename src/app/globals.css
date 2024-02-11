@@ -26,3 +26,8 @@
     font-size: 16px;
   }
 }
+
+th,
+td {
+  border: 1px solid #484848;
+}

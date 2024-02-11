@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Essay from '@/components/admission/Essay';
+import Subject from '@/components/admission/Subject';
+import Total from '@/components/admission/Total';
 import Breadcrumb from '@/components/common/Breadcrumb';
 
 const sub_title = [
@@ -21,6 +24,11 @@ export default function Page({searchParams: {type}}: {searchParams: {type: strin
   return (
     <div>
       <Breadcrumb title="수시" sub_titles={sub_title} curParams={type} />
+      <div className="max-w-[1280px] mx-auto break-keep px-6 sm:px-18 md:px-36">
+        {type === '교과' && <Subject />}
+        {type === '종합' && <Total />}
+        {type === '논술' && <Essay />}
+      </div>
     </div>
   );
 }

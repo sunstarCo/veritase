@@ -32,7 +32,6 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
     if (menu.default_path.includes('tips') && curPath.includes('tips')) {
       return true;
     }
-
     return menu.default_path.includes(curPath.split('/')[1]);
   }, [menu.default_path, curPath]);
 

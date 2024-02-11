@@ -7,7 +7,7 @@ import Providers from '@/utils/provider';
 
 import type {Metadata} from 'next';
 
-const noto_sans_kr = Noto_Sans_KR({subsets: ['latin'], display: 'swap'});
+const noto_sans_kr = Noto_Sans_KR({subsets: ['latin']});
 const urbanist = Urbanist({subsets: ['latin'], display: 'swap', variable: '--font-urbanist'});
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={`${noto_sans_kr.className} ${urbanist.variable} min-h-screen`}>
         <Providers>
           <Header />
-          <div className="min-h-screen pt-[148px]">{children}</div>
+          <div className="min-h-screen pt-[105px] lg:pt-[148px]">{children}</div>
           <Footer />
         </Providers>
       </body>
