@@ -39,7 +39,7 @@ const menus = [
         path: '/education/teacher',
       },
       {
-        name: '자주묻는질문',
+        name: '자주하는질문',
         path: '/education/qna',
       },
     ],

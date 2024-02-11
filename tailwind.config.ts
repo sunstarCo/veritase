@@ -40,6 +40,11 @@ const config: Config = {
           '0%': {transform: 'translateX(0)'},
           '100%': {transform: 'translateX(100%)'},
         },
+        rotate360: {
+          to:{
+            transform: 'rotate(360deg)'
+          }
+        }
       },
     },
   },
