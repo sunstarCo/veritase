@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -116,14 +117,16 @@ export default function Home() {
                       className="w-full"
                     />
                   </Link>
-                  <Image
-                    src={'/sat/학원연락처.svg'}
-                    alt="한국교육과정평가원 로고"
-                    width={0}
-                    height={0}
-                    sizes="100"
-                    className="w-full mt-4"
-                  />
+                  <a href="tel:02-512-8343">
+                    <Image
+                      src={'/sat/학원연락처.svg'}
+                      alt="전화로고"
+                      width={0}
+                      height={0}
+                      sizes="100"
+                      className="w-full mt-4"
+                    />
+                  </a>
                 </div>
                 <MainNews />
               </div>

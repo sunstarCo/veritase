@@ -2,10 +2,10 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import {newsMockData} from '../page';
+import {getNewsDetail} from '@/app/api/getNews';
 
-export default function Page({params: {id}}: {params: {id: string}}) {
-  const news = newsMockData.find(news => news.id === id);
+export default async function Page({params: {id}}: {params: {id: string}}) {
+  const news = await getNewsDetail(id);
 
   return (
     <div className="max-w-[1280px] mx-auto px-20">

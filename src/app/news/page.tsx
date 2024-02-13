@@ -1,33 +1,20 @@
+export const revalidate = 0;
 import React from 'react';
 
 import Link from 'next/link';
 
-export const newsMockData = [
-  {
-    id: 'asd',
-    origin: 'www.hehlwkdsjsdjlsd.com',
-    title: "2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능 내신영향력 약화'",
-    content:
-      "[입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로",
-  },
-  {
-    id: 'dsa',
-    origin: 'www.hehlwkdsjsdjlsd.com',
-    title: "2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능 내신영향력 약화'",
-    content:
-      " [입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로 [입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로 [입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로 [입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로 [입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로",
-  },
-  {
-    id: 'adw',
-    origin: 'www.hehlwkdsjsdjlsd.com',
-    title: "2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능 내신영향력 약화'",
-    content:
-      "[입시톡톡] 2028 대학입시제도 개편 확정안 '사교육비 경감 vs 수능∙내신 영향력 약화' ... 확정안의 주요 내용은 2028 수능부터 심화수학 없이 핵심적인 과목 위주로",
-  },
-];
+import PaginationContoller from '@/components/news/PaginationController';
 
-export default function Page() {
-  const data = newsMockData;
+import {getNewsPagination} from '../api/getNews';
+
+interface IPagination {
+  searchParams: {[key: string]: string};
+}
+
+export default async function Page({searchParams}: IPagination) {
+  const pageParams = Number(searchParams['page']) || 1;
+  const {data, count, totalPages} = await getNewsPagination(pageParams);
+
   return (
     <div className="max-w-[1280px] mx-auto px-20">
       {/* header */}
@@ -37,13 +24,13 @@ export default function Page() {
           <p className="opacity-70">누구보다 빠르게 입시 뉴스를 알아보세요!</p>
         </div>
         <div className="w-full justify-end flex gap-8 py-2">
-          <p>총 216건</p>
-          <p>현재페이지 1/22</p>
+          <p>총 {count}건</p>
+          <p>현재페이지 {`${pageParams}/${totalPages}`}</p>
         </div>
       </div>
       {/* body */}
       <div className="p-2 mt-4 flex flex-col">
-        {data.map((news, i) => {
+        {data?.map((news, i) => {
           return (
             <Link href={`/news/${news.id}`} key={i} className="w-full border-b p-3 pb-5">
               <p className="text-lg font-bold">{news.title}</p>
@@ -53,6 +40,9 @@ export default function Page() {
             </Link>
           );
         })}
+      </div>
+      <div className="flex justify-center">
+        <PaginationContoller pageParams={pageParams} totalPages={totalPages} />
       </div>
     </div>
   );

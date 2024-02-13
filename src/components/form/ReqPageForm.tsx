@@ -13,6 +13,7 @@ export default function ReqPageForm() {
     e.preventDefault();
     if (formRef) {
       sendEmail('consult', formRef.current);
+      alert('상담신청이 완료되었습니다.');
       router.push('/');
       formRef.current = null;
     }

@@ -2,6 +2,9 @@ import emailjs from 'emailjs-com';
 
 export const useEmail = () => {
   const sendEmail = (formType, formData) => {
+    const apiKey = process.env.NEXT_PUBLIC_EMAIL_API_KEY as string
+    const templateKey = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY as string
+    const serviceKey = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY as string
     console.log(formData);
     const newFormData = new FormData(formData);
 
@@ -12,15 +15,16 @@ export const useEmail = () => {
       번호: newFormData.get('phone') || '',
       지역: newFormData.get('location') || '',
       학교: newFormData.get('school') || '',
-      신청과목: newFormData.get('object') || '',
+      신청과목: newFormData.get('subject') || '',
       상담내용: newFormData.get('content') || '',
     };
 
-    emailjs.send('service_epa6mea', 'template_5brwbg9', templateParams, 'qWAhaHkSLVQFEsy10').then(
+    emailjs.send(serviceKey, templateKey, templateParams, apiKey).then(
       result => {
-        alert('상담신청이 완료되었습니다.');
+        return
       },
       error => {
+        console.log(error)
         alert('오류가 발생했습니다.');
       },
     );
