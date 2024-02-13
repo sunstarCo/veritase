@@ -57,44 +57,43 @@ function Page() {
     return;
   }
   return (
-    <div className="w-full flex flex-col items-center gap-10">
-      <p className="text-3xl">입시 뉴스 등록</p>
-      <form className="border flex flex-col items-center p-10" onSubmit={onSubmit}>
-        <div className="flex flex-col gap-4">
+    <div className="max-w-[1280px] flex flex-col items-center gap-10 px-8">
+      <p className="text-3xl border-b-2 border-black pb-10 w-full text-center ">입시 뉴스 등록</p>
+      <form className="flex flex-col items-center w-full p-10" onSubmit={onSubmit}>
+        <div className="flex flex-col w-full gap-4">
           <label>
             제목<span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             placeholder="제목을 입력하세요"
-            className="border w-[30rem] p-2"
+            className="border w-full p-2"
             onChange={onChangeTitle}
             value={title}
           />
           <label>본문</label>
           <textarea
-            placeholder="본문 입력하세요"
-            className="resize-none border p-2 h-40"
+            placeholder="본문을 입력하세요"
+            className="resize-none border p-2 min-h-52"
             value={content}
             onChange={onChangeContent}
           />
-
           <label>
             출처<span className="text-red-500"></span>
           </label>
           <input
             type="text"
-            placeholder="출처 입력하세요"
-            className="border w-[30rem] p-2"
+            placeholder="출처를 입력하세요"
+            className="border p-2"
             onChange={onChangeOrigin}
             value={origin}
           />
         </div>
-        <div className="flex gap-10">
+        <div className="flex gap-10 mt-4">
           <Link href={'/admin'} className="p-2 px-2 w-fit rounded-lg mt-4 border-2 border-black">
             취소하기
           </Link>
-          <button className="bg-primary p-2 px-2 w-fit border-black  border-2 rounded-lg mt-4">등록하기</button>
+          <button className="p-2 px-2 w-fit bg-blue-4 text-white rounded-lg mt-4">등록하기</button>
         </div>
       </form>
     </div>

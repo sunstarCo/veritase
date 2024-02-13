@@ -5,14 +5,16 @@ import AdminAuth from '@/components/admin/adminAuth';
 import AdminPage from '@/components/admin/adminPage';
 import useCheckAdmin from '@/components/admin/useCheckAdmin';
 
-function Page() {
+import type {IPagination} from '../news/page';
+
+function Page({searchParams: {page}}: IPagination) {
   const [isAdmin] = useCheckAdmin();
 
   if (isAdmin === 'loading') {
     return;
   }
 
-  return isAdmin ? <AdminPage /> : <AdminAuth />;
+  return isAdmin ? <AdminPage page={page} /> : <AdminAuth />;
 }
 
 export default Page;

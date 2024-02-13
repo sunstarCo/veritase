@@ -2,7 +2,6 @@ import {supabase} from '../../../supabase/supabase.config'
 
 export const getMainNews = async () =>{
   const {data} =  await supabase.from('news').select('id, title').range(0, 5).order('created_at', {ascending : false});
-  console.log(data)
  return data
 }
 
@@ -11,7 +10,6 @@ export const getNewsPagination = async (pageParams: number) => {
     const endPostNumber = pageParams * 5 - 1;
     const {data }  = await supabase.from('news').select('*').range(startPostNumber, endPostNumber).order('created_at', {ascending : false});
       const { count } = await supabase.from('news').select(`*`, { count: 'exact', head: true })
-      console.log(data, count)
   return {data,count, totalPages: Math.ceil((Number(count) ?? 0) / 5) *10};  
 };
 

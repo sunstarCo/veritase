@@ -7,7 +7,7 @@ import PaginationContoller from '@/components/news/PaginationController';
 
 import {getNewsPagination} from '../api/getNews';
 
-interface IPagination {
+export interface IPagination {
   searchParams: {[key: string]: string};
 }
 
@@ -41,7 +41,7 @@ export default async function Page({searchParams}: IPagination) {
           );
         })}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-10">
         <PaginationContoller pageParams={pageParams} totalPages={totalPages} />
       </div>
     </div>

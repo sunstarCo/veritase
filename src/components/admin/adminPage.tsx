@@ -3,29 +3,46 @@ import {useEffect, useState} from 'react';
 import {Skeleton} from 'antd';
 import Link from 'next/link';
 
-import {getNews} from '@/app/api/admin';
+import {getNewsPagination} from '@/app/api/getNews';
 
-function AdminPage() {
-  const [data, setData] = useState<any>(null);
+import PaginationContoller from '../news/PaginationController';
+
+import type {Tables} from '@/types/supabase';
+
+function AdminPage({page}: {page: string}) {
+  const pageParams = Number(page) || 1;
+  const [data, setData] = useState<Tables<'news'>[] | null>(null);
+  const [count, setCount] = useState<any>();
+  const [totalPages, setTotalPages] = useState<any>();
 
   useEffect(() => {
     (async function () {
-      setData(await getNews());
+      const {data, count, totalPages} = await getNewsPagination(pageParams);
+      setData(data);
+      setCount(count);
+      setTotalPages(totalPages);
     })();
-  }, []);
+  }, [page]);
 
   return (
-    <div className="flex flex-col items-center gap-10 px-20">
-      <p className="text-3xl">관리자 페이지</p>
-      <div className="w-full flex justify-end">
-        <Link
-          href={'/admin/post'}
-          className="bg-hover_primary p-2 rounded-md  border-[1px] border-primary hover:bg-primary">
-          게시글 올리기
-        </Link>
+    <div className="max-w-[1280px] mx-auto px-20">
+      {/* header */}
+      <div className="pb-2 border-b-2 border-black">
+        <div className="flex gap-5 items-center justify-center">
+          <h3 className="text-3xl font-bold">관리자 페이지</h3>
+        </div>
+        <div className="w-full flex justify-between py-2 mt-4">
+          <div className="flex gap-8">
+            <p>총 {count}건</p>
+            <p>현재페이지 {`${pageParams}/${totalPages}`}</p>
+          </div>
+          <Link href={'/admin/post'} className="bg-blue-2 text-white px-2 p-1 rounded-sm hover:opacity-75">
+            게시물 작성
+          </Link>
+        </div>
       </div>
-      <div className="w-full text-xl">[게시글 목록]</div>
-      <div className="flex flex-col gap-4 w-full">
+      {/* body */}
+      <div className="p-2 mt-4 flex flex-col">
         {!data ? (
           <>
             <Skeleton />
@@ -33,29 +50,22 @@ function AdminPage() {
             <Skeleton />
           </>
         ) : data.length !== 0 ? (
-          data.map((news: any) => {
+          data?.map((news, i) => {
             return (
-              <Link
-                key={news.id}
-                href={`/admin/detail/${news.id}`}
-                className="border-[1px] border-black p-4 rounded-md  relative">
-                <p className="text-lg mb-2">
-                  제목 : <span>{news.title}</span>
+              <Link href={`/admin/detail/${news.id}`} key={i} className="w-full border-b p-3 pb-5">
+                <p className="text-lg font-bold">{news.title}</p>
+                <p className="mt-4 text-sub-5 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden break-keep ">
+                  {news.content}
                 </p>
-                <div className="flex gap-4">
-                  {/* <p className="text-slate-600">
-                    제품 : <span>{news.category}</span>
-                  </p> */}
-                  <p className="text-slate-600">
-                    작성일 : <span>{news.created_at.split('.')[0].replace('T', ' ')}</span>
-                  </p>
-                </div>
               </Link>
             );
           })
         ) : (
           <div className="text-2xl w-full text-center p-10">아직 등록된 게시물이 없습니다.</div>
         )}
+      </div>
+      <div className="flex justify-center mt-10">
+        <PaginationContoller pageParams={pageParams} totalPages={totalPages} admin />
       </div>
     </div>
   );
