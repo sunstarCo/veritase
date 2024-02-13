@@ -52,11 +52,12 @@ function AdminPage({page}: {page: string}) {
         ) : data.length !== 0 ? (
           data?.map((news, i) => {
             return (
-              <Link href={`/admin/detail/${news.id}`} key={i} className="w-full border-b p-3 pb-5">
-                <p className="text-lg font-bold">{news.title}</p>
-                <p className="mt-4 text-sub-5 w-11/12 whitespace-nowrap overflow-ellipsis overflow-hidden break-keep ">
-                  {news.content}
-                </p>
+              <Link
+                href={`/news/${news.id}`}
+                key={i}
+                className="w-full border-b p-3 pb-5 whitespace-nowrap break-keep ">
+                <p className="text-lg font-bold overflow-hidden overflow-ellipsis">{news.title}</p>
+                <p className="mt-4 text-sub-5 w-11/12 overflow-hidden overflow-ellipsis">{news.content}</p>
               </Link>
             );
           })
