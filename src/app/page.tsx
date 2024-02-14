@@ -9,7 +9,10 @@ export default function Home() {
   return (
     <>
       <div className="relative bg-[url('/banner/메인배너기본.png')] h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] bg-cover break-keep">
-        <div className="max-w-[1280px] mx-auto px-2 md:px-8 pt-[20%] flex flex-col">
+        <div className="absolute h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] overflow-hidden w-full">
+          <div className="absolute top-1/2 left-1/2 transition-transform w-0 h-auto -translate-x-[50%] -translate-y-[50%] bg-blue-500 blur-xl opacity-20 mix-blend-multiply animate-ink rounded-full" />
+        </div>
+        <div className="absolute left-1/2 -translate-x-1/2 max-w-[1280px] w-full mx-auto px-2 md:px-8 pt-[20%] flex flex-col">
           <div className="w-11/12 mx-auto max-lg:text-center">
             <h1 className="text-white text-[3rem] md:text-[5rem] font-normal">수능은, 기세야</h1>
             <h2 className="text-white text-xl font-normal">
@@ -29,7 +32,7 @@ export default function Home() {
                     height={0}
                     sizes="100"
                     style={{width: 'fit-content'}}
-                    className="absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50"
+                    className="absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform hover:animate-rotate"
                   />
                   <div className="text-white px-5 flex items-center justify-center sm:block sm:pt-12">
                     <p className="font-bold text-lg sm:mb-3">입시전략</p>
@@ -49,7 +52,7 @@ export default function Home() {
                     height={0}
                     sizes="100"
                     style={{width: 'fit-content'}}
-                    className="absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50"
+                    className="absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform hover:animate-rotate"
                   />
                   <div className="text-white px-5 flex items-center justify-center sm:block sm:pt-12">
                     <p className="font-bold text-lg sm:mb-3">학원소개</p>
@@ -69,7 +72,7 @@ export default function Home() {
                     height={0}
                     sizes="100"
                     style={{width: 'fit-content'}}
-                    className="absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50"
+                    className={`absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform animate-rotate`}
                   />
                   <div className="text-white px-5 flex items-center justify-center sm:block sm:pt-12">
                     <p className="font-bold text-lg sm:mb-3">자주하는질문</p>

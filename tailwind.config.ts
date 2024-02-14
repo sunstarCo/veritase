@@ -42,10 +42,21 @@ const config: Config = {
         },
         rotate360: {
           to:{
-            transform: 'rotate(360deg)'
+            transform: 'rotate(180deg)'
           }
+        },
+        ink: {
+          to: {
+            width: '180%',
+            paddingTop: '180%',
+            // transform: 'translateX(-50%) translateY(-50%)',
+        }
         }
       },
+      animation:{
+        ink: 'ink 2.5s ease-in forwards',
+        rotate: 'rotate360 0.5s ease-in-out forwards'
+      }
     },
   },
   plugins: [],
