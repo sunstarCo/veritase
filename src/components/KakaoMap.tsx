@@ -1,6 +1,12 @@
 'use client';
 import {useEffect} from 'react';
 
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
+
 function KakaoMap() {
   // 고정된 좌표 (예: 서울 시청 좌표)
   const latitude = 37.52112;

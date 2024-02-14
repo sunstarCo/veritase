@@ -1,15 +1,13 @@
 'use client';
+import type {FormEvent} from 'react';
 import React, {useRef} from 'react';
-
-import {useRouter} from 'next/navigation';
 
 import {useEmail} from './form/useEmail';
 
 function MainForm() {
   const mainFormRef = useRef<HTMLFormElement | null>(null);
   const [sendEmail] = useEmail();
-  const router = useRouter();
-  const handleSubmit = e => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (mainFormRef) {
       sendEmail('lecture', mainFormRef.current);

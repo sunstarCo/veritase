@@ -34,24 +34,25 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <footer className="w-full relative bottom-0 p-8 text-white bg-[#163B7B] flex justify-center items-center gap-9 text-nowrap  h-72 ">
-          <div className="flex flex-col gap-1 sm:flex-row sm:gap-8">
-            <div className="max-w-[100px] min-w-[150px] sm:max-w-[294px] sm:min-w-[200px] sm:mr-14">
+        <footer className="w-full relative bottom-0 p-8 text-white bg-[#163B7B] flex justify-center items-center gap-4 lg:gap-9 text-nowrap  h-72 ">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
+            <div className="max-w-[100px] min-w-[150px] sm:max-w-[294px] sm:min-w-[200px] mx-auto">
               <Image
                 alt="footerLogo"
                 src="/logo/베리타스푸터로고.png"
                 width={0}
                 height={0}
                 sizes="100"
-                style={{width: '100%'}}
+                style={{width: '100%', objectFit: 'cover'}}
                 priority
               />
             </div>
             <div className="flex flex-col sm:flex-row  gap-3 mt-2">
               <p className="font-medium">(주)베리타스 교육</p>
               <div className="flex flex-col gap-0">
-                <div className="flex flex-col sm:flex-row text-sm">
-                  <p>서울 강남구 도산대로27길 20, 2층(신사동, 오름빌딩)&nbsp;</p>
+                <div className="flex flex-col md:flex-row text-sm">
+                  <p>서울 강남구 도산대로27길 20, 2층(신사동, 오름빌딩)</p>
+                  <span className="max-md:hidden">&nbsp;|&nbsp;</span>
                   <p>사업자 등록 번호 : 520-87-10407</p>
                 </div>
                 <p className="text-sm mb-2 sm:mb-2 flex items-center">
