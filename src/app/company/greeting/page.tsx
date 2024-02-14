@@ -10,7 +10,7 @@ export default function Page() {
       <IntroBanner />
       <div className="w-full">
         <div className="w-full bg-[url('/banner/인삿말3.png')] bg-no-repeat bg-cover bg-right-bottom pb-96">
-          <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-20 pt-20">
+          <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-4 md:px-20 pt-20">
             <div className="w-[7px] h-[66px] bg-blue-4" />
             <div>
               <p className="text-3xl py-4 relative w-fit">
@@ -22,7 +22,7 @@ export default function Page() {
                   height={0}
                   sizes="100"
                   style={{width: 'fit-content'}}
-                  className="absolute -top-10 -right-14"
+                  className="absolute -top-10 -right-14 max-sm:hidden"
                 />
               </p>
               <p className="w-full sm:max-w-[80%] break-keep mt-10 leading-[30px] font-medium pr-8">

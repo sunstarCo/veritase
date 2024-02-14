@@ -11,6 +11,7 @@ const menus = [
   {
     name: '회사소개',
     default_path: '/company/greeting',
+    category: 'company',
     sub_menu: [
       {
         name: '인사말',
@@ -29,6 +30,7 @@ const menus = [
   {
     name: '교육시스템',
     default_path: '/education/eduSystem',
+    category: 'education',
     sub_menu: [
       {
         name: '학습관리시스템',
@@ -48,6 +50,7 @@ const menus = [
     // path를 search params로 영역별 분리
     name: '영역별 학습팁',
     default_path: '/tips?subject=국어',
+    category: 'tips',
     sub_menu: [
       {
         name: '국어',
@@ -74,6 +77,7 @@ const menus = [
   {
     name: '입시전략',
     default_path: '/plan/eduPeriod',
+    category: 'plan',
     sub_menu: [
       {
         name: '시기별학습법',
@@ -96,6 +100,7 @@ const menus = [
   {
     name: '입시뉴스',
     default_path: '/news',
+    category: 'news',
   },
 ];
 
@@ -127,10 +132,14 @@ function Header() {
     }
   }, [showMenu]);
 
+  const selectMenu = menus.find(menu => {
+    return curPath.includes(menu.category);
+  });
+
   return (
-    <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white">
+    <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white ">
       <div className="w-full xl:max-w-[1280px] lg:pb-8 relative">
-        <div className="w-full flex items-center justify-center relative p-8 lg:justify-between">
+        <div className="w-full flex items-center justify-center relative p-4 xl:p-8 lg:justify-between">
           <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[150px] md:max-w-[217px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
@@ -193,6 +202,24 @@ function Header() {
               상담신청
             </Link>
           </div>
+        </div>
+        <div className="w-full px-16 lg:hidden gap-4 flex justify-center">
+          {selectMenu?.sub_menu?.map(sub_menu => {
+            return (
+              <Link
+                href={sub_menu.path}
+                key={sub_menu.name}
+                className={`p-2 hover:text-blue-4 hover:font-bold ${
+                  curPath === sub_menu.path ||
+                  searchParams === sub_menu.path.split('=')[1] ||
+                  (curPath.includes('admission') && sub_menu.name === '수시')
+                    ? 'font-bold text-blue-4'
+                    : ''
+                }`}>
+                {sub_menu.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

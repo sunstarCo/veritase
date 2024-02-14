@@ -17,7 +17,7 @@ function MainForm() {
     }
   };
   return (
-    <div className="p-8 text-white bg-blue-5">
+    <div className="p-8 text-white bg-blue-5 w-full md:max-w-96 lg:w-80  mx-auto">
       <p className="text-lg font-bold">무료 시범강의 신청</p>
       <form className="mt-4 flex flex-col gap-4" ref={mainFormRef} onSubmit={handleSubmit}>
         <input
@@ -25,7 +25,7 @@ function MainForm() {
           id="name"
           name="name"
           placeholder="성함"
-          className="bg-transparent border p-2 w-64"
+          className="bg-transparent border p-2 w-full"
           required
         />
         <input
@@ -33,7 +33,7 @@ function MainForm() {
           id="subject"
           name="subject"
           placeholder="신청과목"
-          className="bg-transparent border p-2 w-64"
+          className="bg-transparent border p-2 w-full"
           required
         />
         <input
@@ -44,14 +44,14 @@ function MainForm() {
           minLength={11}
           maxLength={11}
           placeholder="연락처"
-          className="bg-transparent border p-2 w-64"
+          className="bg-transparent border p-2 w-full"
           required
         />
         <textarea
           placeholder="세부사항"
           id="content"
           name="content"
-          className="bg-transparent border p-2 w-64 min-h-36 resize-none"
+          className="bg-transparent border p-2 w-full min-h-36 resize-none"
         />
         <div className="flex gap-3 items-center justify-between">
           <p className="text-sm text-sub-2">개인정보 제공하는 것에 동의합니다.</p>

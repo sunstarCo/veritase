@@ -18,7 +18,7 @@ export function Footer() {
   return (
     <>
       <div className="">
-        <div className="w-screen py-8 bg-[#EAEAEA] flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-11">
+        <div className="w-full py-8 bg-[#EAEAEA] flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-11">
           <div className="flex items-center gap-2 sm:gap-11">
             {logoImages1.map(logo => (
               <a href={logo.link} key={logo.img} className="max-w-[164px] min-w-[80px]">

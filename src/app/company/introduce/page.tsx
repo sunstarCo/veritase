@@ -6,25 +6,18 @@ import IntroBanner from '@/components/IntroBanner';
 
 export default function Page() {
   return (
-    <div className="">
+    <div className="break-keep">
       <IntroBanner />
       <div className="bg-[url('/banner/회사소개.png')] bg-no-repeat bg-contain bg-right-bottom pb-40">
-        <article className="max-w-[1280px] mx-auto p-8 px-20 ">
-          <h3 className="flex gap-4 items-center ml-6 text-3xl font-bold">
-            <Image
-              src={'/icons/1등.svg'}
-              alt="1등 아이콘"
-              width={0}
-              height={0}
-              sizes="100"
-              style={{width: 'fit-content'}}
-            />
+        <article className="max-w-[1280px] mx-auto py-6 px-4 sm:px-20 ">
+          <h3 className="flex gap-4 items-center ml-6 text-2xl md:text-3xl font-bold">
+            <Image src={'/icons/1등.svg'} alt="1등 아이콘" width={0} height={0} sizes="100" className="w-24 md:w-fit" />
             One Stop 입시교육을 실현하는 완벽한 System
           </h3>
           <div className="flex gap-10 items-start mt-4">
             <div className="w-[7px] h-[66px] bg-blue-4" />
             <div>
-              <p className="text-3xl">
+              <p className="text-2xl md:text-3xl font-semibold">
                 (주)베리타스 학원은 국내 최고강사들의 <br />
                 수준높은 강의를 1: 1로 제공하는 입시 전문 교육기관입니다.
               </p>
@@ -44,7 +37,7 @@ export default function Page() {
           <div className="flex gap-10 items-start mt-10">
             <div className="w-[7px] h-[66px] bg-blue-4" />
             <div>
-              <p className="text-3xl py-4">강남 최고의 강사진 보유</p>
+              <p className="text-2xl md:text-3xl font-semibold py-4">강남 최고의 강사진 보유</p>
               <p className="max-w-full break-keep mt-10 leading-[30px] font-medium pr-8">
                 (주)베리타스교육은 서울 강남 지역에서 최고로 꼽히는 강사진을 자랑하며, 학생들의 고득점을 이루어낸 검증된
                 강사들로 <br />
