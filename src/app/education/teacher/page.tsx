@@ -17,7 +17,7 @@ export default function Page() {
             <Image src={'/teacher/월계수.svg'} alt="" width={0} height={0} sizes="100" className="w-full" />
           </div>
         </section>
-        <div className="mt-32 relative">
+        <div className="mt-24 relative">
           <Image
             src={'/teacher/강사소개.svg'}
             alt=""

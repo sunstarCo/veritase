@@ -40,12 +40,10 @@ export default function Page() {
               <p className="text-2xl md:text-3xl font-semibold py-4">강남 최고의 강사진 보유</p>
               <p className="max-w-full break-keep mt-10 leading-[30px] font-medium pr-8">
                 (주)베리타스교육은 서울 강남 지역에서 최고로 꼽히는 강사진을 자랑하며, 학생들의 고득점을 이루어낸 검증된
-                강사들로 <br />
-                구성되어 있습니다. 이들은 수능문제의 <span className="text-blue-4 font-bold">출제 의도</span>를 꿰뚫고,
-                다양한 풀이의 접근 방식을 제공하며, <span className="text-blue-4 font-bold">확인학습</span>을 통한
-                <br />
-                학습을 보장하는 선생님들입니다. 또한, EBS 교재의 유형을 다양한 패턴으로 제공하고, 단순히 한 교재에
-                의존하지 않고 <br />
+                강사들로 구성되어 있습니다. 이들은 수능문제의 <span className="text-blue-4 font-bold">출제 의도</span>를
+                꿰뚫고, 다양한 풀이의 접근 방식을 제공하며, <span className="text-blue-4 font-bold">확인학습</span>을
+                통한 학습을 보장하는 선생님들입니다. 또한, EBS 교재의 유형을 다양한 패턴으로 제공하고, 단순히 한 교재에
+                의존하지 않고
                 <span className="text-blue-4 font-bold">다양한 수험 자료</span>의 엑기스를 제공하여 학생들에게 풍부한
                 학습 경험을 제공합니다. <br />
                 (주)베리타스교육에서는 <span className="text-red text-lg font-bold">

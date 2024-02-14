@@ -6,9 +6,9 @@ import {getNewsDetail} from '@/app/api/getNews';
 
 export default async function Page({params: {id}}: {params: {id: string}}) {
   const news = await getNewsDetail(id);
-
+  const contentLines = news.content.split(/\n/);
   return (
-    <div className="max-w-[1280px] mx-auto px-20">
+    <div className="max-w-[1280px] mx-auto px-8 mb:px-20">
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center">
@@ -26,7 +26,14 @@ export default async function Page({params: {id}}: {params: {id: string}}) {
         <>
           <div className="p-2 mt-8 flex flex-col border-b-2 pb-16">
             <p className="text-2xl font-bold">{news.title}</p>
-            <p className="mt-12 text-sub-5 break-keep w-4/5 leading-8 ">{news.content}</p>
+            <div className="mt-12 text-sub-5 break-keep w-full leading-8">
+              {contentLines.map((line, index) => {
+                if (line === '') {
+                  return <br key={index} />;
+                }
+                return <p key={index}>{line}</p>;
+              })}
+            </div>
           </div>
           <div className="flex w-full mt-24 mb-16 border-y-2 border-sub-3 items-center">
             <div className="bg-sub-2 h-14 w-1/6 flex items-center justify-center">출처</div>
