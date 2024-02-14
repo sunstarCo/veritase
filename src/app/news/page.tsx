@@ -14,7 +14,7 @@ export interface IPagination {
 export default async function Page({searchParams}: IPagination) {
   const pageParams = Number(searchParams['page']) || 1;
   const {data, count, totalPages} = await getNewsPagination(pageParams);
-  console.log(totalPages);
+
   return (
     <div className="max-w-[1280px] mx-auto px-20 mb-4">
       {/* header */}
