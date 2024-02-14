@@ -1,7 +1,7 @@
 import emailjs from 'emailjs-com';
 
 export const useEmail = () => {
-  const sendEmail = (formType, formData) => {
+  const sendEmail = (formType:any, formData:any) => {
     const apiKey = process.env.NEXT_PUBLIC_EMAIL_API_KEY as string
     const templateKey = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY as string
     const serviceKey = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY as string
@@ -20,7 +20,7 @@ export const useEmail = () => {
     };
 
     emailjs.send(serviceKey, templateKey, templateParams, apiKey).then(
-      result => {
+      () => {
         return
       },
       error => {

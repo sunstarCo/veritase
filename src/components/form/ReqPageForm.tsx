@@ -1,4 +1,5 @@
 'use client';
+import type {FormEvent} from 'react';
 import React, {useRef} from 'react';
 
 import {useRouter} from 'next/navigation';
@@ -9,7 +10,7 @@ export default function ReqPageForm() {
   const [sendEmail] = useEmail();
   const formRef = useRef<HTMLFormElement | null>(null);
   const router = useRouter();
-  const handleSubmit = e => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (formRef) {
       sendEmail('consult', formRef.current);

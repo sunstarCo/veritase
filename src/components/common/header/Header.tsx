@@ -157,7 +157,7 @@ function Header() {
           {showMenu && (
             <div
               ref={mobileMenuRef}
-              className={`absolute lg:hidden overflow-hidden bg-white z-30 w-1/3 h-screen top-0 right-0 translate-x-full flex flex-col justify-center items-center p-4`}>
+              className={`absolute lg:hidden overflow-hidden bg-white z-30 w-1/2 sm:w-1/3 h-screen top-0 right-0 translate-x-full flex flex-col justify-center items-center p-4`}>
               {menus.map((menu, i) => {
                 return (
                   <Link
@@ -169,6 +169,9 @@ function Header() {
                   </Link>
                 );
               })}
+              <Link href={'/request'} className="w-full p-4 text-center text-white bg-blue-4">
+                상담신청
+              </Link>
             </div>
           )}
 

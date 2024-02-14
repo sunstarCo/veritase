@@ -29,7 +29,7 @@ export default async function Page({searchParams}: IPagination) {
         </div>
       </div>
       {/* body */}
-      <div className="p-2 mt-4 flex flex-col">
+      <div className="p-2 mt-4 flex flex-col h-[35rem]">
         {data?.map((news, i) => {
           return (
             <Link href={`/news/${news.id}`} key={i} className="w-full border-b p-3 pb-5 whitespace-nowrap break-keep ">
@@ -39,7 +39,7 @@ export default async function Page({searchParams}: IPagination) {
           );
         })}
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center ">
         <PaginationContoller pageParams={pageParams} totalPages={totalPages} />
       </div>
     </div>

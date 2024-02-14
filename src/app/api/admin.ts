@@ -1,5 +1,8 @@
 import { supabase } from "../../../supabase/supabase.config";
 
+import type { TablesInsert } from "@/types/supabase";
+
+
 export const deleteNews = async(id :string) => {
   const { error } = await supabase.from('news').delete().eq('id', `${id}`);
   if (error) {
@@ -15,7 +18,7 @@ export const getNews = async () => {
   return data;
 }
 
-export const postNews = async (newPost) => {
+export const postNews = async(newPost:TablesInsert<'news'>) => {
   const { error } = await supabase.from('news').insert(newPost);
   if (error) {
     console.log(error)

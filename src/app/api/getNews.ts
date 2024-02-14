@@ -1,7 +1,7 @@
 import {supabase} from '../../../supabase/supabase.config'
 
 export const getMainNews = async () =>{
-  const {data} =  await supabase.from('news').select('id, title').range(0, 5).order('created_at', {ascending : false});
+  const {data} =  await supabase.from('news').select('id, title').range(0,4).order('created_at', {ascending : false});
  return data
 }
 

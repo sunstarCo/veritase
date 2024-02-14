@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div className="relative bg-[url('/banner/메인배너기본.png')] h-[30rem] sm:h-[30rem] md:h-[40rem] lg:h-[50rem] xl:h-[42.75rem] bg-cover">
         <div className="max-w-[1280px] mx-auto px-8 pt-[20%]">
-          <h1 className="text-white text-[5rem] font-normal">수능은, 기세야</h1>
+          <h1 className="text-white text-[5rem] text-start font-normal">수능은, 기세야</h1>
           <h2 className="text-white text-xl font-normal">
             1대1 집중교육으로 학생의 공부습관과 성적을 끝까지 책입집니다!
           </h2>

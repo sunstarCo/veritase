@@ -42,7 +42,7 @@ function AdminPage({page}: {page: string}) {
         </div>
       </div>
       {/* body */}
-      <div className="p-2 mt-4 flex flex-col">
+      <div className="p-2 mt-4 flex flex-col h-[35rem]">
         {!data ? (
           <>
             <Skeleton />
@@ -65,7 +65,7 @@ function AdminPage({page}: {page: string}) {
           <div className="text-2xl w-full text-center p-10">아직 등록된 게시물이 없습니다.</div>
         )}
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center">
         <PaginationContoller pageParams={pageParams} totalPages={totalPages} admin />
       </div>
     </div>

@@ -8,8 +8,8 @@ import {getMainNews} from '@/app/api/getNews';
 async function MainNews() {
   const data = await getMainNews();
   return (
-    <div>
-      <div className="w-full border-b pb-2 px-2 border-black flex justify-between items-start">
+    <div className="max-w-[27rem] ">
+      <div className="border-b pb-2 px-2 border-black flex justify-between items-start">
         <p className="text-lg font-bold">입시뉴스</p>
         <Link href={'/news'} className="p-2">
           <Image src={'/icons/plus_black.svg'} alt="plus" width={0} height={0} sizes="100" className="w-[1.25rem]" />
