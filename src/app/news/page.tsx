@@ -16,7 +16,7 @@ export default async function Page({searchParams}: IPagination) {
   const {data, count, totalPages} = await getNewsPagination(pageParams);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-20">
+    <div className="max-w-[1280px] mx-auto px-20 mb-4">
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center">
@@ -25,7 +25,7 @@ export default async function Page({searchParams}: IPagination) {
         </div>
         <div className="w-full justify-end flex gap-8 py-2">
           <p>총 {count}건</p>
-          <p>현재페이지 {`${pageParams}/${totalPages}`}</p>
+          <p>현재페이지 {`${pageParams}/${totalPages / 10}`}</p>
         </div>
       </div>
       {/* body */}

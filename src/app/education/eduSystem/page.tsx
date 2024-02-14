@@ -55,7 +55,34 @@ export default function Page() {
           width={0}
           height={0}
           style={{width: '100%'}}
+          className="max-sm:hidden"
         />
+        <div className="px-6 flex flex-col gap-5 my-14 sm:hidden">
+          <Image
+            src="/eduSystem/교육시스템모바일1.jpg"
+            alt="어머님들이 우리 아이들을 위해 걱정하시는 리스트."
+            sizes="100"
+            width={0}
+            height={0}
+            style={{width: '100%'}}
+          />
+          <Image
+            src="/eduSystem/교육시스템모바일2.svg"
+            alt="어머님들이 우리 아이들을 위해 걱정하시는 리스트."
+            sizes="100"
+            width={0}
+            height={0}
+            style={{width: '100%'}}
+          />
+          <Image
+            src="/eduSystem/교육시스템모바일3.svg"
+            alt="어머님들이 우리 아이들을 위해 걱정하시는 리스트."
+            sizes="100"
+            width={0}
+            height={0}
+            style={{width: '100%'}}
+          />
+        </div>
         <div className="px-6 xl:px-24">
           <div className="flex gap-4 items-center">
             <div className="w-10">
