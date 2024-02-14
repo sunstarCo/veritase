@@ -11,7 +11,7 @@ interface paginationContollerProps {
 
 export default function PaginationContoller({pageParams, totalPages, admin = false}: paginationContollerProps) {
   const router = useRouter();
-
+  console.log(totalPages);
   const onChangePagination = (page: any) => {
     router.push(`/${admin ? 'admin' : 'news'}?page=${page}`);
   };

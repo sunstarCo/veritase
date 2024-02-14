@@ -22,12 +22,14 @@ export default function ReqPageForm() {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-8 sm:w-[37.875rem] text-lg ">
-      <label htmlFor="name" className="consult_label">
+      <label htmlFor="name" className="consult_label text-nowrap">
         학생명
         <input type="text" id="name" name="name" className="consult_input" required />
       </label>
       <div className="font-medium flex justify-between">
-        <label htmlFor="rel">신청자</label>
+        <label className="text-nowrap" htmlFor="rel">
+          신청자
+        </label>
         <div className="sm:w-[28rem] flex gap-7">
           <label className="flex gap-2">
             <input type="radio" id="rel" name="rel" value="학생" required />
@@ -39,7 +41,7 @@ export default function ReqPageForm() {
           </label>
         </div>
       </div>
-      <label htmlFor="phone" className="consult_label">
+      <label htmlFor="phone" className="consult_label text-nowrap">
         휴대폰 번호
         <input
           id="phone"
