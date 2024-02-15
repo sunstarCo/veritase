@@ -6,7 +6,7 @@ import ReqPageForm from '@/components/form/ReqPageForm';
 
 function Page() {
   return (
-    <section className="mx-auto max-w-[51.25rem] h-[80.4375rem] px-12 py-14 border-4 rounded-3xl border-[4472C4] flex flex-col items-center mb-4">
+    <section className="mx-auto max-w-[51.25rem] h-[80.4375rem] px-12 py-14 border-4 rounded-3xl border-[#4472C4] flex flex-col items-center mb-4">
       <div className="flex items-center gap-5 mb-9">
         <div className="relative w-[5.4375rem] h-[5.4375rem]">
           <Image alt="7" src="/icons/상담신청.svg" fill className="absolute" />

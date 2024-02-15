@@ -53,15 +53,17 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row text-sm">
                   <p>서울 강남구 도산대로27길 20, 2층(신사동, 오름빌딩)</p>
                   <span className="max-md:hidden">&nbsp;|&nbsp;</span>
-                  <p>사업자 등록 번호 : 520-87-10407</p>
+                  <p>사업자 등록 번호 : 520-87-01407</p>
                 </div>
                 <p className="text-sm mb-2 sm:mb-2 flex items-center">
-                  대표번호 : 02-512-8343 | 팩스 : 02-6952-9334
+                  대표번호 : 02-512-8343&nbsp;|&nbsp;팩스 : 02-6952-9334
+                </p>
+                <div className="flex">
+                  <p className="text-xs">Copyright © (주)베리타스 교육.All rights reserved. </p>
                   <Link href={'/admin'} className="text-gray-200 opacity-75 text-xs ">
                     &nbsp;관리자용
                   </Link>
-                </p>
-                <p className="text-xs">Copyright © (주)베리타스 교육.All rights reserved. </p>
+                </div>
               </div>
             </div>
           </div>

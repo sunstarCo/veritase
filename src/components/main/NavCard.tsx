@@ -49,7 +49,7 @@ function NavCard() {
           }`}
         />
         <div className="text-white px-5 flex items-center justify-center sm:block sm:pt-12">
-          <p className="font-bold text-lg sm:mb-3">학원소개</p>
+          <p className="font-bold text-lg sm:mb-3">회사소개</p>
           <div className="text-sm font-normal hidden sm:block ">
             <p>1대1 대면 과외로</p>
             <p>학생의 상황에 맞는 올바른 수업</p>
