@@ -7,6 +7,7 @@ import DeleteBtn from '@/components/admin/deleteBtn';
 
 async function Page({params: {id}}: {params: {id: string}}) {
   const data = await getNewsDetail(id);
+  const contentLines = data.content.split(/\n/);
   if (!data) {
     return <div className="w-full text-center text-2xl">해당 게시물이 존재하지 않습니다.</div>;
   }
@@ -38,7 +39,15 @@ async function Page({params: {id}}: {params: {id: string}}) {
       {/* 본문 영역 */}
       <div className="w-full text-start p-2">
         <div className="flex gap-3">
-          <p className="min-h-[20vh]">{data.content}</p>
+          <p className="min-h-[20vh]">
+            {' '}
+            {contentLines.map((line, index) => {
+              if (line === '') {
+                return <br key={index} />;
+              }
+              return <p key={index}>{line}</p>;
+            })}
+          </p>
         </div>
         <div className="flex gap-3 border-t-2 mt-4 p-3">
           <p className="font-semibold">출처 : </p>
