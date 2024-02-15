@@ -178,7 +178,10 @@ function Header() {
                   </Link>
                 );
               })}
-              <Link href={'/request'} className="w-full p-4 text-center text-white bg-blue-4">
+              <Link
+                href={'/request'}
+                onClick={() => setShowMenu(false)}
+                className="w-full p-4 text-center text-white bg-blue-4">
                 상담신청
               </Link>
             </div>

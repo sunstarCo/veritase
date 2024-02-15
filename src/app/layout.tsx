@@ -1,8 +1,11 @@
+import {Suspense} from 'react';
+
 import {Noto_Sans_KR, Urbanist} from 'next/font/google';
 
 import './globals.css';
 import {Footer} from '@/components/common/Footer/Footer';
 import Header from '@/components/common/header/Header';
+import Loading from '@/components/loading/Loading';
 import Providers from '@/utils/provider';
 
 import type {Metadata} from 'next';
@@ -24,7 +27,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={`${noto_sans_kr.className} ${urbanist.variable} min-h-screen`}>
         <Providers>
           <Header />
-          <div className="min-h-screen pt-[100px] md:pt-[115px] lg:pt-[120px] xl:pt-[158px]">{children}</div>
+          <Suspense fallback={<Loading lodingText="로딩중" />}>
+            <div className="min-h-screen pt-[100px] md:pt-[115px] lg:pt-[120px] xl:pt-[158px]">{children}</div>
+          </Suspense>
           <Footer />
         </Providers>
       </body>

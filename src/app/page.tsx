@@ -11,16 +11,16 @@ export default function Home() {
     <>
       <div className="relative bg-[url('/banner/메인배너기본.png')] h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] bg-cover break-keep">
         <div className="absolute h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] overflow-hidden w-full">
-          <div className="absolute top-1/2 left-1/2 transition-transform w-0 h-auto -translate-x-[50%] -translate-y-[50%] bg-blue-500 blur-xl opacity-20 mix-blend-multiply animate-ink rounded-full" />
+          <div className="absolute top-1/2 left-1/2 transition-transform w-0 h-auto -translate-x-[50%] -translate-y-[50%] bg-blue-600 blur-xl opacity-30 mix-blend-multiply animate-ink rounded-full" />
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 max-w-[1280px] w-full mx-auto px-2 md:px-8 pt-[20%] flex flex-col">
+        <div className="absolute left-1/2 -translate-x-1/2 max-w-[1280px] w-full mx-auto px-2 md:px-8 pt-[35%] min-[450px]:pt-[25%] flex flex-col">
           <div className="w-11/12 mx-auto max-lg:text-center">
-            <h1 className="text-white text-[3rem] md:text-[5rem] font-normal">수능은, 기세야</h1>
+            <h1 className="text-white text-[3rem] md:text-[5rem] font-medium">수능은, 기세야</h1>
             <h2 className="text-white text-xl font-normal">
               1대1 집중교육으로 학생의 공부습관과 성적을 끝까지 책입집니다!
             </h2>
           </div>
-          <section className="flex gap-8 items-start justify-center mt-16 w-full">
+          <section className="flex gap-8 items-start justify-center mt-8 sm:mt-12 w-full">
             <div className="w-full">
               <NavCard />
               <div className="flex gap-6 mt-16 w-full max-lg:hidden">
@@ -55,7 +55,7 @@ export default function Home() {
           </section>
         </div>
       </div>
-      <div className="lg:hidden mt-12 px-6">
+      <div className="lg:hidden mt-20 px-6">
         <MainNews />
         <div className="flex flex-col md:flex-row w-4/5 mx-auto gap-16 mt-12 justify-center items-center mb-12">
           <MainForm />

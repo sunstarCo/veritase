@@ -53,7 +53,7 @@ function AdminPage({page}: {page: string}) {
           data?.map((news, i) => {
             return (
               <Link
-                href={`/news/${news.id}`}
+                href={`/admin/detail/${news.id}`}
                 key={i}
                 className="w-full border-b p-3 pb-5 whitespace-nowrap break-keep ">
                 <p className="text-lg font-bold overflow-hidden overflow-ellipsis">{news.title}</p>

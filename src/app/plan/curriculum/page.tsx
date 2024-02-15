@@ -9,7 +9,7 @@ export default function Page() {
     <div>
       <Breadcrumb title="2028 대입 개편안" />
       <div className="max-w-[1280px] mx-auto break-keep px-6 sm:px-14">
-        <div className="flex flex-col md:flex-row gap-11 mt-24">
+        <div className="flex flex-col items-start md:flex-row gap-11 mt-24">
           <Image
             src={'/sat/대입개편안.png'}
             alt="대입개편안"

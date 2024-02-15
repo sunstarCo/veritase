@@ -12,7 +12,7 @@ export default async function Page({params: {id}}: {params: {id: string}}) {
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center">
-          <h3 className="text-3xl font-bold">입시뉴스</h3>
+          <h3 className="text-2xl md:text-3xl font-bold">입시뉴스</h3>
           <p className="opacity-70">누구보다 빠르게 입시 뉴스를 알아보세요!</p>
         </div>
         <div className="w-full justify-end flex">

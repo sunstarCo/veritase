@@ -12,7 +12,7 @@ function NavCard() {
         href={'/plan/eduPeriod'}
         onMouseOver={() => setHover('first')}
         onMouseLeave={() => setHover('')}
-        className="flex sm:flex-none relative w-40 h-16 sm:w-[32%] sm:h-[10rem] bg-blue-3">
+        className="flex sm:flex-none relative w-40 h-20 sm:w-[32%] sm:h-[10rem] bg-blue-3">
         <Image
           src={'/icons/plus.svg'}
           alt="plus"
@@ -20,7 +20,7 @@ function NavCard() {
           height={0}
           sizes="100"
           style={{width: 'fit-content'}}
-          className={`absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
+          className={`absolute top-1 right-0 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
             hover === 'first' ? 'animate-rotateRight' : ' rotate-0'
           }`}
         />
@@ -36,7 +36,7 @@ function NavCard() {
         href={'/education/eduSystem'}
         onMouseOver={() => setHover('second')}
         onMouseLeave={() => setHover('')}
-        className="flex sm:flex-none relative w-40 h-16 sm:w-[32%] sm:h-[10rem] bg-blue-4">
+        className="flex sm:flex-none relative w-40 h-20 sm:w-[32%] sm:h-[10rem] bg-blue-4">
         <Image
           src={'/icons/plus.svg'}
           alt="plus"
@@ -44,7 +44,7 @@ function NavCard() {
           height={0}
           sizes="100"
           style={{width: 'fit-content'}}
-          className={`absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
+          className={`absolute top-1 right-0 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
             hover === 'second' ? 'animate-rotateRight' : ' rotate-0'
           }`}
         />
@@ -60,7 +60,7 @@ function NavCard() {
         href={'/education/qna'}
         onMouseOver={() => setHover('third')}
         onMouseLeave={() => setHover('')}
-        className="flex sm:flex-none relative w-40 h-16 sm:w-[32%] sm:h-[10rem] bg-blue-3">
+        className="flex sm:flex-none relative w-40 h-20 sm:w-[32%] sm:h-[10rem] bg-blue-3">
         <Image
           src={'/icons/plus.svg'}
           alt="plus"
@@ -68,7 +68,7 @@ function NavCard() {
           height={0}
           sizes="100"
           style={{width: 'fit-content'}}
-          className={`absolute top-2 right-2 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
+          className={`absolute top-1 right-0 sm:top-3 sm:right-4 max-sm:scale-50 transition-transform  ${
             hover === 'third' ? 'animate-rotateRight' : ' rotate-0'
           }`}
         />
