@@ -34,7 +34,7 @@ function AdminPage({page}: {page: string}) {
         <div className="w-full flex justify-between py-2 mt-4">
           <div className="flex gap-8">
             <p>총 {count}건</p>
-            <p>현재페이지 {`${pageParams}/${totalPages}`}</p>
+            <p>현재페이지 {`${pageParams}/${totalPages / 10}`}</p>
           </div>
           <Link href={'/admin/post'} className="bg-blue-2 text-white px-2 p-1 rounded-sm hover:opacity-75">
             게시물 작성

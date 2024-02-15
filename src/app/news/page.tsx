@@ -16,11 +16,11 @@ export default async function Page({searchParams}: IPagination) {
   const {data, count, totalPages} = await getNewsPagination(pageParams);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-20 mb-4">
+    <div className="max-w-[1280px] mx-auto px-4 md:px-20 mb-4">
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center">
-          <h3 className="text-3xl font-bold">입시뉴스</h3>
+          <h3 className="text-2xl md:text-3xl font-bold">입시뉴스</h3>
           <p className="opacity-70">누구보다 빠르게 입시 뉴스를 알아보세요!</p>
         </div>
         <div className="w-full justify-end flex gap-8 py-2">

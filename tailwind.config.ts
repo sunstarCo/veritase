@@ -40,11 +40,16 @@ const config: Config = {
           '0%': {transform: 'translateX(0)'},
           '100%': {transform: 'translateX(100%)'},
         },
-        rotate360: {
+        rotate180: {
           to:{
             transform: 'rotate(180deg)'
           }
+
         },
+        '-rotate90': {
+          to:{
+            transform: 'rotate(-90deg)'
+          }},
         ink: {
           to: {
             width: '180%',
@@ -54,8 +59,9 @@ const config: Config = {
         }
       },
       animation:{
-        ink: 'ink 2.5s ease-in forwards',
-        rotate: 'rotate360 0.5s ease-in-out forwards'
+        ink: 'ink 2s ease-in forwards',
+        rotateRight: 'rotate180 0.3s ease-in-out forwards',
+        rotateLeft: '-rotate90 0.3s ease-in-out forwards',
       }
     },
   },
