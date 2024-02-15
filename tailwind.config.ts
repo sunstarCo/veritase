@@ -56,12 +56,19 @@ const config: Config = {
             paddingTop: '180%',
             // transform: 'translateX(-50%) translateY(-50%)',
         }
+        },
+        show: {
+          to: {
+            opacity: '100%',
+        }
         }
       },
       animation:{
-        ink: 'ink 2s ease-in forwards',
+        ink: 'ink 2.5s ease-in forwards',
         rotateRight: 'rotate180 0.3s ease-in-out forwards',
         rotateLeft: '-rotate90 0.3s ease-in-out forwards',
+        show: 'show 0.7s ease-in-out forwards',
+        show_delay: 'show 1s ease-in-out forwards 1000ms',
       }
     },
   },

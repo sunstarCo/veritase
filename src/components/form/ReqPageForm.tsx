@@ -21,7 +21,10 @@ export default function ReqPageForm() {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-8 sm:w-[37.875rem] text-lg text-nowrap">
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-8 w-full sm:w-[37.875rem] text-lg text-nowrap">
       <label htmlFor="name" className="consult_label text-nowrap">
         학생명
         <input type="text" id="name" name="name" className="consult_input" required />

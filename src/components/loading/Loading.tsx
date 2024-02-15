@@ -1,7 +1,7 @@
 'use client';
 import {useEffect, useReducer} from 'react';
 
-import {classNames} from '../../utils/common';
+import {classNames} from '@/utils/common';
 
 interface ILodingActionType {
   type: string;
