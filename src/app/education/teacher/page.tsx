@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
+import Slider from '@/components/common/Slider';
 
 export default function Page() {
   return (
@@ -17,7 +18,7 @@ export default function Page() {
             <Image src={'/teacher/월계수.svg'} alt="" width={0} height={0} sizes="100" className="w-full" />
           </div>
         </section>
-        <div className="mt-24 relative">
+        <section className="mt-24 relative">
           <Image
             src={'/teacher/강사소개.svg'}
             alt=""
@@ -44,7 +45,8 @@ export default function Page() {
               className="w-2/3 md:hidden"
             />
           </div>
-        </div>
+        </section>
+        <Slider />
       </div>
     </div>
   );
