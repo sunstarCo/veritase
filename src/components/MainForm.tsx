@@ -18,7 +18,7 @@ function MainForm() {
   };
   return (
     <div className="p-8 text-white bg-blue-5 w-full md:max-w-96 lg:w-80  mx-auto">
-      <p className="text-lg font-bold">무료 시범강의 신청</p>
+      <p className="text-lg font-bold">(주)베리타스교육 회원들의 첫수업 반응도</p>
       <form className="mt-4 flex flex-col gap-4" ref={mainFormRef} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -57,8 +57,8 @@ function MainForm() {
           <p className="text-sm text-sub-2">개인정보 제공하는 것에 동의합니다.</p>
           <input type="checkbox" className="w-4 h-4 border p-1" required></input>
         </div>
-        <button type="submit" className="w-full text-lg font-bold p-2 rounded bg-[#66B6BD]">
-          시범수업 신청
+        <button type="submit" className="w-full  text-lg font-bold p-2 rounded bg-[#66B6BD]">
+          <p className="flex items-center justify-center">(주)베리타스교육 후기 →</p>
         </button>
       </form>
     </div>

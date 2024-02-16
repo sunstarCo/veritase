@@ -20,7 +20,7 @@ export default function Home() {
           <div className="w-11/12 mx-auto max-lg:text-center">
             <div className="flex">
               <h1 className="text-white text-[3rem] md:text-[5rem] font-medium transition-transform animate-show opacity-0">
-                수능 <span className="text-red-500">단기고득점</span>,&nbsp;
+                수능 <span className="text-light-red">단기고득점</span>,&nbsp;
               </h1>
               <h1 className="text-white text-[3rem] md:text-[5rem] font-medium transition-transform animate-show_delay opacity-0">
                 가능하다

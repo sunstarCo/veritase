@@ -18,7 +18,7 @@ export default function Page() {
             <div className="w-[7px] h-[66px] bg-blue-4" />
             <div>
               <p className="text-2xl md:text-3xl font-semibold">
-                (주)베리타스 학원은 국내 최고강사들의 <br />
+                (주)베리타스교육은 국내 최고강사들의 <br />
                 수준높은 강의를 1: 1로 제공하는 입시 전문 교육기관입니다.
               </p>
               <p className="w-full break-keep mt-10 leading-[30px] font-medium pr-8">
