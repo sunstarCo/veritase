@@ -26,7 +26,7 @@ export default function Home() {
                 가능하다
               </h1>
             </div>
-            <h2 className="text-white text-xl font-normal">
+            <h2 className="text-white text-xl font-normal text-start">
               1대1 집중교육으로 학생의 공부습관과 성적을 끝까지 책입집니다!
             </h2>
           </div>
