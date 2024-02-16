@@ -42,8 +42,8 @@ function Slider({type}: {type: 'main' | 'teacher'}) {
       contentWidth: 'w-[210px]',
     },
     teacher: {
-      size: [780],
-      contentWidth: 'lg:w-[780px] w-[500px]',
+      size: [800],
+      contentWidth: 'w-[800px]',
     },
   };
 

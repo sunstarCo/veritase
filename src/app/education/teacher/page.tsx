@@ -40,7 +40,9 @@ export default function Page() {
           />
         </section>
         <div className="mt-12">
-          <Slider type="teacher" />
+          <div className="max-lg:hidden">
+            <Slider type="teacher" />
+          </div>
         </div>
       </div>
     </div>
