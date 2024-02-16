@@ -10,7 +10,7 @@ import MainReview from '@/components/MainReview';
 export default function Home() {
   return (
     <>
-      <div className="relative h-[26rem] bg-[url('/banner/메인배너기본.png')] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] bg-cover break-keep">
+      <div className="relative h-[26rem] bg-[url('/banner/메인배너기본.png')] mb-32 sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] bg-cover break-keep">
         {/* <Image src={'/banner/메인배너기본.png'} fill sizes="100" alt="" className={`object-top object-cover`} /> */}
 
         <div className="absolute h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] overflow-hidden w-full">
@@ -20,7 +20,7 @@ export default function Home() {
           <div className="w-11/12 mx-auto max-lg:text-center">
             <div className="flex flex-col sm:flex-row">
               <h1 className="text-white text-nowrap text-[3rem] lg:text-[5rem] font-medium transition-transform animate-show opacity-0">
-                수능 <span className="text-light-red">단기고득점</span>,&nbsp;
+                수능 <span className="text-light-red font-bold">단기고득점</span>,&nbsp;
               </h1>
               <h1 className="text-white text-[3rem] lg:text-[5rem] font-medium transition-transform animate-show_delay opacity-0">
                 가능하다
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full sm:h-[35rem]" />
+      <div className="w-full lg:h-[20rem] xl:h-[15rem]" />
     </>
   );
 }
