@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute h-[26rem] sm:h-[36rem] md:h-[38rem] xl:h-[42.75rem] 2xl:[50rem] overflow-hidden w-full">
           <div className="absolute top-1/2 left-1/4 transition-transform w-0 h-auto -translate-x-[50%] -translate-y-[50%] bg-blue-600 blur-xl opacity-30 mix-blend-multiply animate-ink rounded-full" />
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 max-w-[1280px] w-full mx-auto px-2 md:px-8 pt-[28%] min-[450px]:pt-[15rem] md:pt-[27%] flex flex-col">
+        <div className="absolute left-1/2 -translate-x-1/2 max-w-[1280px] w-full mx-auto px-2 md:px-8 pt-[28%] min-[450px]:pt-[15rem] md:pt-[20rem] flex flex-col">
           <div className="w-11/12 mx-auto max-lg:text-center">
             <div className="flex flex-col sm:flex-row">
               <h1 className="text-white text-nowrap text-[3rem] lg:text-[5rem] font-medium transition-transform animate-show opacity-0">
