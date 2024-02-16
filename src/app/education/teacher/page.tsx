@@ -9,7 +9,10 @@ export default function Page() {
   return (
     <div>
       <Breadcrumb title="수능강사" sub_text="최고의 강사진으로 구성된 베리타스 교육" />
-      <div className="max-w-[1280px] mx-auto px-6 md:px-36 py-24">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-36 py-12">
+        <p className="text-lg text-center font-semibold px-4 p-2 text-white bg-blue-4 rounded w-full mb-16">
+          타사에서 강사 정보 유출사례가 빈번하여, 당사는 모든 강사진들의 정보를 홈페이지에 공개하지 않습니다.
+        </p>
         <section className="flex flex-col md:flex-row justify-center gap-16">
           <div className="w-full">
             <Image src={'/teacher/수능강사copywrite.svg'} alt="" width={0} height={0} sizes="100" className="w-full" />
@@ -35,16 +38,6 @@ export default function Page() {
             sizes="100"
             className="w-full md:hidden"
           />
-          {/* <div className="absolute top-[7%] left-1/2 -translate-x-1/3 w-1/2">
-            <Image
-              src={'/teacher/강사사진.png'}
-              alt="강사사진"
-              width={0}
-              height={0}
-              sizes="100"
-              className="w-2/3 md:hidden"
-            />
-          </div> */}
         </section>
         <div className="mt-12">
           <Slider type="teacher" />
