@@ -20,7 +20,7 @@ export default function Page() {
         </section>
         <section className="mt-24 relative">
           <Image
-            src={'/teacher/강사소개.svg'}
+            src={'/teacher/강사소개.png'}
             alt=""
             width={0}
             height={0}
@@ -28,14 +28,14 @@ export default function Page() {
             className="w-full hidden md:block"
           />
           <Image
-            src={'/teacher/강사소개_모바일.svg'}
+            src={'/teacher/강사소개_모바일.png'}
             alt=""
             width={0}
             height={0}
             sizes="100"
             className="w-full md:hidden"
           />
-          <div className="absolute top-[7%] left-1/2 -translate-x-1/3 w-1/2">
+          {/* <div className="absolute top-[7%] left-1/2 -translate-x-1/3 w-1/2">
             <Image
               src={'/teacher/강사사진.png'}
               alt="강사사진"
@@ -44,9 +44,11 @@ export default function Page() {
               sizes="100"
               className="w-2/3 md:hidden"
             />
-          </div>
+          </div> */}
         </section>
-        <Slider />
+        <div className="mt-12">
+          <Slider type="teacher" />
+        </div>
       </div>
     </div>
   );

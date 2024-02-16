@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import {useInterval} from '@/utils/useInterval';
 
-const images = [
+const teacher_reviews = [
   '/teacher/reviews/pc/review_pc_1.svg',
   '/teacher/reviews/pc/review_pc_2.svg',
   '/teacher/reviews/pc/review_pc_3.svg',
@@ -16,19 +16,43 @@ const images = [
   '/teacher/reviews/pc/review_pc_8.svg',
 ];
 
-function Slider() {
-  const cloneContents = [...images, images[0]];
+const main_reviews = [
+  '/teacher/reviews/main/review_main_1.svg',
+  '/teacher/reviews/main/review_main_2.svg',
+  '/teacher/reviews/main/review_main_3.svg',
+];
+
+type innerMatch = {
+  size: number[];
+  contentWidth: string;
+};
+type Match = Record<string, innerMatch>;
+
+function Slider({type}: {type: 'main' | 'teacher'}) {
+  const reviews = type === 'main' ? main_reviews : teacher_reviews;
+  const cloneContents = [...reviews, reviews[0]];
   const slideRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setCurrentSlide] = useState(0);
-  const lastSlide = cloneContents.length;
+  const lastSlide = cloneContents.length - 1;
+
+  const slideObj: Match = {
+    main: {
+      size: [210],
+      contentWidth: 'w-[210px]',
+    },
+    teacher: {
+      size: [780],
+      contentWidth: 'lg:w-[780px] w-[500px]',
+    },
+  };
 
   const autoplayIterator = () => {
     setCurrentSlide(prev => {
       const newSlide = prev + 1;
       if (slideRef.current) {
         slideRef.current.style.transition = 'all 0.5s ease-in-out';
-        slideRef.current.style.transform = `translateX(-${newSlide * 800}px)`;
+        slideRef.current.style.transform = `translateX(-${newSlide * slideObj[type].size[0]}px)`;
         if (newSlide > lastSlide) {
           slideRef.current.style.transition = '';
           slideRef.current.style.transform = `translateX(-0px)`;
@@ -43,11 +67,11 @@ function Slider() {
   useInterval(autoplayIterator, 6000);
 
   return (
-    <div className="flex items-center justify-center mx-auto relative w-[800px] mt-20">
+    <div className={`flex items-center justify-center mx-auto relative ${slideObj[type].contentWidth} `}>
       <div className={` overflow-x-hidden flex `}>
         <div className={`flex`} ref={slideRef}>
-          {images.map((img, i) => (
-            <div key={i} className="w-[800px] ">
+          {cloneContents.map((img, i) => (
+            <div key={i} className={`${slideObj[type].contentWidth}`}>
               <Image src={img} alt="" width={0} height={0} sizes="100" className="w-full" />
             </div>
           ))}
