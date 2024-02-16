@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
 
+const reviews_arr = [''];
+
 export default function page() {
   return (
     <>
@@ -15,13 +17,11 @@ export default function page() {
           </div>
           <p className="text-2xl font-bold">(주)베리타스교육을 경험한 학생과 학부모님들의 생생한 후기</p>
         </div>
-        <Image
-          src="/teacher/reviews/pc/리뷰전체.png"
-          alt="reviews"
-          width={0}
-          height={0}
-          sizes="100"
-          className="w-full"></Image>
+        {reviews_arr.map((img, i) => (
+          <div key={i} className="w-full">
+            <Image src={img} alt="reviews" width={0} height={0} sizes="100" className="w-full" />
+          </div>
+        ))}
       </div>
     </>
   );

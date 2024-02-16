@@ -39,7 +39,9 @@ export default async function Page({params: {id}}: {params: {id: string}}) {
             <div className="bg-sub-2 h-14 w-1/6 flex items-center justify-center">출처</div>
             <div className="flex justify-between w-full px-6">
               <div>
-                <span>{news.origin}</span>
+                <a href={news.origin} className="text-blue-600 underline" target="_black">
+                  {news.origin}
+                </a>
               </div>
             </div>
           </div>
