@@ -1,9 +1,10 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
+import ReviewCarousel from '@/components/common/antd/ReviewCarousel';
 import Breadcrumb from '@/components/common/Breadcrumb';
-import Slider from '@/components/common/Slider';
 
 export default function Page() {
   return (
@@ -39,10 +40,16 @@ export default function Page() {
             className="w-full md:hidden"
           />
         </section>
-        <div className="mt-12">
-          <div className="max-lg:hidden">
+        <div className="mt-12 w-full">
+          {/* <div className="max-lg:hidden">
             <Slider type="teacher" />
-          </div>
+          </div> */}
+          <ReviewCarousel />
+        </div>
+        <div className="mt-4 flex justify-end w-full">
+          <Link href={'/review'} className=" text-lg text-center p-2 text-white rounded bg-blue-4">
+            후기 더보기 →
+          </Link>
         </div>
       </div>
     </div>

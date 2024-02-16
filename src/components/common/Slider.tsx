@@ -52,7 +52,7 @@ function Slider({type}: {type: 'main' | 'teacher'}) {
       const newSlide = prev + 1;
       if (slideRef.current) {
         slideRef.current.style.transition = 'all 0.5s ease-in-out';
-        slideRef.current.style.transform = `translateX(-${newSlide * slideObj[type].size[0]}px)`;
+        slideRef.current.style.transform = `translateX(-${newSlide * (100 / cloneContents.length)}%)`;
         if (newSlide > lastSlide) {
           slideRef.current.style.transition = '';
           slideRef.current.style.transform = `translateX(-0px)`;
