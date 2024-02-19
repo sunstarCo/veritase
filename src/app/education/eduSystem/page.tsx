@@ -95,7 +95,7 @@ export default function Page() {
                 style={{width: '100%'}}
               />
             </div>
-            <p className="text-[1.75rem] font-medium">작은 부분 하나도 놓치지 않겠습니다!</p>
+            <p className="sm:text-3xl text-2xl font-medium text-nowrap">작은 부분 하나도 놓치지 않겠습니다!</p>
           </div>
           <div className="mx-4 flex flex-col gap-16 my-16 items-center lg:items-start">
             {data.map((card, i) => {
@@ -111,7 +111,7 @@ export default function Page() {
                     <div className="flex gap-5">
                       <div className="w-[5px] h-[64px] bg-blue-4" />
                       <div>
-                        <p className="text-4xl text-blue-3 font-medium py-3">{card.title}</p>
+                        <p className="sm:text-4xl text-3xl text-nowrap text-blue-3 font-medium py-3">{card.title}</p>
                         <div className="p-2">
                           <p className="font-bold text-lg">{card.text}</p>
                           <p className="p-2 text-lg">
