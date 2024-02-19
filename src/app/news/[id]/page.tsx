@@ -36,13 +36,11 @@ export default async function Page({params: {id}}: {params: {id: string}}) {
             </div>
           </div>
           <div className="flex w-full mt-24 mb-16 border-y-2 border-sub-3 items-center">
-            <div className="bg-sub-2 h-14 w-1/6 flex items-center justify-center">출처</div>
-            <div className="flex justify-between w-full px-6">
-              <div>
-                <a href={news.origin} className="text-blue-600 underline" target="_black">
-                  {news.origin}
-                </a>
-              </div>
+            <div className="bg-sub-2 p-6 w-[3rem] flex items-center justify-center text-nowrap px-2">출처</div>
+            <div className="flex justify-between px-6">
+              <a href={news.origin} className="text-blue-600 underline break-all" target="_black">
+                {news.origin}
+              </a>
             </div>
           </div>
         </>
