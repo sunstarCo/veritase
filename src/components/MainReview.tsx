@@ -14,8 +14,10 @@ function MainReview() {
           <Slider type="main" />
         </div>
       </div>
-      <Link href={'/review'} className="w-full text-lg font-bold text-center p-2 text-white rounded bg-[#66B6BD]">
-        후기 더보기 →
+      <Link
+        href={'/review'}
+        className="w-full flex justify-center items-center text-lg font-bold text-center p-2 max-sm:py-4 max-sm:text-2xl text-white rounded bg-blue-4">
+        <span>후기 더보기</span> <span className="sm:pb-[5px] pb-[3px]">&nbsp;→</span>
       </Link>
     </div>
   );

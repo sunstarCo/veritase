@@ -36,7 +36,7 @@ export function Footer() {
         </div>
         <footer className="w-full relative bottom-0 p-8 text-white bg-[#163B7B] flex justify-center items-center gap-4 lg:gap-9 text-nowrap  h-72 ">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center">
-            <div className="max-w-[100px] min-w-[150px] sm:max-w-[294px] sm:min-w-[200px] mx-auto">
+            <Link href={'/'} className="max-w-[100px] min-w-[150px] sm:max-w-[294px] sm:min-w-[200px] mx-auto">
               <Image
                 alt="footerLogo"
                 src="/logo/베리타스푸터로고.png"
@@ -46,7 +46,7 @@ export function Footer() {
                 style={{width: '100%', objectFit: 'cover'}}
                 priority
               />
-            </div>
+            </Link>
             <div className="flex flex-col sm:flex-row  gap-3 mt-2">
               <p className="font-medium">(주)베리타스 교육</p>
               <div className="flex flex-col gap-0">
