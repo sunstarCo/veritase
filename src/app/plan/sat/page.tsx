@@ -86,7 +86,7 @@ export default function Page() {
                   있습니다.
                 </p>
               </div>
-              <div className="bg-[#FFFCB4] mt-8 p-2 rounded-2xl">
+              <div className="bg-slate-200 mt-8 p-2 rounded-2xl">
                 <p>
                   <span className="text-red font-bold">※ 수시 추가합격자는 정시지원 불가</span>
                   <br />

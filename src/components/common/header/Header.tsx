@@ -33,12 +33,20 @@ const menus = [
     category: 'education',
     sub_menu: [
       {
+        name: '시스템소개',
+        path: '/education/eduSystem',
+      },
+      {
         name: '학습관리시스템',
         path: '/education/eduSystem',
       },
       {
         name: '수능강사',
         path: '/education/teacher',
+      },
+      {
+        name: '수업후기',
+        path: '/education/review',
       },
       {
         name: '자주하는질문',

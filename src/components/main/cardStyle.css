@@ -1,0 +1,15 @@
+.card:hover > .article > .Link {
+  display: block;
+}
+
+.card:hover > .article {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.card > .article {
+  transition: all 0.5s ease;
+}
+
+.article > .Link {
+  display: none;
+}

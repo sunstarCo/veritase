@@ -46,10 +46,17 @@ const config: Config = {
           }
 
         },
+        
         '-rotate90': {
           to:{
             transform: 'rotate(-90deg)'
           }},
+          cardHover: {
+            to:{
+              width: '100%'
+            }
+  
+          },
         ink: {
           to: {
             width: '180%',
@@ -69,6 +76,7 @@ const config: Config = {
         rotateLeft: '-rotate90 0.3s ease-in-out forwards',
         show: 'show 0.7s ease-in-out forwards',
         show_delay: 'show 1s ease-in-out forwards 1000ms',
+        cardHover:'cardHover 0.3s ease-in-out forwards'
       }
     },
   },

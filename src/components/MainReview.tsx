@@ -14,7 +14,9 @@ function MainReview() {
           <Slider type="main" />
         </div>
       </div>
-      <Link href={'/review'} className="w-full text-lg font-bold text-center p-2 text-white rounded bg-[#66B6BD]">
+      <Link
+        href={'/education/review'}
+        className="w-full text-lg font-bold text-center p-2 text-white rounded bg-[#66B6BD]">
         후기 더보기 →
       </Link>
     </div>
