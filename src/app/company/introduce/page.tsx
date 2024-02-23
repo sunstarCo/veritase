@@ -2,34 +2,40 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import IntroBanner from '@/components/IntroBanner';
-
 export default function Page() {
   return (
     <div className="break-keep">
-      <IntroBanner />
-      <div className="bg-[url('/banner/회사소개.png')] bg-no-repeat bg-contain bg-right-bottom pb-40">
+      <div className="w-full relative h-[calc(100vh-148px)]">
+        <Image
+          src={'/introPage/회사소개.jpg'}
+          className=""
+          fill
+          objectFit="cover"
+          objectPosition="center"
+          alt="회사소개배너"
+        />
+        <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-5 ">
+          <p className="transition-transform animate-show opacity-0">수능 성적은,</p>
+          <p className="transition-transform animate-show_delay opacity-0 ">수능 전문가에게</p>
+        </div>
+      </div>
+      <div className=" pb-40">
         <article className="max-w-[1280px] mx-auto py-6 px-4 sm:px-20 ">
-          <h3 className="flex gap-4 items-center ml-4 text-2xl md:text-3xl font-bold">
-            <Image src={'/icons/1등.svg'} alt="1등 아이콘" width={0} height={0} sizes="100" className="w-24 md:w-fit" />
-            One Stop 입시교육을 실현하는 완벽한 System
-          </h3>
+          <div className="w-full bg-blue-4 text-2xl md:text-3xl font-semibold text-center text-white py-6 px-9">
+            <p>신뢰와 믿음 / 혁신적 마인드로 학생의 변화를 선도하고 있습니다.</p>
+          </div>
           <div className="flex gap-10 items-start mt-16">
-            <div className="w-[7px] h-[66px] bg-blue-4" />
+            <div className="w-[7px] h-[70px] mt-1 bg-blue-4" />
             <div>
-              <p className="text-2xl md:text-3xl font-semibold">
-                (주)베리타스교육은 국내 최고강사들의 <br />
-                수준높은 강의를 1: 1로 제공하는 입시 전문 교육기관입니다.
-              </p>
+              <div className="text-2xl md:text-3xl flex flex-col justify-center gap-2 font-semibold">
+                <p>베리타스 교육은 강남 최고 강사들이</p>
+                <p>1:1로 수준높은 강의를 제공하는 입시 전문회사 입니다.</p>
+              </div>
+
               <p className="w-full break-keep mt-10 leading-[30px] font-medium pr-8">
-                서울 강남일대 학원가 초일류 강사들의 생동감 넘치는 강의를 학생의{' '}
-                <span className="text-blue-4 font-bold">개별 성향에 따라 최적의 맞춤학습을 제공</span>하는 회사입니다.{' '}
-                <br />
-                급변하는 입시 경향에 발맞춰 늘 새로운 학습 프로그램을 개발, 양질의 서비스를 제공하며 특히 대입수학 능력
-                시험을 대비하는 예비 수험생들에게 획일적 강의가 아닌{' '}
-                <span className="text-blue-4 font-bold">특화된 핵심 강의</span>를{' '}
-                <span className="text-blue-4 font-bold">국내 최고 강사진</span>을 통해 생동감 넘치는 강의를 제공하는
-                회사입니다.
+                내신 성적이 부족해 수능에 올인하겠다는 학생 / 모의평가 성적이 내신성적에 비해 턱없이 부족한 학생 / 수능
+                실패를 경험한 재수생/ 현재 자신의 위치보다 최상의 점수를 올리고자 하는 학생들에게 특화된 핵심 강의를
+                최고의 강사진들을 통해 생동감 넘치는 강의를 제공하는 회사입니다. <br />
               </p>
             </div>
           </div>
@@ -42,12 +48,10 @@ export default function Page() {
                 강사들로 구성되어 있습니다. 이들은 수능문제의 <span className="text-blue-4 font-bold">출제 의도</span>를
                 꿰뚫고, 다양한 풀이의 접근 방식을 제공하며, <span className="text-blue-4 font-bold">확인학습</span>을
                 통한 학습을 보장하는 선생님들입니다. 또한, EBS 교재의 유형을 다양한 패턴으로 제공하고, 단순히 한 교재에
-                의존하지 않고
+                의존하지 않고&nbsp;
                 <span className="text-blue-4 font-bold">다양한 수험 자료</span>의 엑기스를 제공하여 학생들에게 풍부한
                 학습 경험을 제공합니다. <br />
-                (주)베리타스교육에서는 <span className="text-red text-lg font-bold">
-                  이런 선생님을 만날 수 있기에
-                </span>{' '}
+                (주)베리타스교육에서는 <span className="text-blue-4 font-bold">이런 선생님을 만날 수 있기에</span>{' '}
                 학생들은 자신의 입시에 대한 확고한 신뢰를 가지고 있습니다.
               </p>
             </div>

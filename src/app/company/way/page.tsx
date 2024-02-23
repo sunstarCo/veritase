@@ -3,24 +3,36 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import IntroBanner from '@/components/IntroBanner';
 import KakaoMap from '@/components/KakaoMap';
 
 export default function Page() {
   return (
     <div>
-      <IntroBanner />
+      <div className="w-full relative h-[calc(100vh-148px)]">
+        <Image
+          src={'/introPage/찾아오시는길.jpg'}
+          className=""
+          fill
+          objectFit="cover"
+          objectPosition="center"
+          alt="회사소개배너"
+        />
+        <p className="absolute top-[30%] left-[10%]  font-bold text-5xl text-blue-5">찾아오시는 길</p>
+      </div>
       <article className="max-w-[1280px] mx-auto p-8 px-4 md:px-10">
-        <div className="flex gap-10 items-center mt-4 mb-14">
-          <div className="w-[7px] h-[60px] bg-blue-4" />
-          <p className="text-3xl">찾아오시는 길</p>
-        </div>
-        <div className="flex flex-col-reverse justify-center items-center lg:flex-row">
-          <section className="">
-            <ul className="list-disc flex flex-col gap-7 text-[#3F9EC4] font-medium px-4 md:px-10 text-nowrap">
+        <div className="flex flex-col gap-7 justify-center items-center ">
+          <section className="w-full">
+            <div className="w-full h-[35rem]">
+              <KakaoMap />
+            </div>
+          </section>
+          <section className="w-full flex flex-col sm:flex-row">
+            <ul className="list-disc flex flex-col gap-7 text-[#3F9EC4] font-medium px-4 md:px-10 sm:text-nowrap">
               <li className="text">
                 주소 (네비게이션 이용)
-                <p className="text-black text-xl font-bold mt-3">서울 강남구 도산대로27길20, 2층(신사동, 오름빌딩)</p>
+                <p className="text-black text-lg sm:text-xl font-bold mt-3">
+                  서울 강남구 도산대로27길20, 2층(신사동, 오름빌딩)
+                </p>
               </li>
               <li className="flex flex-col gap-3 pb-12">
                 대중교통 이용
@@ -40,25 +52,26 @@ export default function Page() {
                 </div>
               </li>
             </ul>
-            <div className="flex flex-col w-[30.75rem] gap-7 border-y-2 px-4 md:px-10 py-5 border-[#173FB8]">
-              <div className="flex items-center gap-3">
-                <div className="icon-box">
-                  <Image alt="phone" src="/icons/phone.svg" fill className="absolute" />
+
+            <ul className="list-disc flex flex-col gap-7 text-[#3F9EC4] font-medium px-4 md:px-10 text-nowrap">
+              <li className="text">
+                연락처
+                <div className="flex flex-col justify-center my-4 w-[30.75rem] gap-5 ">
+                  <div className="flex items-center gap-3">
+                    <div className="icon-box">
+                      <Image alt="phone" src="/icons/phone.svg" fill className="absolute" />
+                    </div>
+                    <p>02-512-8343</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="icon-box">
+                      <Image alt="email" src="/icons/email.svg" fill className="absolute" />
+                    </div>
+                    <p>veritase2f@naver.com</p>
+                  </div>
                 </div>
-                <p>02-512-8343</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="icon-box">
-                  <Image alt="email" src="/icons/email.svg" fill className="absolute" />
-                </div>
-                <p>veritase2f@naver.com</p>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div className="w-[28rem] h-[17rem] min-[395px]:w-[35rem] min-[395px]:h-[22rem]">
-              <KakaoMap />
-            </div>
+              </li>
+            </ul>
           </section>
         </div>
       </article>
