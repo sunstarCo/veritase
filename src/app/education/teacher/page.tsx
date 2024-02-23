@@ -47,7 +47,7 @@ export default function Page() {
           <ReviewCarousel />
         </div>
         <div className="mt-4 flex justify-end w-full">
-          <Link href={'/review'} className=" text-lg text-center p-2 text-white rounded bg-blue-4">
+          <Link href={'/education/review'} className=" text-lg text-center p-2 text-white rounded bg-blue-4">
             후기 더보기 →
           </Link>
         </div>

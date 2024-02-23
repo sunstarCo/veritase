@@ -34,16 +34,16 @@ function Subject() {
           </p>
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
-              <tr className="bg-yellow-200">
-                <th className="">대학명</th>
+              <tr className="border-b-2 border-black">
+                <th className="h-24">대학명</th>
                 <th className="">전형명</th>
                 <th className="">반영교과</th>
                 <th className="">반영방법</th>
               </tr>
             </thead>
             <tbody className="font-medium">
-              <tr className=" text-center">
-                <td className="p-2">가천대</td>
+              <tr className=" text-center border-b-2 border-black">
+                <td className="p-2 h-24">가천대</td>
                 <td className="p-2">학생부우수자, 지역균형</td>
                 <td className="p-2">
                   인문: 국, 수, 영, 사<br />
@@ -55,20 +55,20 @@ function Subject() {
                 </td>
               </tr>
               <tr className="text-center">
-                <td className="p-2 row-span-2" rowSpan={2}>
+                <td className="p-2 row-span-2 h-24" rowSpan={2}>
                   덕성여대
                 </td>
                 <td className="p-2">학생부 100%</td>
                 <td className="p-2">국, 수, 영, 사/과</td>
                 <td className="p-2">상위 3개 교과목의 4개 과목 - 총 12과목</td>
               </tr>
-              <tr className="text-center">
+              <tr className="text-center border-b-2 border-black">
                 <td className="p-2"> 고교추천</td>
                 <td className="p-2">국, 수, 영, 사/과</td>
                 <td className="p-2"> 상위 3개 교과 전 과목</td>
               </tr>
-              <tr className="text-center">
-                <td className="p-2">동국대</td>
+              <tr className="text-center border-b-2 border-black">
+                <td className="p-2 h-24">동국대</td>
                 <td className="p-2">학교장 추천인재</td>
                 <td className="p-2">
                   인문: 국, 수, 영, 사, 한국사
@@ -77,14 +77,14 @@ function Subject() {
                 </td>
                 <td className="p-2">석차등급 상위 10과목</td>
               </tr>
-              <tr className=" text-center">
-                <td className="p-2">서울여대</td>
+              <tr className=" text-center border-b-2 border-black">
+                <td className="p-2 h-24">서울여대</td>
                 <td className="p-2">교과 우수자</td>
                 <td className="p-2">국, 수, 영, 사/과</td>
                 <td className="p-2">교과별 상위 3과목 - 총 12과목</td>
               </tr>
-              <tr className=" text-center">
-                <td className="p-2">한국항공대</td>
+              <tr className=" text-center border-b-2 border-black">
+                <td className="p-2 h-24">한국항공대</td>
                 <td className="p-2">교과성적 우수자</td>
                 <td className="p-2">
                   공학: 국, 수, 영, 과<br />
@@ -111,7 +111,7 @@ function Subject() {
 
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
-              <tr className="bg-yellow-200">
+              <tr className="h-32 border-b-2 border-black">
                 <th className="">대학명</th>
                 <th className="">전형명</th>
                 <th className="">계열</th>
@@ -120,7 +120,7 @@ function Subject() {
             </thead>
             <tbody className="font-medium">
               <tr className=" text-center">
-                <td className="p-2" rowSpan={3}>
+                <td className="p-2 h-32" rowSpan={3}>
                   고려대
                 </td>
                 <td className="p-2" rowSpan={3}>
@@ -133,12 +133,12 @@ function Subject() {
                 <td className="p-2">자연</td>
                 <td className="p-2">국미기영과(1) 4 합8</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center  border-b-2 border-black">
                 <td className="p-2">반도체 등</td>
                 <td className="p-2">국미기영과(1) 4 합7</td>
               </tr>
               <tr className=" text-center">
-                <td className="p-2" rowSpan={3}>
+                <td className="p-2 h-32" rowSpan={3}>
                   연세대
                 </td>
                 <td className="p-2" rowSpan={2}>
@@ -151,13 +151,13 @@ function Subject() {
                 <td className="p-2">자연</td>
                 <td className="p-2">미기 포함 2 합5. 영3</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">국제형(국내)</td>
                 <td className="p-2">아시아학 등</td>
                 <td className="p-2">국수 1개 포함 2 합5. 영1</td>
               </tr>
               <tr className=" text-center">
-                <td className="p-2" rowSpan={3}>
+                <td className="p-2 h-32" rowSpan={3}>
                   이화여대
                 </td>
                 <td className="p-2" rowSpan={3}>
@@ -170,12 +170,12 @@ function Subject() {
                 <td className="p-2">자연</td>
                 <td className="p-2">국미기영과(1) 2 합5</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center  border-b-2 border-black">
                 <td className="p-2">스크랜튼</td>
                 <td className="p-2">국수영탐(1) 3 합5</td>
               </tr>
               <tr className=" text-center">
-                <td className="p-2" rowSpan={2}>
+                <td className="p-2 h-32" rowSpan={2}>
                   홍익대
                 </td>
                 <td className="p-2" rowSpan={2}>
@@ -184,7 +184,7 @@ function Subject() {
                 <td className="p-2">인문</td>
                 <td className="p-2">국수영탐(1) 3 합8</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center  border-b-2 border-black">
                 <td className="p-2">자연</td>
                 <td className="p-2">국미기영과(1) 3 합8</td>
               </tr>

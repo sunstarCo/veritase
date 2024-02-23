@@ -65,7 +65,7 @@ function Total() {
           </div>
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
-              <tr className="bg-yellow-200">
+              <tr className="border-b-2 border-black h-20">
                 <th className="">평가요소</th>
                 <th className="" colSpan={2}>
                   평가항목에 따른 세부내용
@@ -74,7 +74,7 @@ function Total() {
             </thead>
             <tbody className="font-medium">
               <tr className=" text-center">
-                <td className="p-2" rowSpan={3}>
+                <td className="p-2 h-60" rowSpan={3}>
                   학업역량
                   <br />- 대학교육을 충실히 이수하는데 필요한 수학능력
                 </td>
@@ -85,13 +85,13 @@ function Total() {
                 <td className="p-2">학업태도</td>
                 <td className="p-2">학업을 수행하고 학습해 나가려는 의지와 노력</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">탐구력</td>
                 <td className="p-2">지적 호기심을 바탕으로 사물과 현상에 대해 탐구하고, 문제를 해결하려는 노력</td>
               </tr>
               {/*  */}
               <tr className=" text-center">
-                <td className="p-2" rowSpan={3}>
+                <td className="p-2 h-60" rowSpan={3}>
                   진로역량
                   <br />- 자신의 진로와 전공(계열)에 관한 탐색 노력과 준비정도
                 </td>
@@ -108,13 +108,13 @@ function Total() {
                 </td>
                 <td className="p-2">고교 교육과정에서 전공(계열)에 필요한 과목을 수강하고 취득한 학업 성취 수준</td>
               </tr>
-              <tr className=" text-center">
+              <tr className="border-b-2 border-black text-center">
                 <td className="p-2">진로탐색 활동과 경험</td>
                 <td className="p-2">자신의 진로를 탐색하는 과정에서 이루어진 활동이나 경험 및 노력 정도</td>
               </tr>
               {/*  */}
               <tr className=" text-center">
-                <td className="p-2" rowSpan={4}>
+                <td className="p-2 h-60" rowSpan={4}>
                   공동체역량
                   <br />- 공동체의 일원으로서 갖춰야 할 바람직한 사고와 행동
                 </td>
@@ -123,19 +123,19 @@ function Total() {
                   공동체의 목표를 달성하기 위해 협력하며, 구성원들과 합리적인 의사소통을 할 수 있는 능력
                 </td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center h-16">
                 <td className="p-2">나눔과 배려</td>
                 <td className="p-2">
                   상대방을 존중하고 이해하여 원한만 관계를 형성하며, 타인을 위해 기꺼이 나누어 주고자 하는 태도와 행동
                 </td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center h-16">
                 <td className="p-2">성실성과 규칙 준수</td>
                 <td className="p-2">
                   책임감을 바탕으로 자신의 의무를 다하고, 공동체의 기본 윤리와 원칙을 준수하는 태도
                 </td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black h-16">
                 <td className="p-2">리더십</td>
                 <td className="p-2">공동체의 목표 달성을 위해 구성원들의 상호작용을 이끌어가는 능력</td>
               </tr>
@@ -161,21 +161,21 @@ function Total() {
           </p>
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
-              <tr className="bg-yellow-200">
-                <th className="">대학명</th>
+              <tr className="border-b-2 border-black">
+                <th className="h-20 ">대학명</th>
                 <th className="">서류/면접</th>
                 <th className="">평가요소(비율)</th>
               </tr>
             </thead>
             <tbody className="font-medium">
-              <tr className=" text-center">
-                <td className="p-2" rowSpan={2}>
+              <tr className=" text-center ">
+                <td className="p-2 h-20" rowSpan={2}>
                   가톨릭대
                 </td>
                 <td className="p-2">잠재능력우수자면접</td>
                 <td className="p-2 text-start">학업역량(25), 전공적합성(35), 인성(20), 발전가능성(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">잠재능력우수자서류</td>
                 <td className="p-2 text-start">학업역량(35), 전공적합성(30), 인성(20), 발전가능성(15)</td>
               </tr>
@@ -187,7 +187,7 @@ function Total() {
                 <td className="p-2">학업우수</td>
                 <td className="p-2 text-start">학업역량(50), 자기계발역량(30), 공동체역량(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">계열적합</td>
                 <td className="p-2 text-start">학업역량(40), 자기계발역량(40), 공동체역량(20)</td>
               </tr>
@@ -199,7 +199,7 @@ function Total() {
                 <td className="p-2">참빛인재 Ⅰ - 면접형</td>
                 <td className="p-2 text-start">학업역량(35), 진로역량(45), 인성(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">참빛인재 Ⅱ - 서류형</td>
                 <td className="p-2 text-start">학업역량(25), 진로역량(50), 인성(25)</td>
               </tr>
@@ -213,7 +213,7 @@ function Total() {
                   자기주도성(15), 발전가능성(20), 전공잠재력(35), 학업능력(15), 공동체의식 및 협동능력(15)
                 </td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">국민프런티어</td>
                 <td className="p-2 text-start">
                   자기주도성(30), 발전가능성(20), 전공잠재력(25), 학업능력(15), 공동체의식 및 협동능력(10)
@@ -227,7 +227,7 @@ function Total() {
                 <td className="p-2">학생부종합 Ⅰ</td>
                 <td className="p-2 text-start">학업역량(35), 잠재역량(40), 사회성(25)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">학생부종합 Ⅱ</td>
                 <td className="p-2 text-start">학업역량(30), 잠재역량(50), 사회성(20)</td>
               </tr>
@@ -239,7 +239,7 @@ function Total() {
                 <td className="p-2">바롬인재서류</td>
                 <td className="p-2 text-start">학업역량(40), 진로역량(35), 공동체역량(25)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">바롬인재면접</td>
                 <td className="p-2 text-start">학업역량(35), 진로역량(40), 공동체역량(25)</td>
               </tr>
@@ -251,7 +251,7 @@ function Total() {
                 <td className="p-2">세종창의인재(서류)</td>
                 <td className="p-2 text-start">학업역량(45), 진로역량(25), 창의융합(20), 공동체역량(10)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">세종창의인재(면접)</td>
                 <td className="p-2 text-start">학업역량(25), 진로역량(45), 창의융합(20), 공동체역량(10)</td>
               </tr>
@@ -263,7 +263,7 @@ function Total() {
                 <td className="p-2">CAU융합형인재</td>
                 <td className="p-2 text-start">학업역량(50), 진로역량(30), 공동체역량(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">CAU탐구형인재</td>
                 <td className="p-2 text-start">학업역량(40), 진로역량(50), 공동체역량(10)</td>
               </tr>
@@ -275,7 +275,7 @@ function Total() {
                 <td className="p-2">학생부종합(서류형)</td>
                 <td className="p-2 text-start">학업역량(50), 진로역량(30), 공동체역량(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">학생부종합(면접형)</td>
                 <td className="p-2 text-start">학업역량(30), 진로역량(50), 공동체역량(20)</td>
               </tr>
@@ -287,7 +287,7 @@ function Total() {
                 <td className="p-2">DKU인재-서류형</td>
                 <td className="p-2 text-start">학업역량(45), 진로역량(35), 공동체역량(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">DKU인재-면접형</td>
                 <td className="p-2 text-start">학업역량(35), 진로역량(45), 공동체역량(20)</td>
               </tr>
@@ -299,7 +299,7 @@ function Total() {
                 <td className="p-2">일반학생</td>
                 <td className="p-2 text-start">학업역량(30), 진로역량(50), 공동체역량(20)</td>
               </tr>
-              <tr className=" text-center">
+              <tr className=" text-center border-b-2 border-black">
                 <td className="p-2">SW특별</td>
                 <td className="p-2 text-start">학업역량(40), 진로역량(45), 공동체역량(15)</td>
               </tr>
