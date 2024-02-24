@@ -32,7 +32,7 @@ const cardData = [
 
 function CardContainer() {
   return (
-    <div className="flex gap-4 w-full max-w-[1760px] mx-auto mb-20 max:md:overflow-scroll">
+    <div className="flex gap-4 w-full max-w-[1760px] mx-auto mb-20 overflow-scroll md:overflow-none">
       {cardData.map((card, i) => (
         <Link
           key={i}

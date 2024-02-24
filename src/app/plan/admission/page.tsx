@@ -24,7 +24,7 @@ export default function Page({searchParams: {type}}: {searchParams: {type: strin
   return (
     <div>
       <Breadcrumb title="수시" sub_titles={sub_title} curParams={type} />
-      <div className="max-w-[1280px] mx-auto break-keep px-6 sm:px-18 md:px-36">
+      <div className="max-w-[1700px] mx-auto break-keep px-6 sm:px-18 md:px-36">
         {type === '교과' && <Subject />}
         {type === '종합' && <Total />}
         {type === '논술' && <Essay />}

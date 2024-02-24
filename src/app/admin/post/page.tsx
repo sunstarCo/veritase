@@ -57,7 +57,7 @@ function Page() {
     return;
   }
   return (
-    <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-10 px-8 mb-20">
+    <div className="max-w-[1700px] mx-auto flex flex-col items-center gap-10 px-8 mb-20">
       <p className="text-3xl border-b-2 border-black pb-10 w-full text-center ">입시 뉴스 등록</p>
       <form className="flex flex-col items-center w-full md:p-10" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-4">

@@ -38,7 +38,7 @@ export default function Page({searchParams: {subject: curParams}}: {searchParams
         sub_titles={sub_titles}
         curParams={curParams}
       />
-      <div className="max-w-[1280px] mx-auto px-6 md:px-40 mt-12 break-keep">
+      <div className="max-w-[1700px] mx-auto px-6 md:px-40 mt-12 break-keep">
         {curParams === '국어' && <KoreanTips />}
         {curParams === '수학' && <MathTips />}
         {curParams === '영어' && <EnglishTips />}

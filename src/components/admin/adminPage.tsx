@@ -25,7 +25,7 @@ function AdminPage({page}: {page: string}) {
   }, [page]);
 
   return (
-    <div className="max-w-[1280px] mx-auto px-20">
+    <div className="max-w-[1700px] mx-auto px-20">
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center justify-center">

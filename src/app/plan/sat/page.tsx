@@ -35,7 +35,7 @@ export default function Page() {
   return (
     <div>
       <Breadcrumb title="정시" />
-      <div className="max-w-[1280px] mx-auto break-keep px-6 sm:px-18 md:px-36">
+      <div className="max-w-[1700px] mx-auto break-keep px-6 sm:px-18 md:px-36">
         <p className="mt-24 font-medium leading-7 px-4">
           수능은 모든 영역에서 2015개정에 따라 교과 교육과정이 적용되는 시험이며, 한국사 영역은 필수로 지정되어 모든
           수험생이 응시하여야 합니다. <br />

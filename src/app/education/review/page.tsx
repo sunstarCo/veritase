@@ -10,7 +10,7 @@ export default function page() {
   return (
     <>
       <Breadcrumb title="수강후기" sub_text="(주)베리타스교육의 100% 실제 후기" />
-      <div className="w-full max-w-[1080px] mx-auto px-3 py-3">
+      <div className="w-full max-w-[1700px] mx-auto px-3 py-3">
         <div className="flex gap-4 items-center my-11">
           <div className="w-10">
             <Image src={'/icons/check.svg'} alt="check icon" sizes="100" width={0} height={0} style={{width: '100%'}} />

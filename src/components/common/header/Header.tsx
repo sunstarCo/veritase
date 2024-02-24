@@ -29,12 +29,12 @@ const menus = [
   },
   {
     name: '교육시스템',
-    default_path: '/education/eduSystem',
+    default_path: '/education/system',
     category: 'education',
     sub_menu: [
       {
         name: '시스템소개',
-        path: '/education/eduSystem',
+        path: '/education/system',
       },
       {
         name: '학습관리시스템',
@@ -146,7 +146,7 @@ function Header() {
 
   return (
     <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white ">
-      <div className="w-full xl:max-w-[1280px] lg:pb-8 relative">
+      <div className="w-full xl:max-w-[1700px] lg:pb-8 relative">
         <div className="w-full flex items-center justify-center relative p-4 px-6 xl:p-8 lg:justify-between">
           <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[150px] md:max-w-[217px]">
             <Image
@@ -214,7 +214,7 @@ function Header() {
             </Link>
           </div>
         </div>
-        <div className="w-full px-16 lg:hidden gap-4 flex justify-center">
+        <div className="w-full px-8 lg:hidden md:gap-4 flex justify-center">
           {selectMenu?.sub_menu?.map(sub_menu => {
             return (
               <Link

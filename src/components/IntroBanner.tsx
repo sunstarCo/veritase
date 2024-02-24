@@ -15,7 +15,7 @@ function IntroBanner() {
         className=" max-h-72 min-h-60"
       />
       <div className="absolute top-1/2 -translate-y-1/2 w-full px-4">
-        <div className="text-white font-urbanist text-2xl lg:text-3xl xl:text-4xl w-full xl:max-w-[1280px] mx-auto px-4 md:px-12">
+        <div className="text-white font-urbanist text-2xl lg:text-3xl xl:text-4xl w-full xl:max-w-[1700px] mx-auto px-4 md:px-12">
           <p className=""> &ldquo;수능 성적은 수능 전문가에게&rdquo;</p>
           <p className="font-semibold mt-4">&nbsp;(주)베리타스 교육</p>
         </div>

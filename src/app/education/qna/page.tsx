@@ -154,7 +154,7 @@ export default function Page() {
   return (
     <div>
       <Breadcrumb title="자주하는 질문" sub_text="학생과 학부모님들이 제일 많이 묻는 질문과 답변" />
-      <div className="max-w-[1280px] mx-auto">
+      <div className="max-w-[1700px] mx-auto">
         <div className="mt-24 mb-36 space-y-9">
           {data.map((qna, i) => {
             return <QnABox question={qna.question} answer={qna.answer} key={i} index={i} />;
