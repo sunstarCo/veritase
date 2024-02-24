@@ -120,7 +120,8 @@ function Header() {
 
   const [forceBlock, setForceBlock] = useState(false);
 
-  const onForceBlock = () => {
+  const onForceBlock = (name: string) => {
+    if (name === '입시뉴스') return;
     setForceBlock(true);
   };
 
@@ -146,9 +147,12 @@ function Header() {
 
   return (
     <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white ">
-      <div className="w-full xl:max-w-[1700px] lg:pb-8 relative">
+      <div
+        className={`w-full xl:max-w-[1700px] ${
+          forceBlock && 'pb-12 shadow-[0px_4px_4px_0_rgba(53,60,73,0.08)] '
+        } relative transition-all ease-in-out duration-500`}>
         <div className="w-full flex items-center justify-center relative p-4 px-6 xl:p-8 lg:justify-between">
-          <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[150px] md:max-w-[217px]">
+          <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[200px] md:max-w-[270px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"
@@ -202,14 +206,15 @@ function Header() {
                   menu={menu}
                   key={menu.name}
                   curPath={curPath}
-                  forceBlock={forceBlock}
                   onForceBlock={onForceBlock}
                   offForceBlock={offForceBlock}
                   searchParams={searchParams ?? ''}
                 />
               );
             })}
-            <Link href={'/request'} className="py-2 bg-blue-4 text-white rounded px-20 text-nowrap">
+            <Link
+              href={'/request'}
+              className="py-2 bg-blue-4 text-white rounded px-20 text-nowrap ml-2 lg:ml-3 xl:ml-5">
               상담신청
             </Link>
           </div>

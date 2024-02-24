@@ -10,8 +10,8 @@ interface MenusI {
     sub_menu?: SubMenuI[];
   };
   curPath: string;
-  forceBlock: boolean;
-  onForceBlock: () => void;
+
+  onForceBlock: (menu: string) => void;
   offForceBlock: () => void;
   searchParams: {};
 }
@@ -21,7 +21,7 @@ interface SubMenuI {
   path: string;
 }
 
-function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, searchParams}: MenusI) {
+function SubMenuBar({menu, curPath, onForceBlock, offForceBlock, searchParams}: MenusI) {
   const [hoverMenu, setHoverMenu] = useState(false);
   const [selectMenu, setSelectMenu] = useState([{name: '', path: ''}]);
   if (curPath === '/') {
@@ -42,9 +42,9 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
         if (menu.sub_menu) {
           setHoverMenu(prev => !prev);
           setSelectMenu(menu.sub_menu);
-          onForceBlock();
+          onForceBlock(menu.name);
         } else if (menu.default_path === '/news') {
-          onForceBlock();
+          onForceBlock(menu.name);
         } else {
           setHoverMenu(false);
         }
@@ -53,13 +53,19 @@ function SubMenuBar({menu, curPath, forceBlock, onForceBlock, offForceBlock, sea
         setHoverMenu(false);
         offForceBlock();
       }}>
-      <Link key={menu.name} href={menu.default_path} className={`flex flex-col  px-2`}>
-        <p className={`border-b-4 hover:border-blue-4 py-3 ${isClicked ? 'border-blue-4' : 'border-transparent'}`}>
+      <Link key={menu.name} href={menu.default_path} className={`flex flex-col px-2 md:text-lg`}>
+        <p
+          className={`border-b-4 hover:border-blue-4 py-3 ${
+            isClicked || hoverMenu ? 'border-blue-4' : 'border-transparent'
+          }`}>
           {menu.name}
         </p>
       </Link>
-      {(hoverMenu || (!forceBlock && isClicked)) && (
-        <div className="flex gap-4 absolute p-4 pt-3 text-nowrap -left-5">
+      {hoverMenu && (
+        <div
+          className={`flex gap-4 absolute p-4 pt-3 text-nowrap -left-5 opacity-0 transition-transform ${
+            hoverMenu && 'animate-show delay-300'
+          } `}>
           {selectMenu.map(sub_menu => {
             return (
               <Link

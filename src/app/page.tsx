@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <div className="w-full relative h-[calc(100vh-148px)]">
-        <Image src={'/mainPage/mainBanner.jpg'} fill objectFit="cover" alt="메인배너" />
+        <Image src={'/mainPage/mainBanner.jpg'} fill className="object-cover" alt="메인배너" />
         <div className="w-full flex absolute top-[30%] left-[10%]">
           <h1 className="text-white text-nowrap text-[2.5rem] lg:text-[4.5rem] font-medium transition-transform animate-show opacity-0">
             수능단기 고득점,&nbsp;
