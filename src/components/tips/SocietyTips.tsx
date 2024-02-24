@@ -26,7 +26,7 @@ function SocietyTips() {
                 <div className="bg-blue-4 text-white min-w-40 min-h-40 flex justify-center items-center rounded-full">
                   {item.title}
                 </div>
-                <div>
+                <div className="px-8">
                   {item.content.map((text, i) => {
                     return (
                       <p key={i} className="list-item">

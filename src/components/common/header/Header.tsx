@@ -149,7 +149,7 @@ function Header() {
     <div className="fixed top-0 left-0 w-screen text-nowrap flex justify-center z-20 bg-white ">
       <div
         className={`w-full xl:max-w-[1700px] ${
-          forceBlock && 'pb-12 shadow-[0px_4px_4px_0_rgba(53,60,73,0.08)] '
+          forceBlock && 'pb-11 shadow-[0px_4px_4px_0_rgba(53,60,73,0.08)] '
         } relative transition-all ease-in-out duration-500`}>
         <div className="w-full flex items-center justify-center relative p-4 px-6 xl:p-8 lg:justify-between">
           <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[200px] md:max-w-[270px]">
