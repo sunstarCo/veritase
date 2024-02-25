@@ -14,6 +14,7 @@ const config: Config = {
       },
       fontFamily: {
         urbanist: ['var(--font-urbanist)'],
+        inter: ['var(--font-inter)'],
       },
       colors: {
         red: '#FA0A0A',

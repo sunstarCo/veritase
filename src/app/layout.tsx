@@ -1,6 +1,6 @@
 import {Suspense} from 'react';
 
-import {Noto_Sans_KR, Urbanist} from 'next/font/google';
+import {Inter, Noto_Sans_KR, Urbanist} from 'next/font/google';
 
 import './globals.css';
 import {Footer} from '@/components/common/Footer/Footer';
@@ -12,6 +12,7 @@ import type {Metadata} from 'next';
 
 const noto_sans_kr = Noto_Sans_KR({subsets: ['latin']});
 const urbanist = Urbanist({subsets: ['latin'], display: 'swap', variable: '--font-urbanist'});
+const inter = Inter({subsets: ['latin'], variable: '--font-inter'});
 
 export const metadata: Metadata = {
   title: 'veritase',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ko">
-      <body className={`${noto_sans_kr.className} ${urbanist.variable} min-h-screen`}>
+      <body className={`${noto_sans_kr.className} ${urbanist.variable} ${inter.variable} min-h-screen`}>
         <Providers>
           <Header />
           <Suspense fallback={<Loading lodingText="로딩중" />}>
