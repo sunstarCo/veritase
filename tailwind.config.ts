@@ -68,6 +68,10 @@ const config: Config = {
           to: {
             opacity: '100%',
         }
+        },
+        reShow: {
+          '0%': {opacity: '0%'},
+          '100%': {opacity: '100%'},
         }
       },
       animation:{
@@ -75,8 +79,9 @@ const config: Config = {
         rotateRight: 'rotate180 0.3s ease-in-out forwards',
         rotateLeft: '-rotate90 0.3s ease-in-out forwards',
         show: 'show 0.7s ease-in-out forwards',
-        show_delay: 'show 1s ease-in-out forwards 1000ms',
-        cardHover:'cardHover 0.3s ease-in-out forwards'
+        show_delay_1s: 'show 1s ease-in-out forwards 1000ms',
+        cardHover:'cardHover 0.3s ease-in-out forwards',
+        reShow:'reShow 1.8s ease-in-out forwards'
       }
     },
   },

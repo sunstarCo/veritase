@@ -152,7 +152,7 @@ function Header() {
           forceBlock && 'pb-11 shadow-[0px_4px_4px_0_rgba(53,60,73,0.08)] '
         } relative transition-all ease-in-out duration-500`}>
         <div className="w-full flex items-center justify-center relative p-4 px-6 xl:p-8 lg:justify-between">
-          <Link href={'/'} className="min-w-[120px] max-w-[180px] md:min-w-[200px] md:max-w-[270px]">
+          <Link href={'/'} className="min-w-[140px] max-w-[180px] md:min-w-[270px] md:max-w-[270px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"

@@ -28,7 +28,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Providers>
           <Header />
           <Suspense fallback={<Loading lodingText="로딩중" />}>
-            <div className="min-h-screen pt-[78px] xl:pt-[116px]">{children}</div>
+            <div className="min-h-screen pt-[100px] md:pt-[120px] xl:pt-[116px]">{children}</div>
           </Suspense>
           <Footer />
         </Providers>

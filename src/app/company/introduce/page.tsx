@@ -16,7 +16,7 @@ export default function Page() {
         />
         <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-5 ">
           <p className="transition-transform animate-show opacity-0">수능 성적은,</p>
-          <p className="transition-transform animate-show_delay opacity-0 ">수능 전문가에게</p>
+          <p className="transition-transform animate-show_delay_1s opacity-0 ">수능 전문가에게</p>
         </div>
       </div>
       <div className=" pb-40">

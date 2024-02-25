@@ -101,7 +101,9 @@ export default function Page() {
           fill
           className="object-cover object-center"
         />
-        <h2 className="absolute font-medium text-6xl tracking-wide text-white top-1/3 left-1/4">학습관리시스템</h2>
+        <h2 className="absolute font-medium text-6xl tracking-wide text-white top-1/3 px-4 md:left-[10%]">
+          학습관리시스템
+        </h2>
       </div>
       <div className="flex flex-col md:flex-row gap-4 max-w-[1700px] mx-auto my-20 px-6 break-keep">
         {cardData.map((card, i) => (
