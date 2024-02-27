@@ -34,13 +34,13 @@ export default function Page() {
       <article className="max-w-[1700px] mx-auto p-8 px-4 md:px-10">
         <div className="flex flex-col gap-7 justify-center items-center ">
           <section className="w-full">
-            <div className="w-full h-[35rem]">
+            <div className="w-full h-[35rem] border-2 border-blue-5">
               <KakaoMap />
             </div>
           </section>
-          <section className="w-full flex flex-col sm:flex-row">
+          <section className="w-full max-w-[1000px] flex flex-col sm:flex-row sm:justify-between">
             <ul className="list-disc flex flex-col gap-7 text-[#3F9EC4] font-medium px-4 md:px-10 sm:text-nowrap">
-              <li className="text">
+              <li>
                 주소 (네비게이션 이용)
                 <p className="text-black text-lg sm:text-xl font-bold mt-3">
                   서울 강남구 도산대로27길20, 2층(신사동, 오름빌딩)
@@ -73,13 +73,13 @@ export default function Page() {
                     <div className="icon-box">
                       <Image alt="phone" src="/icons/phone.svg" fill className="absolute" />
                     </div>
-                    <p>02-512-8343</p>
+                    <p className="text-lg sm:text-xl font-bold">02-512-8343</p>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="icon-box">
                       <Image alt="email" src="/icons/email.svg" fill className="absolute" />
                     </div>
-                    <p>veritase2f@naver.com</p>
+                    <p className="text-lg sm:text-xl font-bold">veritase2f@naver.com</p>
                   </div>
                 </div>
               </li>

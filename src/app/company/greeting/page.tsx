@@ -2,14 +2,26 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import BannerLayout from '@/components/common/BannerLayout';
+
 export default function Page() {
   return (
     <>
       <div className="w-full mb-7 relative">
-        <div className="w-full relative h-[calc(100vh-148px)]">
-          <Image src={'/introPage/인사말.jpg'} alt="배너 이미지" fill className="object-cover object-top" />
-        </div>
-        <div className="flex gap-10 items-start w-full xl:max-w-[1700px] mx-auto px-4 md:px-20 pt-20">
+        <BannerLayout>
+          <Image
+            src={'/introPage/인사말.jpg'}
+            className="object-cover object-right sm:object-center"
+            fill
+            alt="회사소개배너"
+            priority
+          />
+          <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-4">
+            <p className="transition-transform animate-show opacity-0">수능 성적은,</p>
+            <p className="transition-transform animate-show_delay_1s opacity-0 ">수능 전문가에게</p>
+          </div>
+        </BannerLayout>
+        <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-4 md:px-20 pt-20">
           <div className="w-[7px] h-[66px] bg-blue-4" />
           <div>
             <p className="text-3xl py-4 relative w-fit">(주) 베리타스 교육은...</p>
