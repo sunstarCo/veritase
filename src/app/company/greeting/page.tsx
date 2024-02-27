@@ -7,7 +7,7 @@ export default function Page() {
     <>
       <div className="w-full mb-7 relative">
         <div className="w-full relative h-[calc(100vh-148px)]">
-          <Image src={'/introPage/인사말.jpg'} alt="배너 이미지" layout="fill" className="object-cover object-top" />
+          <Image src={'/introPage/인사말.jpg'} alt="배너 이미지" fill className="object-cover object-top" />
         </div>
         <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-4 md:px-20 pt-20">
           <div className="w-[7px] h-[66px] bg-blue-4" />

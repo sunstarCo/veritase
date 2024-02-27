@@ -16,7 +16,7 @@ export default async function Page({searchParams}: IPagination) {
   const {data, count, totalPages} = await getNewsPagination(pageParams);
 
   return (
-    <div className="max-w-[1700px] mx-auto px-4 md:px-20 mb-4">
+    <div className="max-w-[1700px] mx-auto px-4 md:px-20 my-4">
       {/* header */}
       <div className="pb-2 border-b-2 border-black">
         <div className="flex gap-5 items-center">

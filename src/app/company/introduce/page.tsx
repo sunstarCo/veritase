@@ -2,25 +2,26 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import BannerLayout from '@/components/common/BannerLayout';
+
 export default function Page() {
   return (
     <div className="break-keep">
-      <div className="w-full relative h-[calc(100vh-148px)]">
+      <BannerLayout>
         <Image
           src={'/introPage/회사소개.jpg'}
-          className=""
+          className="object-cover object-center"
           fill
-          objectFit="cover"
-          objectPosition="center"
           alt="회사소개배너"
+          priority
         />
-        <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-5 ">
+        <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-4">
           <p className="transition-transform animate-show opacity-0">수능 성적은,</p>
           <p className="transition-transform animate-show_delay_1s opacity-0 ">수능 전문가에게</p>
         </div>
-      </div>
-      <div className=" pb-40">
-        <article className="max-w-[1280px] mx-auto py-6 px-4 sm:px-20 ">
+      </BannerLayout>
+      <div className="mb-20">
+        <article className="max-w-[1280px] mx-auto py-24 px-4 sm:px-20 ">
           <div className="w-full bg-blue-4 text-2xl md:text-3xl font-semibold text-center text-white py-6 px-9">
             <p>신뢰와 믿음 / 혁신적 마인드로 학생의 변화를 선도하고 있습니다.</p>
           </div>

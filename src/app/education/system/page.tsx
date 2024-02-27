@@ -44,14 +44,14 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center">
       <Breadcrumb title="시스템소개" sub_text="베리타스 교육의 시스템" />
-      <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1500px] w-full px-2 sm:px-6 md:px-16 my-16 break-keep">
+      <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full px-2 sm:px-6 md:px-12 my-16 break-keep opacity-0 animate-showUpper">
         {cardData.map(card => (
-          <div key={card.step} className={`${card.color} text-white w-full min-h-[300px] md:h-[650px]`}>
+          <div key={card.step} className={`${card.color} text-white w-full min-h-[300px] md:h-[700px]`}>
             <div className="border-b-2 py-6 px-6">
-              <p className="font-semibold text-2xl">{card.step}단계</p>
-              <p className="font-medium mt-2 text-lg">{card.title}&nbsp;&nbsp;</p>
+              <p className="font-semibold text-4xl">{card.step}단계</p>
+              <p className="font-medium mt-2 text-2xl">{card.title}&nbsp;&nbsp;</p>
             </div>
-            <div className="px-10 space-y-5 text-lg py-12">
+            <div className="px-10 space-y-7 text-xl font-medium py-16">
               {card.desc.map((text, i) => (
                 <p key={i} className="list-item">
                   {text}

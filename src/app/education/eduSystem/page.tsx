@@ -1,47 +1,9 @@
-import React from 'react';
+'use client';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
-
-// const data = [
-//   {
-//     title: '입시전문가의 진단',
-//     sub_title: '시범강의 및 대안제시',
-//     img: '/eduSystem/입시전문가의진단.jpg',
-//     text: '1:1 시범강의를 통한 학생수준 진단 및 현장에서 대안제시',
-//     desc: [
-//       '상위권 : 각 영역별 단원과 단원의 융합과정을 통한 심화학습 지도',
-//       '중위권 : 취약과목 집중지도 / 원리유형 및 개념, 철저히 분석',
-//       '하위권 : 전 영역 기본 개념과 수능 필수유형 지도',
-//     ],
-//   },
-//   {
-//     title: '최적의 맞춤형 전략수립',
-//     sub_title: '학습커리큘림 제공',
-//     img: '/eduSystem/맞춤형전략수립.jpg',
-//     text: '영역별 최약과목 분석에 따른 최적의 커리큘럼 제공',
-//     desc: ['수능 유형의 원리를 각 영역별 세부적으로 나눠서 강의', '수능 단원별 분석', '출제유형 난이도별 분석'],
-//   },
-//   {
-//     title: '영역별 전문강사의 노하우',
-//     sub_title: '전문가의 노하우 전수',
-//     img: '/eduSystem/전문강사의노하우.jpg',
-//     text: null,
-//     desc: ['각 영역별 최고의 강사진을 통한 수업제공', '학생의 성향에 따라 최적의 강사배정'],
-//   },
-//   {
-//     title: '체계적인 진행상황 체크',
-//     sub_title: '멘토링 시스템',
-//     img: '/eduSystem/진행상황체크.jpg',
-//     text: '완벽한 관리시스템',
-//     desc: [
-//       '최초 진단선생님을 통한 꾸준한 학습관리',
-//       '수능 교육자료 제공, 모의고사분석 및 대안제시',
-//       '상황에 따른 입시상담/수시/정시/논술/구술/면접 등',
-//     ],
-//   },
-// ];
 
 const cardData = [
   {
@@ -88,6 +50,27 @@ const cardData = [
   },
 ];
 export default function Page() {
+  const [position, setPosition] = useState(0);
+  const startPoint = useRef(0);
+
+  useEffect(() => {
+    startPoint.current = window.innerHeight / 4;
+
+    function onScroll() {
+      setPosition(window.scrollY);
+    }
+
+    if (position > startPoint.current) {
+      window.removeEventListener('scroll', onScroll);
+    } else {
+      window.addEventListener('scroll', onScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
     <>
       <Breadcrumb title="학습관리시스템" sub_text="베리타스 교육의 체계적인 학습시스템" />
@@ -99,26 +82,40 @@ export default function Page() {
           width={0}
           height={0}
           fill
-          className="object-cover object-center"
+          className="object-cover object-center max-sm:hidden"
+          priority
         />
-        <h2 className="absolute font-medium text-6xl tracking-wide text-white top-1/3 px-4 md:left-[10%]">
+        <Image
+          src={'/eduSystem/학습관리시스템_모바일.jpg'}
+          alt=""
+          sizes="100"
+          width={0}
+          height={0}
+          fill
+          className="object-cover object-center sm:hidden"
+          priority
+        />
+        <h2 className="absolute font-medium text-6xl tracking-wide text-white top-1/3 px-4 md:left-[10%] opacity-0 animate-showUpper">
           학습관리시스템
         </h2>
       </div>
-      <div className="flex flex-col md:flex-row gap-4 max-w-[1700px] mx-auto my-20 px-6 break-keep">
+      <div
+        className={`flex flex-col md:flex-row gap-4 max-w-[1700px] mx-auto my-20 px-6 break-keep opacity-0 ${
+          position >= startPoint.current && 'animate-showUpper'
+        }`}>
         {cardData.map((card, i) => (
           <div key={i} className="w-full">
-            <div className="bg-blue-4 py-8 px-6 md:p-12  text-white">
+            <div className="bg-blue-4 rounded-t-md py-8 px-6 md:p-12 text-white max-md:min-h-36 max-[870px]:min-h-56">
               <p className="text-2xl md:text-4xl font-semibold">{card.title}</p>
               <p className="text-xl md:text-2xl font-medium mt-2">
                 ({card.times[0]}회 ~ {card.times[1]}회)
               </p>
             </div>
-            <div className="bg-[#f5f5f5] py-8 px-4 h-[200px] md:h-[350px]">
+            <div className="bg-[#f5f5f5] rounded-b-md py-8 px-6 h-[250px] md:h-[350px]">
               {card.desc.map((text, i) => (
-                <div key={i} className="px-2 mb-8 h-24">
-                  <p className="text-xl font-semibold">- {text.title}</p>
-                  <div className="px-8 mt-2">
+                <div key={i} className="px-2 mb-4 min-h-32">
+                  <p className="text-2xl font-semibold text-blue-4">{text.title}</p>
+                  <div className="px-8 py-2 text-lg font-medium">
                     {text.content.map((text, i) => (
                       <p key={i} className="list-item">
                         {text}

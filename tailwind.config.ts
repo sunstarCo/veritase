@@ -41,6 +41,10 @@ const config: Config = {
           '0%': {transform: 'translateX(0)'},
           '100%': {transform: 'translateX(100%)'},
         },
+        showUpper: {
+          '0%': {transform: 'translateY(60px)'},
+          '100%': {transform: 'translateY(0)',opacity: '100%'},
+        },
         rotate180: {
           to:{
             transform: 'rotate(180deg)'
@@ -82,7 +86,8 @@ const config: Config = {
         show: 'show 0.7s ease-in-out forwards',
         show_delay_1s: 'show 1s ease-in-out forwards 1000ms',
         cardHover:'cardHover 0.3s ease-in-out forwards',
-        reShow:'reShow 1.8s ease-in-out forwards'
+        reShow:'reShow 1.8s ease-in-out forwards',
+        showUpper: "showUpper 0.5s ease-in-out forwards"
       }
     },
   },

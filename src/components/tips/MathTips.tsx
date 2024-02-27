@@ -2,7 +2,7 @@ import React from 'react';
 
 function MathTips() {
   return (
-    <div className="flex flex-col gap-9">
+    <div className="flex flex-col gap-9 ">
       <article>
         <p className="text-xl font-medium text-blue-4">가. 시험의 성격</p>
         <p className="mt-3">

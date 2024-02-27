@@ -6,7 +6,7 @@ function QnABox({question, answer, id}: {question: string; answer: JSX.Element; 
   const [isOpen, setIsOpen] = useState(false);
   const isOdd = Number(id) % 2 === 1;
   return (
-    <div className="flex flex-col md:flex-row md:min-h-72 break-keep">
+    <div className="flex flex-col md:flex-row md:min-h-72 break-keep  opacity-0 animate-showUpper">
       <div
         className={`flex text-center relative items-center px-3 sm:px-6 md:px-12 max-md:min-h-32 transition-all ease-in-out duration-500 ${
           isOpen

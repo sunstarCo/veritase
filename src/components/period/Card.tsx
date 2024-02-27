@@ -4,17 +4,17 @@ import React, {useState} from 'react';
 function Card({content}: any) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="">
+    <div className={``}>
       <div
-        className={`flex justify-between rounded-md transition-colors duration-300 ${
-          isOpen ? 'bg-blue-3 text-white' : 'bg-[#F5F5F5]'
-        }  min-h-64 items-center px-2 md:px-10`}>
+        className={`flex justify-between rounded-md transition-all ease-in-out duration-300 ${
+          isOpen ? 'bg-blue-4 text-white ' : 'bg-[#F5F5F5]'
+        }  min-h-64 items-center px-2 md:px-12 xl:px-16 2xl:px-32`}>
         <div className="flex flex-col sm:flex-row justify-between w-full px-2">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl text-nowrap font-bold w-24 md:w-32 text-start">
+          <h3 className="text-2xl sm:text-3xl md:text-[2.5rem] text-nowrap font-bold w-24 md:w-32 text-start">
             {content.time}
           </h3>
           <div className="flex gap-5 justify-between w-full sm:w-[85%] items-center">
-            <div className="text-xl md:text-2xl font-medium max-sm:mt-4">{content.sub_text}</div>
+            <div className="text-lg md:text-xl font-medium max-sm:mt-4">{content.sub_text}</div>
           </div>
         </div>
         {isOpen ? (
@@ -36,7 +36,7 @@ function Card({content}: any) {
         )}
       </div>
       {isOpen && (
-        <div className="min-h-60 text-lg font-medium md:text-2xl rounded-b-md shadow-[1px_4px_7px_0_rgba(53,60,73,0.08)] p-4 md:p-12 transition-colors duration-300">
+        <div className="min-h-60 bg-[#F5F5F5] text-lg font-medium md:text-xl rounded-b-md p-4 md:p-12 transition-colors duration-300">
           {content.main_text}
         </div>
       )}

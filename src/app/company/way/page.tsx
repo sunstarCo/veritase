@@ -3,22 +3,34 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import BannerLayout from '@/components/common/BannerLayout';
 import KakaoMap from '@/components/KakaoMap';
 
 export default function Page() {
   return (
     <div>
-      <div className="w-full relative h-[calc(100vh-148px)]">
+      <BannerLayout>
         <Image
           src={'/introPage/찾아오시는길.jpg'}
-          className=""
+          className="object-right object-cover max-sm:hidden"
+          sizes="100"
           fill
-          objectFit="cover"
-          objectPosition="center"
           alt="회사소개배너"
+          priority
         />
-        <p className="absolute top-[30%] left-[10%]  font-bold text-5xl text-blue-5">찾아오시는 길</p>
-      </div>
+        <Image
+          src={'/introPage/찾아오시는길_모바일.jpg'}
+          className="object-right object-cover sm:hidden"
+          fill
+          sizes="100"
+          alt="회사소개배너"
+          priority
+        />
+        <div className="w-full h-full bg-white opacity-20 sm:hidden" />
+        <p className="absolute top-[30%] left-[15%] font-bold text-6xl text-blue-4 opacity-0 animate-showUpper">
+          찾아오시는 길
+        </p>
+      </BannerLayout>
       <article className="max-w-[1280px] mx-auto p-8 px-4 md:px-10">
         <div className="flex flex-col gap-7 justify-center items-center ">
           <section className="w-full">
@@ -56,7 +68,7 @@ export default function Page() {
             <ul className="list-disc flex flex-col gap-7 text-[#3F9EC4] font-medium px-4 md:px-10 text-nowrap">
               <li className="text">
                 연락처
-                <div className="flex flex-col justify-center my-4 w-[30.75rem] gap-5 ">
+                <div className="flex flex-col justify-center my-4 gap-5 ">
                   <div className="flex items-center gap-3">
                     <div className="icon-box">
                       <Image alt="phone" src="/icons/phone.svg" fill className="absolute" />
