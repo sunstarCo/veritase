@@ -11,7 +11,7 @@ export default function Page() {
         <BannerLayout>
           <Image
             src={'/introPage/인사말.jpg'}
-            className="object-cover object-center"
+            className="object-cover object-right sm:object-center"
             fill
             alt="회사소개배너"
             priority

@@ -11,12 +11,12 @@ export default function TeacherBox({num}: ITeacherProps) {
   return (
     <>
       {num == 0 && (
-        <h1 className="text-xl sm:text-3xl font-bold mb-10 text-nowrap">
+        <h1 className="text-xl sm:text-3xl font-bold mb-10 text-nowrap pl-3">
           베리타스교육에서 이런 선생님을 만날 수 있습니다.
         </h1>
       )}
       {num == 4 && (
-        <h1 className="text-xl sm:text-3xl font-bold mb-10 mt-12">엄격한 선발과정을 거친 최고의 선생님들만</h1>
+        <h1 className="text-xl sm:text-3xl font-bold mb-10 mt-12 pl-3">엄격한 선발과정을 거친 최고의 선생님들만</h1>
       )}
 
       <div
