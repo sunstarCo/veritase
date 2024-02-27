@@ -32,7 +32,7 @@ export default function Page() {
         </p>
       </BannerLayout>
       <article className="max-w-[1700px] mx-auto p-8 px-4 md:px-10">
-        <div className="flex flex-col gap-7 justify-center items-center ">
+        <div className="flex flex-col gap-7 justify-center items-start ">
           <section className="w-full">
             <div className="w-full h-[35rem] border-2 border-blue-5">
               <KakaoMap />

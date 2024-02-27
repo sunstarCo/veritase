@@ -53,7 +53,7 @@ function SubMenuBar({menu, curPath, onForceBlock, offForceBlock, searchParams}: 
         setHoverMenu(false);
         offForceBlock();
       }}>
-      <Link key={menu.name} href={menu.default_path} className={`flex flex-col px-2 md:text-lg`}>
+      <Link key={menu.name} href={menu.default_path} className={`flex flex-col px-2 font-semibold`}>
         <p
           className={`border-b-4 hover:border-blue-4 py-3 ${
             isClicked || hoverMenu ? 'border-blue-4' : 'border-transparent'
