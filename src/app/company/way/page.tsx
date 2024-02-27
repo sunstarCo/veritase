@@ -31,7 +31,7 @@ export default function Page() {
           찾아오시는 길
         </p>
       </BannerLayout>
-      <article className="max-w-[1280px] mx-auto p-8 px-4 md:px-10">
+      <article className="max-w-[1700px] mx-auto p-8 px-4 md:px-10">
         <div className="flex flex-col gap-7 justify-center items-center ">
           <section className="w-full">
             <div className="w-full h-[35rem]">

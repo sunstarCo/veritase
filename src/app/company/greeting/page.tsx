@@ -9,11 +9,11 @@ export default function Page() {
         <div className="w-full relative h-[calc(100vh-148px)]">
           <Image src={'/introPage/인사말.jpg'} alt="배너 이미지" fill className="object-cover object-top" />
         </div>
-        <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-4 md:px-20 pt-20">
+        <div className="flex gap-10 items-start w-full xl:max-w-[1700px] mx-auto px-4 md:px-20 pt-20">
           <div className="w-[7px] h-[66px] bg-blue-4" />
           <div>
             <p className="text-3xl py-4 relative w-fit">(주) 베리타스 교육은...</p>
-            <p className="w-full sm:max-w-[80%] break-keep mt-10 leading-[30px] font-medium pr-8">
+            <p className="w-full break-keep mt-10 leading-[30px] font-medium pr-8">
               수많은 학생들이 가지는 저마다 다른꿈을 획일적인 주입식 교육으로는 실현할 수 없습니다. <br />
               교육은 무엇보다 한사람 한사람의 꿈을 가질 수 있게 하는 근간입니다. <br />
               <br />

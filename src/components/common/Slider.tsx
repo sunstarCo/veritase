@@ -17,9 +17,10 @@ const teacher_reviews = [
 ];
 
 const main_reviews = [
-  '/reviews/reviewPage/review4.jpg',
+  '/reviews/reviewPage/review1.jpg',
   '/reviews/reviewPage/review2.jpg',
   '/reviews/reviewPage/review3.jpg',
+  '/reviews/reviewPage/review4.jpg',
 ];
 
 type innerMatch = {
@@ -39,7 +40,7 @@ function Slider({type}: {type: 'main' | 'teacher'}) {
   const slideObj: Match = {
     main: {
       size: [260],
-      contentWidth: 'w-[260px]',
+      contentWidth: 'w-[220px] md:w-[285px]',
     },
     teacher: {
       size: [800],
