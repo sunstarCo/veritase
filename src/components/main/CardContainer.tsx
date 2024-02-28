@@ -18,7 +18,7 @@ const cardData = [
   },
   {
     img: 'bg-[url(/mainPage/교육시스템.jpg)] bg-cover bg-center',
-    path: '/education/eduSystem',
+    path: '/education/system',
     title: '교육시스템',
     text: '목표달성까지 함께합니다',
   },
