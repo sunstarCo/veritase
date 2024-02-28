@@ -8,7 +8,6 @@ declare global {
 }
 
 function KakaoMap() {
-  // 고정된 좌표 (예: 서울 시청 좌표)
   const latitude = 37.52112;
   const longitude = 127.0276;
 

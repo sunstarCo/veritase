@@ -27,7 +27,7 @@ export default function Page() {
           priority
         />
         <div className="w-full h-full bg-white opacity-20 sm:hidden" />
-        <p className="absolute top-[30%] left-[15%] font-bold text-6xl text-blue-4 opacity-0 animate-showUpper">
+        <p className="absolute top-[10%] left-[10%] sm:top-[30%] sm:left-[15%] font-bold text-6xl text-blue-4 opacity-0 animate-showUpper">
           찾아오시는 길
         </p>
       </BannerLayout>
