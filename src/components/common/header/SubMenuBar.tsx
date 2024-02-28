@@ -55,7 +55,7 @@ function SubMenuBar({menu, curPath, onForceBlock, offForceBlock, searchParams}: 
       }}>
       <Link key={menu.name} href={menu.default_path} className={`flex flex-col px-2 font-semibold`}>
         <p
-          className={`border-b-4 hover:border-blue-4 py-3 ${
+          className={`border-b-4 hover:border-blue-4 py-3 text-lg ${
             isClicked || hoverMenu ? 'border-blue-4' : 'border-transparent'
           } ${isClicked && 'text-blue-4 font-semibold'}`}>
           {menu.name}
