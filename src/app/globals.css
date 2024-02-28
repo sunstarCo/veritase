@@ -20,7 +20,7 @@
   color: #272928;
   font-size: 11px;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 640px) {
     font-size: 13px;
   }
 
