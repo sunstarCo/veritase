@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <BannerLayout>
         <Image
-          src={'/mainPage/mainBanner.jpg'}
+          src={'/mainPage/mainBanner2.jpg'}
           fill
           className="object-cover object-left-bottom max-sm:hidden"
           alt="메인배너"

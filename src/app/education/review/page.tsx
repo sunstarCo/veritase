@@ -15,6 +15,8 @@ export default function Page() {
     }
   };
 
+  // const isOdd = curImg % 2 === 1;
+
   return (
     <BannerLayout className="flex justify-center items-start sm:items-center">
       {/* <Breadcrumb title="수강후기" sub_text="(주)베리타스교육의 100% 실제 후기" /> */}
@@ -41,7 +43,7 @@ export default function Page() {
             width={0}
             height={0}
             sizes="100"
-            className="w-[220px] md:w-[285px]"
+            className={`w-[220px] md:w-[285px] `}
             placeholder="blur"
             blurDataURL={`/reviews/reviewPage/review1.jpg`}
           />
