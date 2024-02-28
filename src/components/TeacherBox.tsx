@@ -4,9 +4,10 @@ import Image from 'next/image';
 
 interface ITeacherProps {
   num: number;
+  position: string;
 }
 
-export default function TeacherBox({num}: ITeacherProps) {
+export default function TeacherBox({num, position}: ITeacherProps) {
   const isOdd = num % 2 == 0;
   return (
     <>
@@ -22,16 +23,25 @@ export default function TeacherBox({num}: ITeacherProps) {
       <div
         className={`w-full flex flex-col items-center mb-14 sm:mb-0 ${isOdd ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
         <div className="w-full sm:w-1/2 h-[19rem] sm:h-[29rem]  relative">
-          <Image src={`/teacherPage/teacherImage/수능강사${num}.jpg`} alt="수능강사이미지" objectFit="cover" fill />
-        </div>
-        <div className="w-full sm:w-1/2 h-[19rem] sm:h-[29rem]  relative">
           <Image
-            src={`/teacherPage/teacherContent/수능강사컨텐츠${num}.svg`}
-            alt="수능강사컨텐츠"
-            objectFit="cover"
+            src={`/teacherPage/teacherImage/수능강사${num}.jpg`}
+            alt="수능강사이미지"
+            className={`${position} object-cover`}
             fill
           />
         </div>
+        <div className="w-full flex items-center sm:w-1/2 sm:h-[29rem] bg-[#F3F3F3]">
+          <Image
+            src={`/teacherPage/teacherContent/수능강사컨텐츠${num}.svg`}
+            alt="수능강사컨텐츠"
+            width={0}
+            height={0}
+            sizes="100"
+            className="w-full object-cover"
+          />
+        </div>
+        {/* <div className="w-full sm:w-1/2 h-[19rem] sm:h-[29rem] relative">
+        </div> */}
       </div>
     </>
   );
