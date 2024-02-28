@@ -164,6 +164,7 @@ function Header() {
               priority
             />
           </Link>
+          {/* 모바일 환경 */}
           <button
             className={`lg:hidden absolute z-50 right-12 ${showMenu && 'rotate-90'}`}
             onClick={() => setShowMenu(prev => !prev)}>
@@ -199,7 +200,7 @@ function Header() {
               </Link>
             </div>
           )}
-
+          {/* PC 환경 */}
           <div className="lg:flex items-center hidden">
             {menus.map(menu => {
               return (
@@ -220,7 +221,8 @@ function Header() {
             </Link>
           </div>
         </div>
-        <div className="w-full px-8 lg:hidden md:gap-4 flex justify-center">
+        {/* 모바일 서브 메뉴 렌더링 */}
+        <div className="w-full px-8 mt-2 lg:hidden md:gap-4 flex justify-center">
           {selectMenu?.sub_menu?.map(sub_menu => {
             return (
               <Link
