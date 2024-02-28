@@ -37,7 +37,7 @@ function SubMenuBar({menu, curPath, onForceBlock, offForceBlock, searchParams}: 
 
   return (
     <div
-      className="relative cursor-pointer px-2 lg:px-3 xl:px-5"
+      className="relative cursor-pointer px-2 lg:px-3 xl:px-5 break-keep"
       onMouseOver={() => {
         if (menu.sub_menu) {
           setHoverMenu(prev => !prev);
@@ -71,7 +71,7 @@ function SubMenuBar({menu, curPath, onForceBlock, offForceBlock, searchParams}: 
               <Link
                 href={sub_menu.path}
                 key={sub_menu.name}
-                className={`p-2 hover:text-blue-4 hover:font-bold ${
+                className={`p-2 hover:text-blue-4 text-nowrap hover:font-bold ${
                   curPath === sub_menu.path ||
                   searchParams === sub_menu.path.split('=')[1] ||
                   (curPath.includes('admission') && sub_menu.name === '수시')
