@@ -27,9 +27,10 @@ export default function Page() {
           priority
         />
         <div className="w-full h-full bg-white opacity-20 sm:hidden" />
-        <p className="absolute top-[10%] left-[10%] sm:top-[30%] sm:left-[15%] font-bold text-6xl text-blue-4 opacity-0 animate-showUpper">
-          찾아오시는 길
-        </p>
+        <div className="absolute flex items-center gap-10 top-[5%] left-[10%] sm:top-[30%] sm:left-[15%] opacity-0 animate-showUpper">
+          <div className="w-[7px] h-[54px] sm:h-[88px] bg-blue-4" />
+          <p className=" font-bold text-5xl sm:text-6xl  ">찾아오시는 길</p>
+        </div>
       </BannerLayout>
       <article className="max-w-[1700px] mx-auto p-8 px-4 md:px-10">
         <div className="flex flex-col gap-7 justify-center items-start ">
