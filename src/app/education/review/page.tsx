@@ -18,7 +18,7 @@ export default function Page() {
   // const isOdd = curImg % 2 === 1;
 
   return (
-    <BannerLayout className="flex justify-center items-start sm:items-center">
+    <BannerLayout className="flex justify-center items-start sm:items-center min-h-[600px]">
       {/* <Breadcrumb title="수강후기" sub_text="(주)베리타스교육의 100% 실제 후기" /> */}
       <Image
         src={'/reviews/review_bg.jpg'}
