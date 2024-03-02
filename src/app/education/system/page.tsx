@@ -15,7 +15,7 @@ const cardData = [
     title: '과목별분석 / 상담단계',
     desc: [
       '현 학습상태 분석을 통한 단점 파악',
-      '파악에따른 대안제시',
+      '파악에 따른 대안제시',
       '학부모 / 학생의 분석 상담',
       '100% 만족 보장',
       '수업신청 여부 결정',
@@ -34,7 +34,7 @@ const cardData = [
     desc: [
       '개인별 맞춤관리 및 멘토링',
       '매월 기출모의형가 우편서비스',
-      '기출모평 오답체크 및 관리',
+      '기출 모의평가 오답체크 및 관리',
       '수시 / 정시 원서 접수 코치',
     ],
   },
@@ -46,17 +46,19 @@ export default function Page() {
       <Breadcrumb title="시스템소개" sub_text="베리타스 교육의 시스템" />
       <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full px-2 sm:px-6 md:px-12 my-16 break-keep opacity-0 animate-showUpper">
         {cardData.map(card => (
-          <div key={card.step} className={`${card.color} text-white w-full min-h-[300px] md:h-[700px]`}>
+          <div key={card.step} className={`${card.color} text-white w-full`}>
             <div className="border-b-2 py-6 px-6">
               <p className="font-semibold text-4xl">{card.step}단계</p>
               <p className="font-medium mt-2 text-2xl">{card.title}&nbsp;&nbsp;</p>
             </div>
-            <div className="px-10 space-y-7 text-xl font-medium py-16">
-              {card.desc.map((text, i) => (
-                <p key={i} className="list-item">
-                  {text}
-                </p>
-              ))}
+            <div className="min-h-[300px] md:min-h-[450px] h-[65vh] max-h-[800px] flex flex-col justify-end">
+              <div className="px-10 space-y-7 text-xl font-medium h-80">
+                {card.desc.map((text, i) => (
+                  <p key={i} className="list-item">
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         ))}

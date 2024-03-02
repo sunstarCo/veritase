@@ -112,7 +112,7 @@ export default function Page() {
                   ({card.times[0]}회 ~ {card.times[1]}회)
                 </p>
               </div>
-              <div className="bg-[#f5f5f5] rounded-b-md py-8 px-6 h-[250px] md:h-[350px]">
+              <div className="bg-[#f5f5f5] rounded-b-md pt-20 md:pt-52 px-6 h-[280px] md:h-[500px]">
                 {card.desc.map((text, i) => (
                   <div key={i} className="px-2 mb-4 min-h-32">
                     <p className="text-2xl font-semibold text-blue-4">{text.title}</p>

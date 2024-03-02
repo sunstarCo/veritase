@@ -8,7 +8,14 @@ function Total() {
       <article className="mt-10">
         <div className="flex gap-3 items-center">
           <div className="w-8">
-            <Image src={'/icons/Search_blue.svg'} width={0} height={0} sizes="100" className="w-full" alt="돋보기" />
+            <Image
+              src={'/icons/Search_blue.svg'}
+              width={0}
+              height={0}
+              sizes="100"
+              className="min-w-[20px] md:w-[30px]"
+              alt="돋보기"
+            />
           </div>
           <p className="text-2xl font-medium text-blue-4">학생부 종합 전형이란?</p>
         </div>
@@ -22,47 +29,28 @@ function Total() {
       <article className="mt-10">
         <div className="flex gap-3 items-center">
           <div className="w-8">
-            <Image src={'/icons/Search_blue.svg'} width={0} height={0} sizes="100" className="w-full" alt="돋보기" />
+            <Image
+              src={'/icons/Search_blue.svg'}
+              width={0}
+              height={0}
+              sizes="100"
+              className="min-w-[20px] md:w-[30px]"
+              alt="돋보기"
+            />
           </div>
           <p className="text-2xl font-medium text-blue-4">
             학교생활기록부(생기부)에 대한 평가요소와 세부사항은 어떻게 될까요?
           </p>
         </div>
-        <div className="mt-8 px-12">
-          <div className="flex gap-12 items-center">
-            <div className="w-28 h-28 sm:w-44 sm:h-44 rounded-full flex justify-center items-center bg-blue-4">
-              <div className="w-24 h-24 sm:w-40 sm:h-40 text-lg sm:text-xl rounded-full border-4 border-white bg-blue-4 flex justify-center items-center text-white text-center">
-                학생부 종합전형
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div className="flex items-center gap-8">
-                <div className="w-32 text-center text-xl py-2 bg-blue-4 text-white rounded-full">학업 역량</div>
-                <div className="text-lg">
-                  <p>• 학업성취도</p>
-                  <p>• 학업태도</p>
-                  <p>• 탐구력</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-8">
-                <div className="w-32 text-center text-xl py-2 bg-blue-4 text-white rounded-full">진로 역량</div>
-                <div className="text-lg">
-                  <p>• 전공 관련 교과 이수</p>
-                  <p>• 노력 & 성취도</p>
-                  <p>• 진로 탐색 활동 & 경험</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-8">
-                <div className="w-32 text-center text-xl py-2 bg-blue-4 text-white rounded-full">공동체 역량</div>
-                <div className="text-lg">
-                  <p>• 협업 & 소통 능력</p>
-                  <p>• 나눔 & 배려</p>
-                  <p>• 성실성 & 규칙 준수</p>
-                  <p>• 리더십</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="mt-12">
+          <Image
+            src={'/sat/학생부종합전형평가기준.svg'}
+            alt="학생부종합전형평가기준그림"
+            width={0}
+            height={0}
+            sizes="100"
+            className="w-full md:w-[70%] lg:w-[50%]"
+          />
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
               <tr className="border-b-2 border-black h-20">
@@ -146,7 +134,14 @@ function Total() {
       <article className="mt-10 mb-40">
         <div className="flex gap-3 items-center">
           <div className="w-8">
-            <Image src={'/icons/Search_blue.svg'} width={0} height={0} sizes="100" className="w-full" alt="돋보기" />
+            <Image
+              src={'/icons/Search_blue.svg'}
+              width={0}
+              height={0}
+              sizes="100"
+              className="min-w-[20px] md:w-[30px]"
+              alt="돋보기"
+            />
           </div>
           <p className="text-2xl font-medium text-blue-4">
             학생부 종합전형은 준비한다면 생기부의 어느 부분에 신경을 써야할까요? 

@@ -8,7 +8,7 @@ import BannerLayout from '@/components/common/BannerLayout';
 export default function Page() {
   const [curImg, setCurImg] = useState(1);
   const onClickHandler = () => {
-    if (curImg === 78) {
+    if (curImg === 77) {
       setCurImg(1);
     } else {
       setCurImg(prev => prev + 1);

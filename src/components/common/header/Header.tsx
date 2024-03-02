@@ -153,7 +153,7 @@ function Header() {
           forceBlock && 'pb-11'
         } relative transition-all ease-in-out duration-500`}>
         <div className="w-full flex items-center justify-center relative pt-8 lg:p-4 px-6 xl:p-8 lg:justify-between">
-          <Link href={'/'} className="min-w-[140px] max-w-[180px] md:min-w-[270px] md:max-w-[270px]">
+          <Link href={'/'} className="min-w-[140px] max-w-[170px] md:min-w-[270px] md:max-w-[270px]">
             <Image
               src={'/logo/베리타스헤더로고.svg'}
               alt="veritase_logo"
@@ -222,7 +222,7 @@ function Header() {
           </div>
         </div>
         {/* 모바일 서브 메뉴 렌더링 */}
-        <div className="w-full px-8 mt-2 lg:hidden md:gap-4 flex justify-center">
+        <div className="w-full px-4 mt-2 lg:hidden gap-1 md:gap-4 flex max-[300px]:justify-start justify-center overflow-scroll text-nowrap">
           {selectMenu?.sub_menu?.map(sub_menu => {
             return (
               <Link
