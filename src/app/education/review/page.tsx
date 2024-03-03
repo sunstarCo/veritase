@@ -51,23 +51,6 @@ export default function Page() {
           <TbHandClick className="text-4xl absolute bottom-3 right-6 animate-blink" />
         </div>
       </div>
-      <style jsx global>{`
-        @keyframes blink {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-
-        .animate-blink {
-          animation: blink 1.5s infinite;
-        }
-      `}</style>
     </BannerLayout>
   );
 }

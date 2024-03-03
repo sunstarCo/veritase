@@ -77,8 +77,14 @@ const config: Config = {
         reShow: {
           '0%': {opacity: '0%'},
           '100%': {opacity: '100%'},
+        },
+        blink : {
+          '0%':{opacity: '100%'},
+          '50%':{opacity: '0%'},
+          '100%':{opacity: '100%'}
         }
       },
+
       animation:{
         ink: 'ink 2.5s ease-in forwards',
         rotateRight: 'rotate180 0.3s ease-in-out forwards',
@@ -87,7 +93,8 @@ const config: Config = {
         show_delay_1s: 'show 1s ease-in-out forwards 1000ms',
         cardHover:'cardHover 0.3s ease-in-out forwards',
         reShow:'reShow 1.8s ease-in-out forwards',
-        showUpper: "showUpper 0.5s ease-in-out forwards"
+        showUpper: "showUpper 0.5s ease-in-out forwards",
+        blink: "blink 1.5s infinite"
       }
     },
   },
