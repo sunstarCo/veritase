@@ -58,7 +58,7 @@ export default function Page() {
             placeholder="blur"
             blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
           />
-          <TbHandClick className="text-4xl absolute bottom-3 right-6 animate-blink" />
+          <TbHandClick className="text-6xl absolute bottom-3 right-6 animate-blink" />
         </div>
       </div>
     </BannerLayout>
