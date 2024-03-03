@@ -2,30 +2,21 @@
 import React, {useState} from 'react';
 
 import Image from 'next/image';
+import {TbHandClick} from 'react-icons/tb';
 
 import BannerLayout from '@/components/common/BannerLayout';
 
 export default function Page() {
   const [curImg, setCurImg] = useState(1);
-  const [oddImg, setOddImg] = useState(1);
-  const [evenImg, setEvenImg] = useState(2);
-
-  const isOdd = curImg % 2 === 1;
-
   const onClickHandler = () => {
     if (curImg === 77) {
       setCurImg(1);
-      setOddImg(1);
-      setEvenImg(2);
-      return;
+    } else {
+      setCurImg(prev => prev + 1);
     }
-    setCurImg(prev => prev + 1);
-    if (isOdd) {
-      setOddImg(prev => prev + 2);
-      return;
-    }
-    setEvenImg(prev => prev + 2);
   };
+
+  // const isOdd = curImg % 2 === 1;
 
   return (
     <BannerLayout className="flex justify-center items-start sm:items-center min-h-[600px]">
@@ -37,7 +28,6 @@ export default function Page() {
         height={0}
         sizes="100"
         fill
-        priority
         className="object-cover object-center"
       />
       <div className="absolute flex max-md:flex-col gap-16 md:justify-evenly w-full items-center mt-2 max-w-[1400px] max-sm:mt-16">
@@ -47,29 +37,37 @@ export default function Page() {
         </div>
         <div
           onClick={onClickHandler}
-          className="cursor-pointer bg-[url('/reviews/모바일사진.svg')] p-3 bg-cover w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
+          className="cursor-pointer relative bg-[url('/reviews/모바일사진.svg')] p-3 bg-cover w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
           <Image
-            src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
+            src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${curImg}.jpg`}
             alt=""
             width={0}
             height={0}
             sizes="100"
-            className={`w-[220px] md:w-[285px]  ${!isOdd && 'hidden'}`}
+            className={`w-[220px] md:w-[285px] `}
             placeholder="blur"
             blurDataURL={`/reviews/reviewPage/review1.jpg`}
           />
-          <Image
-            src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${evenImg}.jpg`}
-            alt=""
-            width={0}
-            height={0}
-            sizes="100"
-            className={`w-[220px] md:w-[285px] ${isOdd && 'hidden'} `}
-            placeholder="blur"
-            blurDataURL={`/reviews/reviewPage/review1.jpg`}
-          />
+          <TbHandClick className="text-4xl absolute bottom-3 right-6 animate-blink" />
         </div>
       </div>
+      <style jsx global>{`
+        @keyframes blink {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        .animate-blink {
+          animation: blink 1.5s infinite;
+        }
+      `}</style>
     </BannerLayout>
   );
 }
