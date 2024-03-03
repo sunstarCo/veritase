@@ -30,16 +30,7 @@ export default function Page() {
   return (
     <BannerLayout className="flex justify-center items-start sm:items-center min-h-[600px]">
       {/* <Breadcrumb title="수강후기" sub_text="(주)베리타스교육의 100% 실제 후기" /> */}
-      <Image
-        src={'/reviews/review_bg.jpg'}
-        alt=""
-        width={0}
-        height={0}
-        sizes="100"
-        fill
-        priority
-        className="object-cover object-center"
-      />
+      <Image src={'/reviews/review_bg.jpg'} alt="" sizes="100" fill priority className="object-cover object-center" />
       <div className="absolute flex max-md:flex-col gap-16 md:justify-evenly w-full items-center mt-2 max-w-[1400px] max-sm:mt-16">
         <div className="text-white">
           <h2 className="text-5xl md:text-6xl font-medium tracking-wide">수강후기</h2>
@@ -51,8 +42,8 @@ export default function Page() {
           <Image
             src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
             alt=""
-            width={0}
-            height={0}
+            width={300}
+            height={500}
             sizes="100"
             className={`w-[220px] md:w-[285px]  ${!isOdd && 'hidden'}`}
             placeholder="blur"
@@ -61,8 +52,8 @@ export default function Page() {
           <Image
             src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${evenImg}.jpg`}
             alt=""
-            width={0}
-            height={0}
+            width={300}
+            height={500}
             sizes="100"
             className={`w-[220px] md:w-[285px] ${isOdd && 'hidden'} `}
             placeholder="blur"
