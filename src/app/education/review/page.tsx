@@ -41,23 +41,21 @@ export default function Page() {
           className="cursor-pointer bg-[url('/reviews/모바일사진.svg')] p-3 bg-cover w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
           <Image
             src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
-            alt=""
+            alt="후기메세지"
             width={300}
             height={500}
-            sizes="100"
             className={`w-[220px] md:w-[285px]  ${!isOdd && 'hidden'}`}
             placeholder="blur"
-            blurDataURL={`/reviews/reviewPage/review1.jpg`}
+            blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
           />
           <Image
             src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${evenImg}.jpg`}
-            alt=""
+            alt="후기메세지"
             width={300}
             height={500}
-            sizes="100"
             className={`w-[220px] md:w-[285px] ${isOdd && 'hidden'} `}
             placeholder="blur"
-            blurDataURL={`/reviews/reviewPage/review1.jpg`}
+            blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
           />
         </div>
       </div>
