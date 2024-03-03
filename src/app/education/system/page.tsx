@@ -51,8 +51,8 @@ export default function Page() {
               <p className="font-semibold text-4xl">{card.step}단계</p>
               <p className="font-medium mt-2 text-2xl">{card.title}&nbsp;&nbsp;</p>
             </div>
-            <div className="min-h-[300px] md:min-h-[500px] h-[65vh] max-h-[800px] flex flex-col justify-end">
-              <div className="px-10 space-y-7 text-xl font-medium h-[350px]">
+            <div className="min-h-[300px] md:min-h-[500px] h-[65vh] max-h-[300px] md:max-h-[800px] flex flex-col justify-end">
+              <div className="px-10 space-y-7 text-xl font-medium h-[200px] md:h-[350px]">
                 {card.desc.map((text, i) => (
                   <p key={i} className="list-item">
                     {text}
