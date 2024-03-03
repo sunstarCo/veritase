@@ -1,24 +1,13 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import BannerLayout from '@/components/common/BannerLayout';
+import IntroduceBanner from '@/components/pageBanner/IntroduceBanner';
 
 export default function Page() {
   return (
     <div className="break-keep">
       <BannerLayout>
-        <Image
-          src={'/introPage/회사소개.jpg'}
-          className="object-cover object-center"
-          fill
-          alt="회사소개배너"
-          priority
-        />
-        <div className="absolute top-[30%] left-[10%]  font-bold text-5xl flex flex-col sm:flex-row gap-6  sm:text-6xl text-blue-4">
-          <p className="transition-transform animate-show opacity-0">수능 성적은,</p>
-          <p className="transition-transform animate-show_delay_1s opacity-0 ">수능 전문가에게</p>
-        </div>
+        <IntroduceBanner />
       </BannerLayout>
       <div className="mb-20">
         <article className="max-w-[1700px] mx-auto py-24 px-4 sm:px-20 ">
