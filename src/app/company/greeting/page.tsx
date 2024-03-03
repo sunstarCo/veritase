@@ -21,7 +21,7 @@ export default function Page() {
             <p className="transition-transform animate-show_delay_1s opacity-0 ">수능 전문가에게</p>
           </div>
         </BannerLayout>
-        <div className="flex gap-10 items-start w-full xl:max-w-[1280px] mx-auto px-4 md:px-20 pt-20">
+        <div className="flex gap-10 items-start w-full xl:max-w-[1700px] mx-auto px-4 md:px-20 pt-20">
           <div className="w-[7px] h-[66px] bg-blue-4" />
           <div>
             <p className="text-3xl py-4 relative w-fit">(주) 베리타스 교육은...</p>
