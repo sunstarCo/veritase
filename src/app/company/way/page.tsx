@@ -6,6 +6,8 @@ import Image from 'next/image';
 import BannerLayout from '@/components/common/BannerLayout';
 import KakaoMap from '@/components/KakaoMap';
 
+import WayBanner from '../../../../public/introPage/찾아오시는길.jpg';
+import WayBannerMo from '../../../../public/introPage/찾아오시는길_모바일.jpg';
 export default function Page() {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -13,21 +15,23 @@ export default function Page() {
     <div>
       <BannerLayout>
         <Image
-          src={'/introPage/찾아오시는길.jpg'}
+          src={WayBanner}
           className="object-right object-cover max-sm:hidden"
           sizes="100"
           fill
           alt="회사소개배너"
           onLoad={() => setIsImageLoaded(true)}
           priority
+          placeholder="blur"
         />
         <Image
-          src={'/introPage/찾아오시는길_모바일.jpg'}
+          src={WayBannerMo}
           className="object-right object-cover sm:hidden"
           fill
           sizes="100"
           alt="회사소개배너"
           priority
+          placeholder="blur"
         />
         <div className="w-full h-full bg-white opacity-20 sm:hidden" />
         <div
