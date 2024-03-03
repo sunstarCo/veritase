@@ -21,7 +21,7 @@ export default function Page() {
           <TeacherBox num={item.id} position={item.position} key={item.id} />
         ))}
       </div>
-      <div className="w-full bg-blue-4 text-2xl md:text-3xl font-semibold text-center break-keep text-white py-6 px-9">
+      <div className="w-full bg-blue-4 text-2xl md:text-3xl font-semibold text-center break-keep text-white py-6 px-9 mt-12 mb-40">
         <p>타사에서 강사 정보 유출사례가 빈번하여, 당사는 모든 강사진들의 정보를 홈페이지에 공개하지 않습니다.</p>
       </div>
     </div>
