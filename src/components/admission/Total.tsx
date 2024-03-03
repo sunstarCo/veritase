@@ -42,14 +42,14 @@ function Total() {
             학교생활기록부(생기부)에 대한 평가요소와 세부사항은 어떻게 될까요?
           </p>
         </div>
-        <div className="mt-12">
+        <div className="mt-12 px-4 md:px-12">
           <Image
             src={'/sat/학생부종합전형평가기준.svg'}
             alt="학생부종합전형평가기준그림"
             width={0}
             height={0}
             sizes="100"
-            className="w-full md:w-[70%] lg:w-[50%]"
+            className="w-full md:w-[70%] lg:w-[60%]"
           />
           <table className="border-black mt-8 w-full" border={1}>
             <thead>
@@ -147,7 +147,7 @@ function Total() {
             학생부 종합전형은 준비한다면 생기부의 어느 부분에 신경을 써야할까요? 
           </p>
         </div>
-        <div className="mt-4 px-12">
+        <div className="mt-4 px-4 md:px-12">
           <p>
             대학별 차이가 있기에 반드시 가고자 하는 대학에 대한 입시요강을 확인하는 것이 좋습니다. 학생부종합전형을
             준비하기 위해서는 앞에서 언급한 것처럼 평가요소와 세부 내용에 대한 이해가 필요합니다.
