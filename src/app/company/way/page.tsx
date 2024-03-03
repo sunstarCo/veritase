@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {useState} from 'react';
 
 import Image from 'next/image';
 
@@ -7,6 +7,8 @@ import BannerLayout from '@/components/common/BannerLayout';
 import KakaoMap from '@/components/KakaoMap';
 
 export default function Page() {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <div>
       <BannerLayout>
@@ -16,6 +18,7 @@ export default function Page() {
           sizes="100"
           fill
           alt="회사소개배너"
+          onLoad={() => setIsImageLoaded(true)}
           priority
         />
         <Image
@@ -27,7 +30,10 @@ export default function Page() {
           priority
         />
         <div className="w-full h-full bg-white opacity-20 sm:hidden" />
-        <div className="absolute flex items-center gap-10 top-[5%] left-[10%] sm:top-[30%] sm:left-[15%] opacity-0 animate-showUpper">
+        <div
+          className={`absolute flex items-center gap-10 top-[5%] left-[10%] sm:top-[30%] sm:left-[15%] opacity-0 ${
+            isImageLoaded && `animate-showUpper`
+          }`}>
           <div className="w-[7px] h-[54px] sm:h-[88px] bg-blue-4" />
           <p className=" font-bold text-5xl sm:text-6xl  ">찾아오시는 길</p>
         </div>
