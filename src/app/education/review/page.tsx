@@ -10,10 +10,33 @@ export default function Page() {
   const [curImg, setCurImg] = useState(1);
   const [oddImg, setOddImg] = useState(1);
   const [evenImg, setEvenImg] = useState(2);
+  const [throttle, setThrottle] = useState(false);
+
+  // let timerId: null | NodeJS.Timeout = null;
 
   const isOdd = curImg % 2 === 1;
 
+  // const onClickHandler = () => {
+  //   if (timerId) {
+  //     clearTimeout(timerId);
+  //   }
+  //   timerId = setTimeout(() => {
+  //     clickNext();
+  //   }, 1000);
+  // };
+
   const onClickHandler = () => {
+    if (throttle) return;
+    if (!throttle) {
+      clickNext();
+      setThrottle(true);
+      setTimeout(async () => {
+        setThrottle(false);
+      }, 500);
+    }
+  };
+
+  const clickNext = () => {
     if (curImg === 77) {
       setCurImg(1);
       setOddImg(1);
@@ -45,7 +68,8 @@ export default function Page() {
             alt="후기메세지"
             width={300}
             height={500}
-            className={`w-[220px] md:w-[285px]   ${!isOdd && 'hidden'}`}
+            priority
+            className={`w-[220px] md:w-[285px] ${!isOdd && 'hidden'}`}
             placeholder="blur"
             blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
           />
@@ -54,6 +78,7 @@ export default function Page() {
             alt="후기메세지"
             width={300}
             height={500}
+            priority
             className={`w-[220px] md:w-[285px] ${isOdd && 'hidden'} `}
             placeholder="blur"
             blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
