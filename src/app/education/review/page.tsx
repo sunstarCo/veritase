@@ -32,7 +32,7 @@ export default function Page() {
       setThrottle(true);
       setTimeout(async () => {
         setThrottle(false);
-      }, 500);
+      }, 300);
     }
   };
 
@@ -40,7 +40,6 @@ export default function Page() {
     if (curImg === 77) {
       setCurImg(1);
       setOddImg(1);
-      setEvenImg(2);
       return;
     }
     setCurImg(prev => prev + 1);
@@ -48,7 +47,10 @@ export default function Page() {
       setOddImg(prev => prev + 2);
       return;
     }
-    setEvenImg(prev => prev + 2);
+    setEvenImg(prev => {
+      if (prev >= 76) return 2;
+      return prev + 2;
+    });
   };
 
   return (
@@ -64,7 +66,7 @@ export default function Page() {
           onClick={onClickHandler}
           className="cursor-pointer relative p-3 w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
           <Image src={'/reviews/모바일사진.svg'} alt="모바일 사진" priority fill className="object-cover" sizes="100" />
-          <div className={`relative w-[220px] md:w-[285px] h-[350px] `}>
+          <div className={`relative w-[220px] md:w-[285px] h-[370px] md:h-[460px] `}>
             <Image
               src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
               alt="후기메세지"
@@ -85,6 +87,7 @@ export default function Page() {
               // height={500}
               priority
               fill
+              sizes="100"
               className={`${isOdd && '-z-10'} `}
               placeholder="blur"
               blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
