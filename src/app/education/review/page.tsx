@@ -63,27 +63,33 @@ export default function Page() {
         <div
           onClick={onClickHandler}
           className="cursor-pointer relative  bg-[url('/reviews/모바일사진.svg')] p-3 bg-cover w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
-          <Image
-            src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
-            alt="후기메세지"
-            width={300}
-            height={500}
-            priority
-            className={`w-[220px] md:w-[285px] ${!isOdd && 'hidden'}`}
-            placeholder="blur"
-            blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
-          />
-          <Image
-            src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${evenImg}.jpg`}
-            alt="후기메세지"
-            width={300}
-            height={500}
-            priority
-            className={`w-[220px] md:w-[285px] ${isOdd && 'hidden'} `}
-            placeholder="blur"
-            blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
-          />
-          <TbHandClick className="text-6xl absolute bottom-3 right-6 animate-blink" />
+          <div className={`relative w-[220px] md:w-[285px] h-[350px] `}>
+            <Image
+              src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
+              alt="후기메세지"
+              // width={300}
+              // height={500}
+              priority
+              fill
+              sizes="100"
+              className={`${!isOdd && '-z-10'}`}
+              placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+              blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
+            />
+
+            <Image
+              src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${evenImg}.jpg`}
+              alt="후기메세지"
+              // width={300}
+              // height={500}
+              priority
+              fill
+              className={`${isOdd && '-z-10'} `}
+              placeholder="blur"
+              blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg==`}
+            />
+          </div>
+          <TbHandClick className="text-6xl absolute bottom-3 right-6 animate-blink z-10" />
         </div>
       </div>
     </BannerLayout>

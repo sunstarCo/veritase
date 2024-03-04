@@ -222,7 +222,7 @@ function Header() {
           </div>
         </div>
         {/* 모바일 서브 메뉴 렌더링 */}
-        <div className="w-full px-4 mt-2 lg:hidden gap-1 md:gap-4 flex max-[300px]:justify-start justify-center overflow-scroll text-nowrap">
+        <div className="w-full px-4 mt-2 lg:hidden gap-1 md:gap-4 flex max-[300px]:justify-start justify-center max-[400px]:overflow-x-scroll text-nowrap">
           {selectMenu?.sub_menu?.map(sub_menu => {
             return (
               <Link
