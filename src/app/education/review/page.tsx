@@ -62,7 +62,8 @@ export default function Page() {
         </div>
         <div
           onClick={onClickHandler}
-          className="cursor-pointer relative  bg-[url('/reviews/모바일사진.svg')] p-3 bg-cover w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
+          className="cursor-pointer relative p-3 w-[240px] h-[430px] md:h-[550px] md:w-[310px] flex items-center">
+          <Image src={'/reviews/모바일사진.svg'} alt="모바일 사진" priority fill className="object-cover" sizes="100" />
           <div className={`relative w-[220px] md:w-[285px] h-[350px] `}>
             <Image
               src={`https://onuqprohgtghlcbucalq.supabase.co/storage/v1/object/public/reviews/${oddImg}.jpg`}
