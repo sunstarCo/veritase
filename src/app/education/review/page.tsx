@@ -37,7 +37,7 @@ export default function Page() {
   };
 
   const clickNext = () => {
-    if (curImg === 77) {
+    if (curImg >= 77) {
       setCurImg(1);
       setOddImg(1);
       return;
@@ -59,7 +59,7 @@ export default function Page() {
       <Image src={'/reviews/review_bg.jpg'} alt="" sizes="100" fill priority className="object-cover object-center" />
       <div className="absolute flex max-md:flex-col gap-16 md:justify-evenly w-full items-center mt-2 max-w-[1400px] max-sm:mt-16">
         <div className="text-white">
-          <h2 className="text-5xl md:text-6xl font-medium tracking-wide">수강후기</h2>
+          <h2 className="text-5xl md:text-6xl font-medium tracking-wide">수업후기</h2>
           <p className="text-2xl font-medium mt-4 md:mt-8">(주)베리타스교육의 100% 실제 후기</p>
         </div>
         <div
