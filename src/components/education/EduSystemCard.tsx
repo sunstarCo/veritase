@@ -3,8 +3,8 @@ import React from 'react';
 
 function EduSystemCard({card}: {card: any}) {
   return (
-    <div className="p-4 observer">
-      <div className={`card`}>
+    <div className="p-4 observer w-full">
+      <div className={`card w-full`}>
         <div className="bg-blue-4 rounded-t-md py-8 md:py-12 px-4 md:px-4 flex gap-2 justify-center items-center text-white ">
           <p className="text-2xl md:text-3xl font-medium text-nowrap">{card.title} / </p>
           <p className="text-lg md:text-xl font-medium mt-2">
