@@ -22,7 +22,7 @@ function EduSystemCard({card}: {card: any}) {
             {card.desc.map((text: any, i: number) => (
               <div key={i} className="px-2">
                 <p className="text-2xl font-semibold text-blue-4">{text.title}</p>
-                <div className="px-5 text-xl font-medium">
+                <div className="px-5 text-xl font-medium mt-1">
                   {text.content.map((text: any, i: number) => (
                     <p key={i} className="list-item text-lg">
                       {text}
