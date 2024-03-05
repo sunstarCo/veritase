@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
+import SystemCard from '@/components/education/SystemCard';
 
 const cardData = [
   {
@@ -46,21 +47,7 @@ export default function Page() {
       <Breadcrumb title="시스템소개" sub_text="베리타스 교육의 시스템" />
       <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full px-2 sm:px-6 md:px-12 my-16 break-keep opacity-0 animate-showUpper">
         {cardData.map(card => (
-          <div key={card.step} className={`${card.color} text-white w-full`}>
-            <div className="border-b-2 py-6 px-6">
-              <p className="font-semibold text-4xl">{card.step}단계</p>
-              <p className="font-medium mt-2 text-2xl">{card.title}&nbsp;&nbsp;</p>
-            </div>
-            <div className="min-h-[300px] md:min-h-[500px] h-[65vh] max-h-[300px] md:max-h-[800px] flex flex-col justify-end">
-              <div className="px-10 space-y-7 text-xl font-medium h-[200px] md:h-[350px]">
-                {card.desc.map((text, i) => (
-                  <p key={i} className="list-item">
-                    {text}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
+          <SystemCard card={card} key={card.step} />
         ))}
       </div>
     </div>

@@ -3,7 +3,10 @@ import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 
+import './style.css';
+
 import Breadcrumb from '@/components/common/Breadcrumb';
+import EduSystemCard from '@/components/education/EduSystemCard';
 
 const cardData = [
   {
@@ -101,32 +104,11 @@ export default function Page() {
           </h2>
         </div>
         <div
-          className={`flex flex-col md:flex-row gap-4 max-w-[1700px] mx-auto my-20 break-keep opacity-0 ${
+          className={`flex flex-col md:flex-row gap-2 max-w-[1700px] mx-auto items-center justify-center my-20 break-keep opacity-0 ${
             position >= startPoint.current && 'animate-showUpper'
           }`}>
           {cardData.map((card, i) => (
-            <div key={i} className="w-full">
-              <div className="bg-blue-4 rounded-t-md py-8 px-6 md:p-12 text-white max-md:min-h-36 max-[870px]:min-h-56">
-                <p className="text-2xl md:text-4xl font-semibold">{card.title}</p>
-                <p className="text-xl md:text-2xl font-medium mt-2">
-                  ({card.times[0]}회 ~ {card.times[1]}회)
-                </p>
-              </div>
-              <div className="bg-[#f5f5f5] rounded-b-md pt-20 md:pt-52 px-6 h-[280px] md:h-[500px]">
-                {card.desc.map((text, i) => (
-                  <div key={i} className="px-2 mb-4 min-h-32">
-                    <p className="text-2xl font-semibold text-blue-4">{text.title}</p>
-                    <div className="px-8 py-2 text-lg font-medium">
-                      {text.content.map((text, i) => (
-                        <p key={i} className="list-item">
-                          {text}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <EduSystemCard key={i} card={card} />
           ))}
         </div>
       </div>

@@ -62,6 +62,11 @@ const config: Config = {
             }
   
           },
+        rotateCard : {
+          to:{
+            transform: 'perspective(800px) rotateY(180deg)'
+          }
+        } ,
         ink: {
           to: {
             width: '180%',
@@ -94,7 +99,8 @@ const config: Config = {
         cardHover:'cardHover 0.3s ease-in-out forwards',
         reShow:'reShow 1.8s ease-in-out forwards',
         showUpper: "showUpper 0.5s ease-in-out forwards",
-        blink: "blink 1.5s infinite"
+        blink: "blink 1.5s infinite",
+        rotateCard: "rotateCard 0.3 ease-in-out forwards"
       }
     },
   },

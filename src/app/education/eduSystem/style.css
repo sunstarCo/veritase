@@ -1,0 +1,19 @@
+.card {
+  display: inline-grid;
+  transition: transform 0.5s;
+  transform: perspective(1000px) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.card > * {
+  grid-area: 1 / 1 / 1;
+  backface-visibility: hidden;
+}
+
+.observer:hover > .card {
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
