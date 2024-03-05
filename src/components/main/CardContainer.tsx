@@ -11,16 +11,16 @@ const cardData = [
     text: '여러분의 목표를 달성해드립니다',
   },
   {
-    img: 'bg-[url(/mainPage/입시전략.jpg)] bg-center bg-cover',
-    path: '/plan/eduPeriod',
-    title: '입시전략',
-    text: '지금부터의 전략이 중요합니다',
-  },
-  {
     img: 'bg-[url(/mainPage/교육시스템.jpg)] bg-cover bg-center',
     path: '/education/system',
     title: '교육시스템',
     text: '목표달성까지 함께합니다',
+  },
+  {
+    img: 'bg-[url(/mainPage/입시전략.jpg)] bg-center bg-cover',
+    path: '/plan/eduPeriod',
+    title: '입시전략',
+    text: '지금부터의 전략이 중요합니다',
   },
   {
     img: 'bg-[url(/mainPage/후기.jpg)] bg-center bg-cover',
