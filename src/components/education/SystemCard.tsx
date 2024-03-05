@@ -7,8 +7,8 @@ function SystemCard({card}: {card: any}) {
         <p className="font-semibold text-3xl">{card.step}단계</p>
         <p className="font-medium mt-2 text-2xl">{card.title}&nbsp;&nbsp;</p>
       </div>
-      <div className="min-h-[250px] md:min-h-[500px] max-h-[300px] md:max-h-[700px] flex flex-col justify-end">
-        <div className="px-10 space-y-2 text-xl lg:font-medium mb-14">
+      <div className="min-h-[350px] md:min-h-[500px] max-h-[300px] md:max-h-[700px] flex flex-col justify-end">
+        <div className="px-6 space-y-2 text-2xl sm:text-xl lg:font-medium mb-14">
           {card.desc.map((text: any, i: number) => (
             <p key={i} className="">
               {text}
