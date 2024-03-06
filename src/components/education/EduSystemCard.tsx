@@ -20,11 +20,11 @@ function EduSystemCard({card}: {card: any}) {
           </div>
           <div className="bg-[#e7e7e7] rounded-b-md pt-20 md:pt-44 px-4 pb-16 flex flex-col justify-end h-[340px] md:h-[420px]">
             {card.desc.map((text: any, i: number) => (
-              <div key={i} className="px-2">
+              <div key={i} className="px-2 mt-1">
                 <p className="text-2xl font-semibold text-blue-4">{text.title}</p>
-                <div className="px-5 text-xl font-medium mt-1">
+                <div className="text-xl font-medium">
                   {text.content.map((text: any, i: number) => (
-                    <p key={i} className="list-item text-lg">
+                    <p key={i} className="text-lg">
                       {text}
                     </p>
                   ))}
