@@ -15,6 +15,12 @@ export default function PaginationContoller({pageParams, totalPages, admin = fal
     router.push(`/${admin ? 'admin' : 'news'}?page=${page}`);
   };
   return (
-    <Pagination defaultCurrent={pageParams} onChange={onChangePagination} current={pageParams} total={totalPages} />
+    <Pagination
+      defaultCurrent={pageParams}
+      onChange={onChangePagination}
+      current={pageParams}
+      total={totalPages}
+      showSizeChanger={false}
+    />
   );
 }
