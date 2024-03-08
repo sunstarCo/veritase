@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Image from 'next/image';
+
 import Breadcrumb from '@/components/common/Breadcrumb';
 import SystemCard from '@/components/education/SystemCard';
 
@@ -45,10 +47,37 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center">
       <Breadcrumb title="시스템소개" sub_text="베리타스 교육의 시스템" />
-      <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full px-2 sm:px-6 md:px-12 my-16 break-keep opacity-0 animate-showUpper">
-        {cardData.map(card => (
-          <SystemCard card={card} key={card.step} />
-        ))}
+      <div className="w-full max-w-[1700px] px-2 md:px-12 mx-auto">
+        <div className="relative w-full h-[calc(100vh-200px)] mt-10">
+          <Image
+            src={'/eduSystem/교육시스템.jpg'}
+            alt=""
+            sizes="100"
+            width={0}
+            height={0}
+            fill
+            className="object-cover object-center max-sm:hidden"
+            priority
+          />
+          <Image
+            src={'/eduSystem/교육시스템모바일.jpg'}
+            alt=""
+            sizes="100"
+            width={0}
+            height={0}
+            fill
+            className="object-cover object-center sm:hidden"
+            priority
+          />
+          <h2 className="absolute font-medium text-5xl md:text-6xl tracking-wide text-white top-1/3 px-4 md:left-[10%] opacity-0 animate-showUpper">
+            시스템소개
+          </h2>
+        </div>
+        <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full  my-16 break-keep opacity-0 animate-showUpper">
+          {cardData.map(card => (
+            <SystemCard card={card} key={card.step} />
+          ))}
+        </div>
       </div>
     </div>
   );
