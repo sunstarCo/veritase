@@ -30,17 +30,23 @@ export default function MainBanner() {
         placeholder="blur"
         priority
       />
+      {/* 가독성용 스크림. 이미지 뒤·텍스트 앞에 놓이려면 이 DOM 순서를 유지해야 한다
+          (전부 z-index 없는 absolute 라 배치 순서가 곧 쌓임 순서다). */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-transparent" />
+
       <div className="flex flex-col min-[440px]:flex-row absolute top-[15%] sm:top-[30%] break-keep w-full px-[10%]">
         <h1
           className={`text-white text-nowrap text-[3rem] lg:text-[4.5rem] font-semibold ${
-            isImageLoaded && `transition-transform animate-show`
-          } opacity-0 px-1`}>
+            isImageLoaded ? 'transition-transform animate-show' : ''
+          } opacity-0 px-1`}
+          style={{textShadow: '0 2px 10px rgba(0,0,0,0.35)'}}>
           수능단기 고득점,&nbsp;
         </h1>
         <h1
           className={`text-white text-[3rem] lg:text-[4.5rem] max-[440px]:ml-auto font-semibold ${
-            isImageLoaded && `transition-transform animate-show_delay_1s`
-          } opacity-0`}>
+            isImageLoaded ? 'transition-transform animate-show_delay_1s' : ''
+          } opacity-0`}
+          style={{textShadow: '0 2px 10px rgba(0,0,0,0.35)'}}>
           가능하다!
         </h1>
       </div>
