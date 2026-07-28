@@ -82,9 +82,8 @@ export default function Page() {
           <Image
             src={'/eduSystem/학습관리시스템.jpg'}
             alt=""
-            sizes="100"
-            width={0}
-            height={0}
+            // sm 미만에서는 CSS로 숨겨지므로 최소 크기만 받는다
+            sizes="(max-width: 639px) 1px, (max-width: 1700px) 100vw, 1700px"
             fill
             className="object-cover object-center max-sm:hidden"
             priority
@@ -92,9 +91,7 @@ export default function Page() {
           <Image
             src={'/eduSystem/학습관리시스템_모바일.jpg'}
             alt=""
-            sizes="100"
-            width={0}
-            height={0}
+            sizes="(max-width: 639px) 100vw, 1px"
             fill
             className="object-cover object-center sm:hidden"
             priority

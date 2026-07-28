@@ -12,6 +12,8 @@ export default function MainBanner() {
       <Image
         src={MainBannerImg}
         fill
+        // sm 미만에서는 CSS로 숨겨지므로 최소 크기만 받는다
+        sizes="(max-width: 639px) 1px, 100vw"
         className="object-cover object-left-bottom max-sm:hidden"
         alt="메인배너"
         onLoad={() => setIsImageLoaded(true)}
@@ -21,6 +23,7 @@ export default function MainBanner() {
       <Image
         src={MainBannerImgMo}
         fill
+        sizes="(max-width: 639px) 100vw, 1px"
         className="object-cover object-bottom sm:hidden"
         alt="메인배너"
         onLoad={() => setIsImageLoaded(true)}

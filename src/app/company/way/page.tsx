@@ -17,7 +17,8 @@ export default function Page() {
         <Image
           src={WayBanner}
           className="object-right object-cover max-sm:hidden"
-          sizes="100"
+          // sm 미만에서는 CSS로 숨겨지므로 최소 크기만 받는다
+          sizes="(max-width: 639px) 1px, 100vw"
           fill
           alt="회사소개배너"
           onLoad={() => setIsImageLoaded(true)}
@@ -28,7 +29,7 @@ export default function Page() {
           src={WayBannerMo}
           className="object-right object-cover sm:hidden"
           fill
-          sizes="100"
+          sizes="(max-width: 639px) 100vw, 1px"
           alt="회사소개배너"
           priority
           placeholder="blur"

@@ -28,7 +28,7 @@ export default function TeacherBox({num, position}: ITeacherProps) {
             alt="수능강사이미지"
             className={`${position} object-cover`}
             fill
-            sizes="100"
+            sizes="(max-width: 639px) 100vw, 50vw"
           />
         </div>
         <div className="w-full flex items-center sm:w-1/2 sm:h-[29rem] bg-[#F3F3F3]">
