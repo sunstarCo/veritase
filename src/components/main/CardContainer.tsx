@@ -38,12 +38,13 @@ const cardData = [
 
 function CardContainer() {
   return (
-    <div className="flex gap-4 w-full max-w-[1760px] mx-auto mb-20 overflow-x-scroll lg:overflow-hidden">
+    <div className="flex gap-4 w-full mb-20 overflow-x-scroll lg:overflow-hidden">
       {cardData.map((card, i) => (
         <Link
           key={i}
           href={card.path}
-          className={`card relative min-h-[400px] md:min-h-[500px] xl:min-h-[600px] flex items-end min-w-[210px] md:min-w-[260px] md:w-1/4 hover:w-[50%] break-keep transition-[width] duration-500 ease-out rounded-lg overflow-hidden`}>
+          // 높이는 각 구간의 카드 폭 기준 2:3. hover 로 폭이 변해 aspect-ratio 는 쓸 수 없다
+          className={`card relative min-h-[320px] md:min-h-[400px] lg:min-h-[430px] xl:min-h-[490px] 2xl:min-h-[570px] flex items-end min-w-[210px] md:min-w-[260px] md:w-1/4 hover:w-[50%] break-keep transition-[width] duration-500 ease-out rounded-lg overflow-hidden`}>
           <Image
             src={card.img}
             alt=""
