@@ -2,34 +2,43 @@ import React from 'react';
 
 import Link from 'next/link';
 
-// 본문 하단 영역 이동 네비게이션.
-// 상단 Breadcrumb 는 전체폭 균등 탭 + 굵은 밑줄이므로, 여기서는 겹치지 않도록
-// 알약(pill) 칩을 나열하는 형태로 구분한다.
-// 색상은 시안 팔레트(#1a4bc4 / #f2f5fc / #dde5fa / #e4e7ee)와 같다.
-// hover 가 필요해 인라인 스타일 대신 Tailwind 클래스로 둔다(임의값은 리터럴이어야 JIT 가 읽는다).
+export type DocNavItem = {label: string; path: string};
 
-export type DocNavItem = {label: string; path: string; active?: boolean};
+/** 양끝이 비어도 반대쪽 위치가 흔들리지 않도록 자리를 차지한다 */
+function Side({item, dir}: {item?: DocNavItem; dir: 'prev' | 'next'}) {
+  if (!item) return <div className="flex-1" />;
 
-export default function DocNav({title, items}: {title: string; items: DocNavItem[]}) {
+  const isPrev = dir === 'prev';
   return (
-    <nav aria-label={title} className="mt-14 border-t border-[#e4e7ee] pt-7 md:mt-20 md:pt-9">
-      <p className="mb-4 text-sm md:text-base font-bold tracking-[0.02em] text-[#7a8090] md:mb-5">{title}</p>
-      <ul className="flex flex-wrap gap-2 md:gap-3">
-        {items.map(item => (
-          <li key={item.path}>
-            <Link
-              href={item.path}
-              aria-current={item.active ? 'page' : undefined}
-              className={`block rounded-full px-4 py-2.5 text-base md:text-lg font-bold transition-colors md:px-6 md:py-3 ${
-                item.active
-                  ? 'bg-[#1a4bc4] text-white'
-                  : 'bg-[#f2f5fc] text-[#1a4bc4] hover:bg-[#dde5fa]'
-              }`}>
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <Link
+      href={item.path}
+      className={`group flex flex-1 items-center gap-4 rounded-xl px-5 py-6 transition-colors hover:bg-[#f2f5fc] md:gap-6 md:px-8 md:py-8 ${
+        isPrev ? 'justify-start' : 'flex-row-reverse justify-start text-right'
+      }`}>
+      <span
+        aria-hidden
+        className="flex-none text-2xl font-bold text-[#c8cedb] transition-colors group-hover:text-[#1a4bc4] md:text-4xl">
+        {isPrev ? '←' : '→'}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm md:text-base font-bold tracking-[0.02em] text-[#7a8090]">
+          {isPrev ? '이전' : '다음'}
+        </span>
+        <span className="mt-1 block text-lg md:text-2xl font-bold text-[#1b2230] transition-colors group-hover:text-[#1a4bc4]">
+          {item.label}
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+export default function DocNav({prev, next}: {prev?: DocNavItem; next?: DocNavItem}) {
+  return (
+    <nav
+      aria-label="영역 이동"
+      className="mt-14 flex items-stretch justify-between gap-3 border-t border-[#e4e7ee] pt-6 md:mt-20 md:pt-8">
+      <Side item={prev} dir="prev" />
+      <Side item={next} dir="next" />
     </nav>
   );
 }
