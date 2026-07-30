@@ -3,22 +3,27 @@ import React from 'react';
 import Image from 'next/image';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
+import AdmissionChanges2028 from '@/components/curriculum/AdmissionChanges2028';
 
 export default function Page() {
   return (
     <div>
       <Breadcrumb title="2028 대입 개편안" />
-      <div className="max-w-[1700px] mx-auto break-keep px-6 sm:px-14">
+      <div className="max-w-[1440px] mx-auto break-keep px-6 md:px-10">
+        <AdmissionChanges2028 />
         <div className="flex flex-col items-start md:flex-row gap-11 mt-24">
+          {/* 페이지 폭이 줄어도 이미지는 기존 크기(1700px 래퍼 기준 772px)를 유지한다.
+              flex-none 으로 줄어들지 않게 하되, md 구간 좁은 화면에서는 텍스트가 눌리므로
+              max-w 로 상한만 둔다. 줄어든 폭은 오른쪽 텍스트가 흡수한다. */}
           <Image
             src={'/sat/대입개편안.png'}
             alt="대입개편안"
             width={0}
             height={0}
-            sizes="100"
-            className="md:w-1/2 w-full object-contain"
+            sizes="(max-width: 768px) 100vw, 772px"
+            className="w-full md:w-[772px] md:max-w-[60%] md:flex-none object-contain"
           />
-          <div className="md:w-1/2 w-full">
+          <div className="w-full md:flex-1 md:min-w-0">
             <p className="text-2xl font-medium mb-10">통합형·융합형 수능 과목체계로 개편</p>
             <div className="space-y-8 px-4">
               <p className="list-item">
