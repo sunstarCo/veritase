@@ -73,12 +73,16 @@ const menus = [
         path: '/tips?subject=영어',
       },
       {
-        name: '사탐',
+        name: '사회탐구',
         path: '/tips?subject=사탐',
       },
       {
-        name: '과탐',
+        name: '과학탐구',
         path: '/tips?subject=과탐',
+      },
+      {
+        name: '직업탐구',
+        path: '/tips?subject=직탐',
       },
     ],
   },
