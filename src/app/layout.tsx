@@ -33,7 +33,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <Header />
           </Suspense>
           <Suspense fallback={<Loading lodingText="로딩중" />}>
-            <div className="min-h-screen pt-[90px] sm:pt-[99px] md:pt-[122px] lg:pt-[87.29px] xl:pt-[123.3px]">
+            <div className="min-h-screen pb-28 md:pb-40 pt-[90px] sm:pt-[99px] md:pt-[122px] lg:pt-[87.29px] xl:pt-[123.3px]">
               {children}
             </div>
           </Suspense>
