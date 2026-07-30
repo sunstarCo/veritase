@@ -1,10 +1,7 @@
 import React from 'react';
 
-// 시안(2028 대입 전형 안내)의 색·구조를 옮긴 정적 안내 블록.
-// 크기는 시안의 고정 px 대신 rem 기반 Tailwind 스케일을 쓴다 —
-// 이 사이트는 globals.css 에서 루트 폰트를 11/13/14/16px 로 바꾸므로
-// 그래야 아래 본문과 같은 비율로 함께 커진다.
-// 색상값은 데이터에서 나오므로 Tailwind 임의값 대신 인라인 스타일을 쓴다(JIT 가 못 읽는다).
+// 크기는 rem 스케일. globals.css 가 루트 폰트를 11~16px 로 바꾸므로 px 로 두면 이 블록만 따로 논다.
+// 색상은 데이터에서 오므로 인라인 스타일. Tailwind JIT 는 리터럴 클래스만 읽는다.
 
 type Grade = {label: string; pct: number; opacity: number};
 
@@ -16,11 +13,9 @@ const GRADES: Grade[] = [
   {label: '5등급', pct: 10, opacity: 0.5},
 ];
 
-// stat 이 있으면 왼쪽 열에 통계숫자가, 없으면 eyebrow 가 들어간다
 type Card = {eyebrow: string; stat?: string; title: string; body: string; chart?: boolean};
 
 // title 은 일부 구간을 강조해야 해서 문자열이 아닌 노드를 받는다.
-// statAccent 는 통계숫자만 라벨보다 한 톤 진하게 쓸 때 지정한다(없으면 accent 를 그대로 씀).
 type Section = {
   no: string;
   accent: string;
@@ -36,8 +31,6 @@ const ACCENT_RED = '#dc2626';
  * 글자 위 방점. CSS text-emphasis 는 점을 그릴 자리를 줄 높이에 더해버려
  * 제목 박스가 커지고 옆의 숫자 배지 정렬이 틀어진다.
  * 그래서 absolute 로 띄워 레이아웃에 영향을 주지 않게 한다.
- * 한글은 글자 폭이 일정하므로 justify-around 로 각 글자 중앙에 점이 놓인다.
- * 크기·높이는 em 이라 폰트 크기가 바뀌어도 비율이 유지된다.
  */
 function EmphasisDots({children}: {children: string}) {
   return (
@@ -76,7 +69,6 @@ const SECTIONS: Section[] = [
   {
     no: '2',
     accent: '#059669',
-    // 같은 초록 계열에서 한 단계만 진하게 (emerald 600 → 700)
     statAccent: '#047857',
     title: '수시는 늘고, 정시는 줄어든다',
     desc: '전체적인 모집 기조가 "수시확대", "정시축소"로 움직이고 있습니다.',
@@ -165,9 +157,7 @@ export default function AdmissionChanges2028() {
       <div className="mt-12 md:mt-16 flex flex-col gap-12 md:gap-16">
         {SECTIONS.map(section => (
           <div key={section.no}>
-            {/* 배지 크기와 gap 은 전부 고정 px. Tailwind 의 w- 나 gap- 유틸리티는 rem 기반이라
-                루트 폰트가 11~16px 로 변하는 이 사이트에서는 실제 값이 흔들리고,
-                아래 부가설명 들여쓰기(배지 너비 + gap) 계산과 어긋난다 */}
+            {/* 고정 px. Tailwind w-/gap- 은 rem 이라 루트 폰트에 따라 흔들려 아래 들여쓰기 계산과 어긋난다 */}
             <div className="flex items-center gap-[12px] md:gap-[16px]">
               <span
                 className="grid flex-none place-items-center rounded-full font-bold text-white w-[44px] h-[44px] text-[21px] md:w-[56px] md:h-[56px] md:text-[30px]"
@@ -176,18 +166,13 @@ export default function AdmissionChanges2028() {
               </span>
               <h3 className="text-xl md:text-[1.75rem] font-extrabold leading-tight text-[#0f172a]">{section.title}</h3>
             </div>
-            {/* 제목 아래 내용 전체를 제목 왼쪽 끝에 맞춘다. 들여쓰기를 여기 한 곳에서만
-                선언해야 부가설명과 항목들이 따로 놀지 않는다.
-                값은 배지 너비 + gap (44+12=56 / 56+16=72) — 배지 크기를 바꾸면 같이 바꿀 것 */}
+            {/* 배지 너비 + gap (44+12 / 56+16). 배지 크기를 바꾸면 이 값도 바꿔야 한다 */}
             <div className="pl-[56px] md:pl-[72px]">
               <p className="mt-1 md:mt-1.5 text-sm md:text-base text-[#64748b]">{section.desc}</p>
-
-              {/* 왼쪽 라벨(또는 통계) / 오른쪽 본문, 항목 사이는 구분선으로만 나눈다 */}
               <div className="mt-5 md:mt-7 divide-y divide-[#e8ecf2]">
                 {section.cards.map(card => (
                   <div key={card.title} className="grid gap-2 py-5 md:grid-cols-[190px_1fr] md:gap-8 md:py-7">
                     <div>
-                      {/* 숫자만 있으면 무엇을 뜻하는지 알 수 없어 라벨을 항상 함께 둔다 */}
                       <div className="text-base md:text-xl font-bold leading-snug" style={{color: section.accent}}>
                         {card.eyebrow}
                       </div>

@@ -1,9 +1,7 @@
 import React from 'react';
 
-// 시안(Tips-*, Gyogwa/Jonghap/Nonsul/Jeongsi-PDF.dc.html) 의 공통 렌더러.
-// 10개 시안이 CSS 를 그대로 공유하므로 렌더러 하나에 모으고 내용만 데이터로 주입한다.
-// 시안은 pt 기반 인쇄용이라 크기·간격은 교육과정 블록(AdmissionChanges2028)과 같은
-// rem 스케일·리듬으로 맞췄다(이 사이트는 루트 폰트가 11~16px 로 변한다).
+// 학습팁·입시전략 10개 시안의 공통 렌더러. 내용은 데이터로 주입한다.
+// 크기는 rem 스케일. globals.css 가 루트 폰트를 11~16px 로 바꾼다.
 const C = {
   blue: '#1a4bc4',
   dark: '#1b2230',
@@ -18,7 +16,6 @@ const C = {
   tblHead: '#f6f8fc',
 } as const;
 
-/** 본문 강조 — 파란 굵은 글씨 (.k-em / .j-em / .p-em) */
 export function Em({children}: {children: React.ReactNode}) {
   return (
     <span className="font-bold" style={{color: C.blue}}>
@@ -36,7 +33,6 @@ export function Mark({children}: {children: React.ReactNode}) {
   );
 }
 
-/** 문단 첫머리 굵은 도입부 */
 export function Lead({children}: {children: React.ReactNode}) {
   return (
     <strong className="font-bold" style={{color: C.dark}}>
@@ -47,7 +43,6 @@ export function Lead({children}: {children: React.ReactNode}) {
 
 export type ListItem = {bullet?: string; body: React.ReactNode};
 
-/** 번호(01/02) 또는 점(·) 목록 (.j-list). 행 본문 안에도 넣을 수 있다 */
 export function BulletList({items, className = ''}: {items: ListItem[]; className?: string}) {
   return (
     <ul className={`flex flex-col gap-3 md:gap-4 ${className}`}>
@@ -90,9 +85,7 @@ export type DocSection = {
     rows: [React.ReactNode, React.ReactNode, React.ReactNode][];
   };
   list?: ListItem[];
-  /** 표 아래 보충 문단 */
   tableNote?: React.ReactNode;
-  /** 옅은 배경 박스로 감싼 마무리 문단 */
   footnote?: React.ReactNode;
 };
 
@@ -250,7 +243,6 @@ export default function DocArticle({content}: {content: DocContent}) {
           )}
 
           {section.table && (
-            // 좁은 화면에서 표가 페이지를 밀지 않도록 표 자체만 가로 스크롤한다.
             // globals.css 가 th/td 에 1px #484848, table 에 2px black 을 전역으로 걸어
             // 사방에 진한 선이 덧그려지므로 border-0 으로 끊고 시안 선만 다시 지정한다.
             <div className="mt-5 overflow-x-auto md:mt-7">
