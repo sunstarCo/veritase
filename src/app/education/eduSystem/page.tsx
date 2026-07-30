@@ -77,7 +77,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumb title="학습관리시스템" sub_text="베리타스 교육의 체계적인 학습시스템" />
-      <div className="w-full max-w-[1700px] px-2 md:px-12 mx-auto">
+      <div className="w-full max-w-[1440px] px-2 md:px-12 mx-auto">
         <div className="relative w-full h-[calc(100vh-200px)] mt-10">
           <Image
             src={'/eduSystem/학습관리시스템.jpg'}
@@ -114,7 +114,7 @@ export default function Page() {
           </div>
         </div>
         <div
-          className={`flex flex-col md:flex-row gap-2 max-w-[1700px] mx-auto items-center justify-center my-20 break-keep opacity-0 ${
+          className={`flex flex-col md:flex-row gap-2 max-w-[1440px] mx-auto items-center justify-center my-20 break-keep opacity-0 ${
             position >= startPoint.current && 'animate-showUpper'
           }`}>
           {cardData.map((card, i) => (

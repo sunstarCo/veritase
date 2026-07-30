@@ -106,7 +106,7 @@ export default function Page() {
         title="시기별학습법"
         sub_text="연간 주요 입시 일정에 따라 준비해야 할 사항과 마음가짐을 정리해 두도록 하자!"
       />
-      <div className="max-w-[1700px] mx-auto px-4 md:px-12 my-12">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-12 my-12">
         <div className="flex flex-col gap-6 break-keep">
           {periodData.map((content, i) => (
             <Card content={content} key={i} />

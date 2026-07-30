@@ -47,7 +47,7 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center">
       <Breadcrumb title="시스템소개" sub_text="베리타스 교육의 시스템" />
-      <div className="w-full max-w-[1700px] px-2 md:px-12 mx-auto">
+      <div className="w-full max-w-[1440px] px-2 md:px-12 mx-auto">
         <div className="relative w-full h-[calc(100vh-200px)] mt-10">
           <Image
             src={'/eduSystem/교육시스템.jpg'}
@@ -83,7 +83,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1700px] w-full  my-16 break-keep opacity-0 animate-showUpper">
+        <div className="flex flex-col max-md:gap-2 md:flex-row max-w-[1440px] w-full  my-16 break-keep opacity-0 animate-showUpper">
           {cardData.map(card => (
             <SystemCard card={card} key={card.step} />
           ))}

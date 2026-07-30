@@ -43,7 +43,7 @@ export default function Page() {
           <p className=" font-bold text-5xl sm:text-6xl ">찾아오시는 길</p>
         </div>
       </BannerLayout>
-      <article className="max-w-[1700px] mx-auto p-8 px-4 md:px-10">
+      <article className="max-w-[1440px] mx-auto p-8 px-4 md:px-10">
         <div className="flex flex-col gap-7 justify-center items-start ">
           <section className="w-full">
             <div className="w-full h-[35rem] border-2 border-blue-5">

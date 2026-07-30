@@ -12,14 +12,20 @@ interface Props {
     active?: boolean;
   }[];
   curParams?: string;
+  /** 아래 본문 컨테이너와 좌우 끝을 맞추기 위한 최대 폭(px). 기본은 사이트 표준 1440 */
+  maxWidth?: number;
 }
 
-function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***'}: Props) {
+function Breadcrumb({title, sub_text, sub_titles = [], curParams = '***', maxWidth = 1440}: Props) {
   const sub_len = sub_titles.length;
   return (
-    <div className="w-full sm:max-w-[1700px] mx-auto px-2 sm:px-6 md:px-12 break-keep mt-16">
-      <div className="flex items-center justify-between px-5 gap-8">
-        <h3 className="text-xl sm:text-2xl md:text-[1.75rem] font-bold px-4">{title}</h3>
+    // 좌우 여백은 본문 컨테이너와 같은 px-6 md:px-10 으로 통일한다.
+    // 이전에는 컨테이너 px-12 + 안쪽 px-5 + 제목 px-4 가 겹쳐 제목만 84px 들어가 있었고,
+    // 같은 Breadcrumb 안에서도 제목과 탭의 왼쪽 끝이 서로 달랐다.
+    // 폭이 인자로 들어오므로 Tailwind 임의값(JIT 가 리터럴만 읽는다) 대신 인라인 스타일을 쓴다.
+    <div className="w-full mx-auto px-6 md:px-10 break-keep mt-16" style={{maxWidth}}>
+      <div className="flex items-center justify-between gap-8">
+        <h3 className="text-xl sm:text-2xl md:text-[1.75rem] font-bold">{title}</h3>
         {sub_text && <p className="text-sub-5">{sub_text}</p>}
       </div>
       {sub_len === 0 || (
