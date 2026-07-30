@@ -151,7 +151,8 @@ function Header() {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-screen text-nowrap flex justify-center lg:shadow-[1px_4px_4px_0_rgba(53,60,73,0.08)] z-20 bg-white`}>
+      // w-screen(100vw) 은 스크롤바 폭을 포함해 본문보다 넓어진다. 그만큼 중심이 어긋난다
+      className={`fixed top-0 left-0 w-full text-nowrap flex justify-center lg:shadow-[1px_4px_4px_0_rgba(53,60,73,0.08)] z-20 bg-white`}>
       <div
         className={`w-full xl:max-w-[1640px] ${
           forceBlock && 'pb-11'
