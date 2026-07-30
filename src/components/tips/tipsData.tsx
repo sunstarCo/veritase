@@ -6,7 +6,7 @@ import {DocContent, Em, Lead, Mark} from '@/components/common/DocArticle';
 // 검색 파라미터(?subject=) 값이 키다.
 
 const KOREAN: DocContent = {
-  title: '수능 국어 학습전략',
+  title: '국어 학습전략',
   lead: (
     <>
       2028학년도 대입수능 국어영역은 선택과목(화법과 작문, 언어와 매체)이 폐지되고, 모든 수험생이 동일한 공통과목으로
@@ -105,7 +105,7 @@ const KOREAN: DocContent = {
 };
 
 const MATH: DocContent = {
-  title: '수능 수학 학습전략',
+  title: '수학 학습전략',
   lead: (
     <>
       2028학년도 대입수능 수학영역은 문·이과 구분이 없는 <Mark>완전 통합형</Mark>으로 개편됩니다. 미적분·기하·확률과 통계
@@ -216,7 +216,7 @@ const MATH: DocContent = {
 };
 
 const ENGLISH: DocContent = {
-  title: '수능 영어 학습전략',
+  title: '영어 학습전략',
   lead: (
     <>
       2028학년도 대입수능 영어영역은 국어·수학·탐구와 달리 형식상의 대대적 개편이 없습니다.{' '}
@@ -314,7 +314,7 @@ const ENGLISH: DocContent = {
 };
 
 const SOCIAL: DocContent = {
-  title: '수능 통합사회 학습전략',
+  title: '통합사회 학습전략',
   lead: (
     <>
       2028학년도 대입수능부터 사회탐구 영역은 선택과목 방식이 폐지되고, 모든 수험생이 <Mark>‘통합사회’</Mark> 한 과목을
@@ -410,7 +410,7 @@ const SOCIAL: DocContent = {
 };
 
 const SCIENCE: DocContent = {
-  title: '수능 과학탐구 학습전략',
+  title: '통합과학 학습전략',
   lead: (
     <>
       2028학년도 대입수능 과학탐구 영역은 물리·화학·생명과학·지구과학 선택 체제가 폐지되고, 모든 수험생이{' '}
@@ -508,7 +508,7 @@ const SCIENCE: DocContent = {
 };
 
 const VOCATIONAL: DocContent = {
-  title: '수능 직업탐구 영역 개편',
+  title: '직업탐구 영역 개편',
   lead: (
     <>
       2028학년도 대입수능부터 직업탐구 영역은 선택과목이 완전히 폐지되고, <Mark>‘성공적인 직업 생활’ 1개 과목</Mark>만
@@ -606,7 +606,7 @@ export const TIPS: {param: string; tab: string; content: DocContent}[] = [
   {param: '국어', tab: '국어영역', content: KOREAN},
   {param: '수학', tab: '수학영역', content: MATH},
   {param: '영어', tab: '영어영역', content: ENGLISH},
-  {param: '사탐', tab: '사회탐구', content: SOCIAL},
-  {param: '과탐', tab: '과학탐구', content: SCIENCE},
+  {param: '사탐', tab: '통합사회', content: SOCIAL},
+  {param: '과탐', tab: '통합과학', content: SCIENCE},
   {param: '직탐', tab: '직업탐구', content: VOCATIONAL},
 ];

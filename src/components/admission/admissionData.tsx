@@ -6,7 +6,7 @@ import {BulletList, DocContent, Em, Lead, Mark} from '@/components/common/DocArt
 // 수시 3종은 ?type= 값이 키, 정시는 /plan/sat 전용이다.
 
 const GYOGWA: DocContent = {
-  title: '학생부 교과전형 전략',
+  title: '학생부 교과전형',
   lead: (
     <>
       교과전형은 여전히 전체 모집인원의 가장 큰 비중을 차지하는 전형입니다. 다만{' '}
@@ -130,7 +130,7 @@ const GYOGWA: DocContent = {
 };
 
 const JONGHAP: DocContent = {
-  title: '학생부 종합전형 전략',
+  title: '학생부 종합전형',
   lead: (
     <>
       내신 5등급제 전환으로 성적만으로 학생을 변별하기 어려워지면서, 주요 대학과 수도권 대학을 중심으로{' '}
@@ -253,7 +253,7 @@ const JONGHAP: DocContent = {
 };
 
 const NONSUL: DocContent = {
-  title: '논술전형 전략',
+  title: '논술전형',
   lead: (
     <>
       논술전형은 내신 부담이 가장 적은 수시 전형입니다. 내신 5등급제 전환으로 교과 성적의 변별력이 약해지면서{' '}
@@ -386,7 +386,7 @@ const NONSUL: DocContent = {
 };
 
 export const JEONGSI: DocContent = {
-  title: '정시전형 전략',
+  title: '정시전형',
   lead: (
     <>
       기존의 문·이과 선택과목 방식이 폐지되고 모든 수험생이 동일한 과목으로 응시하는 <Mark>통합형 수능</Mark>으로
