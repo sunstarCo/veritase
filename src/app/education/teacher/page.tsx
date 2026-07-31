@@ -16,7 +16,7 @@ export default function Page() {
   return (
     <div>
       <Breadcrumb title="수능강사" sub_text="최고의 강사진으로 구성된 베리타스 교육" />
-      <div className="max-w-[1700px] mx-auto px-6 md:px-12 pt-12 sm:pb-11">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-12 sm:pb-11">
         {arr.map(item => (
           <TeacherBox num={item.id} position={item.position} key={item.id} />
         ))}

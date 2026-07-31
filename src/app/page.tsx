@@ -9,9 +9,12 @@ export default function Home() {
         <MainBanner />
       </BannerLayout>
 
-      <div className="flex items-center flex-col justify-start px-2 md:px-8 mt-20 md:mt-24">
-        <h3 className="w-full max-w-[1760px] text-4xl my-2 font-extrabold font-inter">Meeting / Confidence</h3>
-        <CardContainer />
+      {/* 폭·패딩을 Header 와 동일하게 두어야 로고와 카드의 좌우 끝이 맞는다 */}
+      <div className="flex flex-col items-center mt-20 md:mt-24">
+        <div className="w-full xl:max-w-[1640px] px-6 lg:px-4 xl:px-8">
+          <h3 className="text-4xl my-2 font-extrabold font-inter">Meeting / Confidence</h3>
+          <CardContainer />
+        </div>
       </div>
     </>
   );

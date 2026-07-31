@@ -27,9 +27,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="ko">
       <body className={`${noto_sans_kr.className} ${urbanist.variable} ${inter.variable} min-h-screen`}>
         <Providers>
-          <Header />
+          {/* Header 가 useSearchParams 를 쓰므로 Suspense 로 감싸지 않으면
+              모든 페이지가 클라이언트 렌더링으로 이탈해 빈 HTML 이 나간다 */}
+          <Suspense>
+            <Header />
+          </Suspense>
           <Suspense fallback={<Loading lodingText="로딩중" />}>
-            <div className="min-h-screen pt-[90px] sm:pt-[99px] md:pt-[122px] lg:pt-[87.29px] xl:pt-[123.3px]">
+            <div className="min-h-screen pb-28 md:pb-40 pt-[90px] sm:pt-[99px] md:pt-[122px] lg:pt-[87.29px] xl:pt-[123.3px]">
               {children}
             </div>
           </Suspense>
