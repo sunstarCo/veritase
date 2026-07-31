@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {DocContent, Em, Lead, Mark} from '@/components/common/DocArticle';
+import {Em, Lead, Mark} from '@/components/common/DocArticle';
+
+import type {DocContent} from '@/components/common/DocArticle';
 
 // 시안(Tips-*-PDF.dc.html) 6개의 본문을 그대로 옮긴 데이터.
 // 검색 파라미터(?subject=) 값이 키다.
