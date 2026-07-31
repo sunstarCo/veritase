@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {BulletList, DocContent, Em, Lead, Mark} from '@/components/common/DocArticle';
+import {BulletList, Em, Lead, Mark} from '@/components/common/DocArticle';
+
+import type {DocContent} from '@/components/common/DocArticle';
 
 // 시안(Gyogwa/Jonghap/Nonsul/Jeongsi-PDF.dc.html) 의 본문을 그대로 옮긴 데이터.
 // 수시 3종은 ?type= 값이 키, 정시는 /plan/sat 전용이다.
