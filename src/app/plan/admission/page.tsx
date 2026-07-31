@@ -15,7 +15,7 @@ export default function Page({searchParams: {type}}: {searchParams: {type: strin
   return (
     <div>
       <Breadcrumb title="수시" sub_titles={sub_titles} curParams={type} />
-      <div className="max-w-[1440px] mx-auto break-keep px-6 md:px-10 mt-20 md:mt-28">
+      <div className="max-w-[1440px] mx-auto break-keep px-6 md:px-10 mt-14 md:mt-20">
         <DocArticle content={current.content} />
       </div>
     </div>

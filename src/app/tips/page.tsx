@@ -27,7 +27,7 @@ export default function Page({searchParams: {subject: curParams}}: {searchParams
         sub_titles={sub_titles}
         curParams={curParams}
       />
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-20 md:mt-28 break-keep">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-14 md:mt-20 break-keep">
         <DocArticle content={current.content} />
         <DocNav prev={toNav(index - 1)} next={toNav(index + 1)} />
       </div>
