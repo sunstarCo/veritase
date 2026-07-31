@@ -197,9 +197,10 @@ export default function DocArticle({content}: {content: DocContent}) {
     <article>
       <header className="mb-10 border-b pb-7 md:mb-14 md:pb-9" style={{borderColor: C.headLine}}>
         <h2
-          className="mb-4 text-2xl md:text-4xl font-extrabold leading-[1.35] tracking-[-0.035em]"
+          className="mb-6 flex items-center gap-5 text-2xl md:text-4xl font-extrabold leading-[1.35] tracking-[-0.035em] md:mb-9 md:gap-7"
           style={{color: C.dark}}>
-          {content.title}
+          <span>{content.title}</span>
+          <span aria-hidden className="h-[2px] min-w-8 flex-1" style={{background: C.dark}} />
         </h2>
         <p className="text-base md:text-xl leading-[1.85]" style={{color: C.body}}>
           {content.lead}
