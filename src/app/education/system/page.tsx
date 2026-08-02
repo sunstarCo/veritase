@@ -5,6 +5,10 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/common/Breadcrumb';
 import SystemCard from '@/components/education/SystemCard';
 
+// static import 여야 placeholder="blur" 가 자동으로 붙는다
+import SysBg from '../../../../public/eduSystem/교육시스템.jpg';
+import SysBgMo from '../../../../public/eduSystem/교육시스템모바일.jpg';
+
 const cardData = [
   {
     step: 1,
@@ -50,7 +54,8 @@ export default function Page() {
       <div className="w-full max-w-[1440px] px-2 md:px-12 mx-auto">
         <div className="relative w-full h-[calc(100vh-200px)] mt-10">
           <Image
-            src={'/eduSystem/교육시스템.jpg'}
+            src={SysBg}
+            placeholder="blur"
             alt=""
             // sm 미만에서는 CSS로 숨겨지므로 최소 크기만 받는다
             sizes="(max-width: 639px) 1px, (max-width: 1700px) 100vw, 1700px"
@@ -59,7 +64,8 @@ export default function Page() {
             priority
           />
           <Image
-            src={'/eduSystem/교육시스템모바일.jpg'}
+            src={SysBgMo}
+            placeholder="blur"
             alt=""
             sizes="(max-width: 639px) 100vw, 1px"
             fill

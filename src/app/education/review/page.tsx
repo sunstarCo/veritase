@@ -6,6 +6,10 @@ import {TbHandClick} from 'react-icons/tb';
 
 import BannerLayout from '@/components/common/BannerLayout';
 
+// static import 여야 placeholder="blur" 가 자동으로 붙는다(문자열 src 는 blurDataURL 을 직접 줘야 한다)
+import ReviewBg from '../../../../public/reviews/review_bg.jpg';
+import PhoneFrame from '../../../../public/reviews/모바일사진.png';
+
 const TOTAL_IMAGES = 93;
 // 세로로 이어붙여 두는 장수. 1장만 화면에 보이고 나머지는 아래에서 미리 로드된다.
 const PANELS = 3;
@@ -48,7 +52,7 @@ export default function Page() {
 
   return (
     <BannerLayout className="flex justify-center items-start sm:items-center min-h-[600px]">
-      <Image src={'/reviews/review_bg.jpg'} alt="" sizes="100vw" fill priority className="object-cover object-center" />
+      <Image src={ReviewBg} alt="" sizes="100vw" fill priority placeholder="blur" className="object-cover object-center" />
       <div className="absolute flex max-md:flex-col gap-16 md:justify-evenly w-full items-center mt-2 max-w-[1440px] max-sm:mt-16">
         <div className="text-white">
           <h2 className="text-5xl md:text-6xl font-medium tracking-wide">수업후기</h2>
@@ -61,10 +65,10 @@ export default function Page() {
           className="cursor-pointer relative w-[240px] md:w-[310px]"
           style={{aspectRatio: `${FRAME.w} / ${FRAME.h}`}}>
           <Image
-            src={'/reviews/모바일사진.png'}
+            src={PhoneFrame}
             alt="모바일 사진"
-            priority
             fill
+            placeholder="blur"
             className="object-contain"
             sizes="(max-width: 768px) 240px, 310px"
           />

@@ -8,6 +8,10 @@ import './style.css';
 import Breadcrumb from '@/components/common/Breadcrumb';
 import EduSystemCard from '@/components/education/EduSystemCard';
 
+// static import 여야 placeholder="blur" 가 자동으로 붙는다
+import EduBg from '../../../../public/eduSystem/학습관리시스템.jpg';
+import EduBgMo from '../../../../public/eduSystem/학습관리시스템_모바일.jpg';
+
 const cardData = [
   {
     title: '기본개념 정리',
@@ -80,7 +84,8 @@ export default function Page() {
       <div className="w-full max-w-[1440px] px-2 md:px-12 mx-auto">
         <div className="relative w-full h-[calc(100vh-200px)] mt-10">
           <Image
-            src={'/eduSystem/학습관리시스템.jpg'}
+            src={EduBg}
+            placeholder="blur"
             alt=""
             // sm 미만에서는 CSS로 숨겨지므로 최소 크기만 받는다
             sizes="(max-width: 639px) 1px, (max-width: 1700px) 100vw, 1700px"
@@ -89,7 +94,8 @@ export default function Page() {
             priority
           />
           <Image
-            src={'/eduSystem/학습관리시스템_모바일.jpg'}
+            src={EduBgMo}
+            placeholder="blur"
             alt=""
             sizes="(max-width: 639px) 100vw, 1px"
             fill
