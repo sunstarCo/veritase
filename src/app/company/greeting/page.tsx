@@ -10,7 +10,7 @@ export default function Page() {
         <BannerLayout>
           <GreetingBanner />
         </BannerLayout>
-        <div className="flex gap-10 items-start w-full xl:max-w-[1700px] mx-auto px-4 md:px-20 pt-20">
+        <div className="flex gap-10 items-start w-full xl:max-w-[1440px] mx-auto px-4 md:px-20 pt-20">
           <div className="w-[7px] h-[66px] bg-blue-4" />
           <div>
             <p className="text-3xl py-4 relative w-fit">(주) 베리타스 교육은...</p>

@@ -10,7 +10,7 @@ export default function Page() {
         <IntroduceBanner />
       </BannerLayout>
       <div className="mb-20">
-        <article className="max-w-[1700px] mx-auto py-24 px-4 sm:px-20 ">
+        <article className="max-w-[1440px] mx-auto py-24 px-4 sm:px-20 ">
           <div className="w-full bg-blue-4 text-2xl md:text-3xl font-semibold text-center text-white py-6 px-9">
             <p>신뢰와 믿음 / 혁신적 마인드로 학생의 변화를 선도하고 있습니다.</p>
           </div>

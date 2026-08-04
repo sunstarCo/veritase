@@ -1,35 +1,24 @@
 import React from 'react';
 
 import Breadcrumb from '@/components/common/Breadcrumb';
-import EnglishTips from '@/components/tips/EnglishTips';
-import KoreanTips from '@/components/tips/KoreanTips';
-import MathTips from '@/components/tips/MathTips';
-import ScienceTips from '@/components/tips/ScienceTips';
-import SocietyTips from '@/components/tips/SocietyTips';
+import DocArticle from '@/components/common/DocArticle';
+import DocNav from '@/components/common/DocNav';
+import {TIPS} from '@/components/tips/tipsData';
 
 export default function Page({searchParams: {subject: curParams}}: {searchParams: {subject: string}}) {
-  const sub_titles = [
-    {
-      title: '국어영역',
-      path: '/tips?subject=국어',
-    },
-    {
-      title: '수학영역',
-      path: '/tips?subject=수학',
-    },
-    {
-      title: '영어영역',
-      path: '/tips?subject=영어',
-    },
-    {
-      title: '사탐영역',
-      path: '/tips?subject=사탐',
-    },
-    {
-      title: '과탐영역',
-      path: '/tips?subject=과탐',
-    },
-  ];
+  const index = Math.max(
+    0,
+    TIPS.findIndex(tip => tip.param === curParams),
+  );
+  const current = TIPS[index];
+  // 탭 이름('통합사회')에 파라미터('사탐')가 안 들어있으므로 활성 여부를 직접 넘긴다
+  const sub_titles = TIPS.map(({param, tab}) => ({
+    title: tab,
+    path: `/tips?subject=${param}`,
+    active: param === current.param,
+  }));
+  const toNav = (i: number) => (TIPS[i] ? {label: TIPS[i].tab, path: `/tips?subject=${TIPS[i].param}`} : undefined);
+
   return (
     <div>
       <Breadcrumb
@@ -38,12 +27,9 @@ export default function Page({searchParams: {subject: curParams}}: {searchParams
         sub_titles={sub_titles}
         curParams={curParams}
       />
-      <div className="max-w-[1700px] mx-auto px-6 md:px-40 mt-12 break-keep">
-        {curParams === '국어' && <KoreanTips />}
-        {curParams === '수학' && <MathTips />}
-        {curParams === '영어' && <EnglishTips />}
-        {curParams === '사탐' && <SocietyTips />}
-        {curParams === '과탐' && <ScienceTips />}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-14 md:mt-20 break-keep">
+        <DocArticle content={current.content} />
+        <DocNav prev={toNav(index - 1)} next={toNav(index + 1)} />
       </div>
     </div>
   );
