@@ -1,11 +1,13 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 
+import useBannerReady from '@/utils/useBannerReady';
+
 import IntroduceBannerImg from '../../../public/introPage/회사소개.jpg';
 export default function IntroduceBanner() {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageLoaded, register] = useBannerReady();
   return (
     <>
       <Image
@@ -14,7 +16,7 @@ export default function IntroduceBanner() {
         fill
         alt="회사소개배너"
         priority
-        onLoad={() => setIsImageLoaded(true)}
+        ref={register(0)}
         placeholder="blur"
       />
       {/* 가독성용 스크림. 배경 오른쪽이 어두워 진한 글자가 묻히므로 왼쪽을 밝게 깐다.

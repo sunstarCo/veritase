@@ -1,15 +1,16 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 
 import BannerLayout from '@/components/common/BannerLayout';
 import KakaoMap from '@/components/KakaoMap';
+import useBannerReady from '@/utils/useBannerReady';
 
 import WayBanner from '../../../../public/introPage/찾아오시는길.jpg';
 import WayBannerMo from '../../../../public/introPage/찾아오시는길_모바일.jpg';
 export default function Page() {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageLoaded, register] = useBannerReady();
 
   return (
     <div>
@@ -21,7 +22,7 @@ export default function Page() {
           sizes="(max-width: 639px) 1px, 100vw"
           fill
           alt="회사소개배너"
-          onLoad={() => setIsImageLoaded(true)}
+          ref={register(0)}
           priority
           placeholder="blur"
         />
@@ -31,6 +32,7 @@ export default function Page() {
           fill
           sizes="(max-width: 639px) 100vw, 1px"
           alt="회사소개배너"
+          ref={register(1)}
           priority
           placeholder="blur"
         />
