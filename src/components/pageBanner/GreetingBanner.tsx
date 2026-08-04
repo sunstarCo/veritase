@@ -1,11 +1,13 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 
+import useBannerReady from '@/utils/useBannerReady';
+
 import GreetingBannerImg from '../../../public/introPage/인사말.jpg';
 export default function GreetingBanner() {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageLoaded, register] = useBannerReady();
   return (
     <>
       <Image
@@ -13,7 +15,7 @@ export default function GreetingBanner() {
         className="object-cover object-right sm:object-center"
         fill
         alt="회사소개배너"
-        onLoad={() => setIsImageLoaded(true)}
+        ref={register(0)}
         placeholder="blur"
         priority
       />
