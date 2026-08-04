@@ -1,12 +1,14 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 
 import Image from 'next/image';
+
+import useBannerReady from '@/utils/useBannerReady';
 
 import MainBannerImg from '../../../public/mainPage/mainBanner2.jpg';
 import MainBannerImgMo from '../../../public/mainPage/mainBannerMobile.jpg';
 export default function MainBanner() {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageLoaded, register] = useBannerReady();
   return (
     <>
       <Image
@@ -16,7 +18,7 @@ export default function MainBanner() {
         sizes="(max-width: 639px) 1px, 100vw"
         className="object-cover object-left-bottom max-sm:hidden"
         alt="메인배너"
-        onLoad={() => setIsImageLoaded(true)}
+        ref={register(0)}
         placeholder="blur"
         priority
       />
@@ -26,7 +28,7 @@ export default function MainBanner() {
         sizes="(max-width: 639px) 100vw, 1px"
         className="object-cover object-bottom sm:hidden"
         alt="메인배너"
-        onLoad={() => setIsImageLoaded(true)}
+        ref={register(1)}
         placeholder="blur"
         priority
       />
