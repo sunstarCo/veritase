@@ -19,13 +19,13 @@ type Card = {eyebrow: string; stat?: string; title: string; body: string; chart?
 type Section = {
   no: string;
   accent: string;
-  statAccent?: string;
   title: React.ReactNode;
   desc: string;
   cards: Card[];
 };
 
-const ACCENT_RED = '#dc2626';
+// 세 섹션 모두 같은 파랑을 쓴다
+const ACCENT = '#2563eb';
 
 /**
  * 글자 위 방점. CSS text-emphasis 는 점을 그릴 자리를 줄 높이에 더해버려
@@ -49,7 +49,7 @@ function EmphasisDots({children}: {children: string}) {
 const SECTIONS: Section[] = [
   {
     no: '1',
-    accent: '#2563eb',
+    accent: ACCENT,
     title: '수능·내신, 근본부터 바뀐다',
     desc: '대입의 표준이 되는 수능과 내신 산출 방식이 완전히 바뀝니다.',
     cards: [
@@ -68,8 +68,7 @@ const SECTIONS: Section[] = [
   },
   {
     no: '2',
-    accent: '#059669',
-    statAccent: '#047857',
+    accent: ACCENT,
     title: '수시는 늘고, 정시는 줄어든다',
     desc: '전체적인 모집 기조가 "수시확대", "정시축소"로 움직이고 있습니다.',
     cards: [
@@ -95,11 +94,11 @@ const SECTIONS: Section[] = [
   },
   {
     no: '3',
-    accent: ACCENT_RED,
+    accent: ACCENT,
     title: (
       <>
         평가 방식이 다각화된다 —{' '}
-        <span style={{color: ACCENT_RED}}>
+        <span style={{color: ACCENT}}>
           가장 핵심 <EmphasisDots>포인트</EmphasisDots>
         </span>
       </>
@@ -179,7 +178,7 @@ export default function AdmissionChanges2028() {
                       {card.stat && (
                         <div
                           className="mt-1 md:mt-2 text-2xl md:text-[2rem] font-bold leading-tight"
-                          style={{color: section.statAccent ?? section.accent}}>
+                          style={{color: section.accent}}>
                           {card.stat}
                         </div>
                       )}
