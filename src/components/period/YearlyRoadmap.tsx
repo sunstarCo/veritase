@@ -60,7 +60,7 @@ export default function YearlyRoadmap() {
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => toggle(i)}
-                className="flex w-full items-center gap-4 rounded-md px-5 py-5 text-left transition-colors md:gap-6 md:px-7 md:py-6"
+                className="flex w-full items-center gap-4 rounded-md px-5 py-10 text-left transition-colors md:gap-6 md:px-7 md:py-16"
                 style={{background: isOpen ? C.blue : C.headBg}}>
                 <span
                   className="flex-none text-lg md:text-2xl font-extrabold tracking-[-0.035em] md:w-[152px] md:text-center"
