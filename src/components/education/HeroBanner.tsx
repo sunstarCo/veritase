@@ -3,6 +3,7 @@ import React from 'react';
 
 import Image, {type StaticImageData} from 'next/image';
 
+import TypeIn from '@/components/common/TypeIn';
 import useBannerReady from '@/utils/useBannerReady';
 
 type Props = {
@@ -49,19 +50,15 @@ export default function HeroBanner({desktop, mobile, scrim, title, lines}: Props
           className={`font-medium text-5xl md:text-6xl tracking-wide opacity-0 ${ready ? 'animate-showUpper' : ''}`}>
           {title}
         </h2>
-        <p
-          className={`mt-5 md:mt-7 text-[1.25rem] md:text-[1.75rem] font-medium leading-[1.5] opacity-0 ${
-            ready ? 'animate-showUpper' : ''
-          }`}
-          // 제목보다 살짝 늦게. both 여야 지연 중에도 시작 프레임(아래쪽·투명)을 유지한다
-          style={{animationDelay: '300ms', animationFillMode: 'both'}}>
-          {lines.map((line, i) => (
-            <React.Fragment key={line}>
-              {i > 0 && <br />}
-              {line}
-            </React.Fragment>
-          ))}
-        </p>
+        {/* 제목이 올라온 뒤에 카피가 한 글자씩 찍힌다 */}
+        <TypeIn
+          start={ready}
+          delay={500}
+          lines={lines.map((line, i) => ({
+            pieces: [{text: line}],
+            className: `text-[1.25rem] md:text-[1.75rem] font-medium leading-[1.5] ${i === 0 ? 'mt-5 md:mt-7' : ''}`,
+          }))}
+        />
       </div>
     </div>
   );

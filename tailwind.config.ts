@@ -79,6 +79,11 @@ const config: Config = {
             opacity: '100%',
         }
         },
+        // 한 글자씩 찍히는 효과. 지연은 글자마다 인라인으로 준다
+        typeIn: {
+          '0%': {opacity: '0', transform: 'translateY(0.22em)'},
+          '100%': {opacity: '1', transform: 'translateY(0)'},
+        },
         reShow: {
           '0%': {opacity: '0%'},
           '100%': {opacity: '100%'},
@@ -95,10 +100,11 @@ const config: Config = {
         rotateRight: 'rotate180 0.3s ease-in-out forwards',
         rotateLeft: '-rotate90 0.3s ease-in-out forwards',
         show: 'show 0.7s ease-in-out forwards',
-        show_delay_1s: 'show 1s ease-in-out forwards 1000ms',
         cardHover:'cardHover 0.3s ease-in-out forwards',
         reShow:'reShow 1.8s ease-in-out forwards',
         showUpper: "showUpper 0.5s ease-in-out forwards",
+        // both 여야 지연 중에도 시작 프레임(투명)을 유지한다
+        typeIn: 'typeIn 0.28s ease-out both',
         blink: "blink 1.5s infinite",
         rotateCard: "rotateCard 0.3 ease-in-out forwards"
       }

@@ -3,6 +3,7 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import TypeIn from '@/components/common/TypeIn';
 import useBannerReady from '@/utils/useBannerReady';
 
 import GreetingBannerImg from '../../../public/introPage/인사말.jpg';
@@ -26,16 +27,13 @@ export default function GreetingBanner() {
 
       {/* 좁은 화면에서는 br 로 끊는 지점을 직접 지정해 어절이 혼자 떨어지지 않게 한다 */}
       <div className="absolute top-[30%] left-[10%] pr-[10%] break-keep font-bold text-blue-6 text-[2.25rem] lg:text-[2.75rem] leading-[1.4]">
-        <p className={`opacity-0 ${isImageLoaded ? 'animate-show' : ''}`}>
-          수능은 기적을 바라는{' '}
-          <br className="md:hidden" />
-          시험이 아니라,
-        </p>
-        <p className={`mt-3 opacity-0 ${isImageLoaded ? 'animate-show_delay_1s' : ''}`}>
-          합격을 만드는{' '}
-          <br className="md:hidden" />
-          실력의 기준입니다.
-        </p>
+        <TypeIn
+          start={isImageLoaded}
+          lines={[
+            {pieces: [{text: '수능은 기적을 바라는 '}, {br: 'md:hidden'}, {text: '시험이 아니라,'}]},
+            {pieces: [{text: '합격을 만드는 '}, {br: 'md:hidden'}, {text: '실력의 기준입니다.'}], className: 'mt-3'},
+          ]}
+        />
       </div>
     </>
   );
