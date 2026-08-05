@@ -93,8 +93,17 @@ export default function SatComparisonTable() {
     <div className="w-full md:w-[772px] md:max-w-[60%] md:flex-none">
       {/* 좁은 화면에서 표가 찌그러지는 대신 가로로 넘긴다 */}
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[680px] border-0 border-collapse break-keep">
+        <table className="w-full min-w-[680px] table-fixed border-0 border-collapse break-keep">
           <caption className="sr-only">현행(~2027 수능)과 개편안(2028 수능~)의 영역별 출제 과목 비교</caption>
+          {/* 폭을 안 정하면 내용이 많은 현행 열이 개편안 열을 밀어낸다.
+              table-fixed 라야 이 값이 그대로 지켜진다.
+              왼쪽 두 열은 '제2외국어'(5글자)와 '사회' 가 안 잘리는 최소치다 */}
+          <colgroup>
+            <col style={{width: '10%'}} />
+            <col style={{width: '9%'}} />
+            <col style={{width: '40.5%'}} />
+            <col style={{width: '40.5%'}} />
+          </colgroup>
           <thead>
             <tr className="bg-[#e8e8e8]">
               <th className={th} style={{borderColor: LINE}} colSpan={2} scope="col">
