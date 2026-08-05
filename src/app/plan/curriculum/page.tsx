@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/common/Breadcrumb';
 import AdmissionChanges2028 from '@/components/curriculum/AdmissionChanges2028';
 
+// static import 여야 placeholder="blur" 가 자동으로 붙는다
+import SatChanges from '../../../../public/sat/수능개편안.png';
+
 export default function Page() {
   return (
     <div>
@@ -15,17 +18,20 @@ export default function Page() {
           {/* 페이지 폭이 줄어도 이미지는 기존 크기(1700px 래퍼 기준 772px)를 유지한다.
               flex-none 으로 줄어들지 않게 하되, md 구간 좁은 화면에서는 텍스트가 눌리므로
               max-w 로 상한만 둔다. 줄어든 폭은 오른쪽 텍스트가 흡수한다. */}
+          {/* static import 라 width/height 가 자동으로 붙는다. w- 로 폭을 덮어쓰므로
+              h-auto 가 없으면 원본 높이가 그대로 남아 비율이 깨진다 */}
           <Image
-            src={'/sat/대입개편안.png'}
-            alt="대입개편안"
-            width={0}
-            height={0}
+            src={SatChanges}
+            alt="현행(~2027 수능)과 개편안(2028 수능~)의 영역별 출제 과목 비교표"
+            placeholder="blur"
             sizes="(max-width: 768px) 100vw, 772px"
-            className="w-full md:w-[772px] md:max-w-[60%] md:flex-none object-contain"
+            className="w-full h-auto md:w-[772px] md:max-w-[60%] md:flex-none"
           />
           <div className="w-full md:flex-1 md:min-w-0">
             <p className="text-2xl font-medium mb-10">통합형·융합형 수능 과목체계로 개편</p>
-            <div className="space-y-8 px-4">
+            {/* marker: 는 자손 ::marker 까지 잡으므로 부모에 한 번만 준다.
+                본문 글자색은 그대로 두고 불릿만 섹션 강조색과 맞춘다 */}
+            <div className="space-y-8 px-4 marker:text-[#2563eb]">
               <p className="list-item">
                 통합형 과목체계를 도입(선택과목 폐지)하여,
                 <br /> 과목 선택의 유·불리를 해소하고 수능 ‘공정성’ 확보
@@ -57,7 +63,7 @@ export default function Page() {
               </div>
 
               <table className="w-full">
-                <thead className="bg-yellow-200">
+                <thead className="bg-slate-300">
                   <tr>
                     <th className="p-2">기존명칭</th>
                     <th>2028대입개편안 과목 명칭</th>
