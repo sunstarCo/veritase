@@ -1,12 +1,8 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import Breadcrumb from '@/components/common/Breadcrumb';
 import AdmissionChanges2028 from '@/components/curriculum/AdmissionChanges2028';
-
-// static import 여야 placeholder="blur" 가 자동으로 붙는다
-import SatChanges from '../../../../public/sat/수능개편안.png';
+import SatComparisonTable from '@/components/curriculum/SatComparisonTable';
 
 export default function Page() {
   return (
@@ -15,18 +11,9 @@ export default function Page() {
       <div className="max-w-[1440px] mx-auto break-keep px-6 md:px-10">
         <AdmissionChanges2028 />
         <div className="flex flex-col items-start md:flex-row gap-11 mt-24">
-          {/* 페이지 폭이 줄어도 이미지는 기존 크기(1700px 래퍼 기준 772px)를 유지한다.
-              flex-none 으로 줄어들지 않게 하되, md 구간 좁은 화면에서는 텍스트가 눌리므로
-              max-w 로 상한만 둔다. 줄어든 폭은 오른쪽 텍스트가 흡수한다. */}
-          {/* static import 라 width/height 가 자동으로 붙는다. w- 로 폭을 덮어쓰므로
-              h-auto 가 없으면 원본 높이가 그대로 남아 비율이 깨진다 */}
-          <Image
-            src={SatChanges}
-            alt="현행(~2027 수능)과 개편안(2028 수능~)의 영역별 출제 과목 비교표"
-            placeholder="blur"
-            sizes="(max-width: 768px) 100vw, 772px"
-            className="w-full h-auto md:w-[772px] md:max-w-[60%] md:flex-none"
-          />
+          {/* 폭은 표 안에서 정한다(772px, md 구간에서는 60% 상한).
+              줄어든 폭은 오른쪽 텍스트가 흡수한다. */}
+          <SatComparisonTable />
           <div className="w-full md:flex-1 md:min-w-0">
             <p className="text-2xl font-medium mb-10">통합형·융합형 수능 과목체계로 개편</p>
             {/* marker: 는 자손 ::marker 까지 잡으므로 부모에 한 번만 준다.
