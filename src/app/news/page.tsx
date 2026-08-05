@@ -25,7 +25,7 @@ export default async function Page({searchParams}: IPagination) {
         </div>
         <div className="w-full justify-end flex gap-8 py-2">
           <p>총 {count}건</p>
-          <p>현재페이지 {`${pageParams}/${totalPages / 10}`}</p>
+          <p>현재페이지 {`${pageParams}/${totalPages}`}</p>
         </div>
       </div>
       {/* body */}
@@ -40,7 +40,7 @@ export default async function Page({searchParams}: IPagination) {
         })}
       </div>
       <div className="flex justify-center ">
-        <PaginationContoller pageParams={pageParams} totalPages={totalPages} />
+        <PaginationContoller pageParams={pageParams} total={count} />
       </div>
     </div>
   );
